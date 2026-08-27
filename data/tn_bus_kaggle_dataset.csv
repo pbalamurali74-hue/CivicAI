@@ -1,0 +1,1201 @@
+trip_id,corporation,route_code,origin,destination,distance_km,hour_of_day,day_of_week,is_peak_hour,weather_condition,traffic_density_index,passenger_occupancy_percent,actual_delay_mins,fuel_consumed_liters
+TN-SETC-902X-0001,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,8,0,1,Fog,0.77,99,21.4,240.9
+TN-TRY-SRM-0002,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,7,4,0,Rain,0.31,35,20.3,5.7
+TN-70H-0003,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,22,1,0,Fog,0.49,64,15.5,7.9
+TN-CBE-101-0004,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,5,6,0,Clear,0.51,51,14.8,5.8
+TN-CBE-PLK-0005,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,8,0,1,Rain,0.83,107,39.3,26.7
+TN-SLM-301-0006,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,22,0,0,Rain,0.34,48,26.7,20.7
+TN-MDU-201-0007,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,23,1,0,Fog,0.23,72,6.0,4.9
+TN-21G-0008,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,12,6,0,Clear,0.37,59,13.8,9.2
+TN-MDU-201-0009,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,16,1,0,Fog,0.32,73,12.4,5.5
+TN-11G-0010,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,22,5,0,Clear,0.27,54,7.5,7.9
+TN-TRY-SRM-0011,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,12,5,0,Clear,0.58,33,16.5,5.3
+TN-CBE-PLK-0012,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,17,2,1,Clear,0.75,121,27.4,25.3
+TN-SETC-902X-0013,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,20,3,1,Fog,0.82,100,22.9,245.3
+TN-TRY-SRM-0014,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,13,5,0,Monsoon_Heavy,0.59,67,43.3,5.7
+TN-5E-0015,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,21,3,0,Clear,0.54,37,14.6,7.9
+TN-MDU-KODAI-0016,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,7,3,0,Rain,0.57,59,30.9,63.5
+TN-70H-0017,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,8,5,1,Monsoon_Heavy,0.98,126,54.5,8.7
+TN-11G-0018,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,19,0,1,Fog,0.93,101,33.6,9.0
+TN-TRY-401-0019,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,8,6,1,Fog,0.78,125,25.0,30.4
+TN-MDU-201-0020,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,10,4,1,Monsoon_Heavy,0.98,123,54.3,5.6
+TN-MDU-201-0021,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,14,1,0,Clear,0.31,66,14.8,4.6
+TN-SLM-ERD-0022,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,7,6,0,Monsoon_Heavy,0.74,38,50.1,36.4
+TN-11G-0023,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,13,4,0,Monsoon_Heavy,0.59,43,48.1,8.3
+TN-570-0024,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,14,3,0,Fog,0.49,58,19.8,19.6
+TN-D70-0025,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,12,0,0,Clear,0.21,65,5.4,13.3
+TN-21G-0026,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,6,1,0,Clear,0.61,51,15.9,9.6
+TN-SLM-ERD-0027,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,11,4,0,Clear,0.53,66,18.1,33.1
+TN-SLM-ERD-0028,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,18,1,1,Clear,0.73,112,22.1,35.4
+TN-101A-0029,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,8,0,1,Rain,0.98,91,40.6,10.3
+TN-SLM-301-0030,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,9,3,1,Clear,0.77,100,28.0,22.5
+TN-TRY-SRM-0031,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,8,0,1,Fog,0.96,85,34.5,7.5
+TN-D70-0032,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,10,3,1,Rain,0.93,110,45.0,16.3
+TN-70H-0033,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,17,2,1,Rain,0.87,120,41.1,8.8
+TN-570-0034,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,14,1,0,Clear,0.46,64,11.3,19.2
+TN-101A-0035,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,23,3,0,Monsoon_Heavy,0.81,63,47.7,11.1
+TN-21G-0036,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,10,0,1,Monsoon_Heavy,0.92,100,53.2,11.7
+TN-SETC-108X-0037,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,12,4,0,Monsoon_Heavy,0.42,35,38.4,71.6
+TN-TRY-401-0038,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,15,2,0,Clear,0.5,50,14.1,28.4
+TN-SETC-902X-0039,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,14,3,0,Clear,0.62,34,15.7,231.8
+TN-SETC-108X-0040,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,8,0,1,Monsoon_Heavy,0.96,100,52.0,82.9
+TN-21G-0041,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,12,2,0,Clear,0.27,64,11.4,9.3
+TN-SETC-902X-0042,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,21,0,0,Fog,0.57,49,22.5,227.6
+TN-5E-0043,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,13,0,0,Clear,0.53,39,15.4,8.6
+TN-CBE-PLK-0044,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,11,5,0,Fog,0.58,62,18.8,25.1
+TN-101A-0045,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,7,5,0,Rain,0.67,32,29.1,10.4
+TN-SETC-902X-0046,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,13,1,0,Fog,0.4,75,12.8,216.1
+TN-21G-0047,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,9,4,1,Clear,0.92,122,29.6,10.8
+TN-101A-0048,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,14,2,0,Clear,0.6,43,21.1,10.1
+TN-MDU-201-0049,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,22,6,0,Rain,0.74,39,39.5,5.6
+TN-11G-0050,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,10,3,1,Clear,0.75,106,26.5,8.0
+TN-D70-0051,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,13,1,0,Fog,0.25,32,12.2,13.5
+TN-SLM-301-0052,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,16,2,0,Clear,0.3,72,7.7,19.9
+TN-21G-0053,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,13,2,0,Fog,0.43,73,18.7,9.6
+TN-70H-0054,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,8,2,1,Clear,0.85,101,22.8,8.9
+TN-MDU-201-0055,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,15,3,0,Monsoon_Heavy,0.84,37,50.7,6.3
+TN-CBE-101-0056,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,6,5,0,Rain,0.3,64,24.2,6.6
+TN-570-0057,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,16,3,0,Clear,0.63,51,21.5,20.8
+TN-23C-0058,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,14,4,0,Clear,0.5,50,15.6,7.1
+TN-5E-0059,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,11,3,0,Fog,0.62,73,22.3,8.1
+TN-SETC-108X-0060,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,14,3,0,Monsoon_Heavy,0.78,49,48.0,79.2
+TN-SETC-108X-0061,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,15,3,0,Rain,0.5,43,28.6,73.7
+TN-11G-0062,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,7,2,0,Monsoon_Heavy,0.7,69,46.0,8.6
+TN-D70-0063,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,14,1,0,Clear,0.27,32,7.3,14.0
+TN-21G-0064,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,19,3,1,Fog,0.85,109,26.9,10.3
+TN-SETC-902X-0065,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,5,6,0,Clear,0.55,44,15.1,227.7
+TN-TRY-401-0066,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,19,0,1,Monsoon_Heavy,0.96,92,54.9,32.9
+TN-TRY-401-0067,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,22,4,0,Clear,0.63,58,21.4,30.0
+TN-TRY-401-0068,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,18,6,1,Monsoon_Heavy,0.98,95,58.1,32.5
+TN-CBE-101-0069,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,12,6,0,Fog,0.32,63,11.0,5.5
+TN-SLM-301-0070,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,7,5,0,Clear,0.31,51,9.2,20.4
+TN-5E-0071,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,9,1,1,Rain,0.98,98,39.0,9.3
+TN-TRY-SRM-0072,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,19,3,1,Clear,0.75,111,23.0,6.9
+TN-70H-0073,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,23,3,0,Rain,0.3,52,20.7,7.3
+TN-MDU-KODAI-0074,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,22,5,0,Fog,0.45,68,18.6,60.5
+TN-CBE-101-0075,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,18,3,1,Clear,0.8,127,27.1,6.6
+TN-11G-0076,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,19,1,1,Monsoon_Heavy,0.98,110,56.7,9.0
+TN-21G-0077,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,18,1,1,Rain,0.85,101,37.9,10.2
+TN-CBE-PLK-0078,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,15,6,0,Rain,0.43,56,24.2,22.6
+TN-70H-0079,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,22,0,0,Clear,0.3,34,13.0,7.8
+TN-70H-0080,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,12,1,0,Clear,0.48,45,12.5,8.2
+TN-SETC-108X-0081,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,11,3,0,Fog,0.32,53,8.1,69.5
+TN-23C-0082,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,10,2,1,Clear,0.85,104,27.7,8.8
+TN-MDU-RMS-0083,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,17,5,1,Clear,0.72,125,20.8,85.8
+TN-CBE-OOTY-0084,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,8,6,1,Monsoon_Heavy,0.98,107,56.2,51.7
+TN-21G-0085,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,21,5,0,Clear,0.21,56,10.7,8.3
+TN-MDU-201-0086,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,19,5,1,Clear,0.81,118,30.0,5.7
+TN-TRY-SRM-0087,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,20,3,1,Rain,0.98,122,40.8,7.4
+TN-21G-0088,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,13,3,0,Clear,0.54,66,18.7,9.7
+TN-70H-0089,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,20,6,1,Clear,0.75,98,22.7,8.1
+TN-CBE-101-0090,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,13,4,0,Clear,0.43,42,10.7,6.5
+TN-SLM-ERD-0091,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,22,6,0,Clear,0.51,71,18.7,33.3
+TN-70H-0092,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,7,2,0,Clear,0.38,45,11.2,7.9
+TN-SLM-ERD-0093,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,22,4,0,Clear,0.39,65,11.7,32.5
+TN-CBE-101-0094,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,14,2,0,Clear,0.25,42,7.3,6.2
+TN-11G-0095,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,11,1,0,Fog,0.42,67,18.4,7.5
+TN-CBE-OOTY-0096,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,8,6,1,Clear,0.78,108,22.0,47.9
+TN-TRY-SRM-0097,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,9,2,1,Clear,0.95,120,28.1,7.5
+TN-SETC-902X-0098,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,20,0,1,Clear,0.85,100,26.8,246.6
+TN-101A-0099,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,13,6,0,Rain,0.35,34,23.1,8.4
+TN-SETC-902X-0100,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,6,1,0,Clear,0.57,49,14.9,227.8
+TN-TRY-SRM-0101,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,18,4,1,Monsoon_Heavy,0.98,99,58.4,6.6
+TN-SLM-301-0102,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,14,6,0,Monsoon_Heavy,0.85,49,52.6,23.0
+TN-23C-0103,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,11,5,0,Clear,0.32,35,8.0,6.5
+TN-21G-0104,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,10,0,1,Rain,0.92,123,40.8,10.1
+TN-CBE-OOTY-0105,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,14,5,0,Rain,0.33,44,27.2,43.2
+TN-SETC-902X-0106,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,23,5,0,Clear,0.39,64,10.7,215.7
+TN-CBE-101-0107,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,9,0,1,Clear,0.74,104,24.6,7.2
+TN-CBE-OOTY-0108,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,19,0,1,Rain,0.98,110,46.9,51.4
+TN-SLM-ERD-0109,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,19,0,1,Monsoon_Heavy,0.91,112,55.9,37.4
+TN-70H-0110,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,7,1,0,Fog,0.58,66,19.7,7.4
+TN-CBE-101-0111,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,23,0,0,Clear,0.41,71,13.3,5.7
+TN-SETC-108X-0112,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,18,5,1,Rain,0.98,100,41.5,83.3
+TN-23C-0113,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,10,2,1,Rain,0.98,103,44.4,8.2
+TN-TRY-SRM-0114,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,6,3,0,Clear,0.34,50,8.2,6.2
+TN-TRY-401-0115,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,5,5,0,Monsoon_Heavy,0.61,33,42.0,29.2
+TN-SLM-ERD-0116,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,19,6,1,Clear,0.75,120,20.7,35.3
+TN-SLM-ERD-0117,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,8,0,1,Fog,0.86,100,29.2,36.5
+TN-70H-0118,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,22,3,0,Clear,0.3,37,10.2,6.9
+TN-5E-0119,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,5,1,Clear,0.83,102,25.6,9.1
+TN-SLM-ERD-0120,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,12,3,0,Monsoon_Heavy,0.47,42,44.4,33.0
+TN-5E-0121,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,7,2,0,Rain,0.45,62,24.9,7.4
+TN-CBE-OOTY-0122,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,23,4,0,Fog,0.42,39,13.6,43.9
+TN-CBE-PLK-0123,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,22,6,0,Monsoon_Heavy,0.57,50,46.9,25.2
+TN-D70-0124,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,23,3,0,Clear,0.59,56,15.1,15.8
+TN-MDU-RMS-0125,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,17,5,1,Fog,0.96,116,34.5,90.6
+TN-SETC-108X-0126,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,15,6,0,Clear,0.59,58,15.6,75.9
+TN-70H-0127,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,9,3,1,Fog,0.95,89,29.7,9.8
+TN-CBE-PLK-0128,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,17,5,1,Clear,0.92,128,32.3,26.6
+TN-CBE-PLK-0129,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,20,6,1,Monsoon_Heavy,0.91,89,51.4,27.0
+TN-CBE-OOTY-0130,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,12,5,0,Clear,0.4,36,15.8,44.0
+TN-23C-0131,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,19,1,1,Fog,0.78,86,20.8,8.5
+TN-CBE-OOTY-0132,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,16,2,0,Rain,0.37,63,23.8,43.6
+TN-11G-0133,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,10,1,1,Clear,0.86,109,28.4,8.0
+TN-SETC-108X-0134,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,9,1,1,Rain,0.97,100,40.4,82.6
+TN-SLM-301-0135,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,14,5,0,Monsoon_Heavy,0.47,58,44.6,22.1
+TN-CBE-OOTY-0136,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,5,1,Clear,0.82,104,23.4,49.1
+TN-SLM-ERD-0137,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,8,1,1,Rain,0.95,121,40.2,38.0
+TN-70H-0138,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,17,2,1,Clear,0.85,128,29.5,9.6
+TN-SETC-801X-0139,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,20,6,1,Clear,0.9,99,29.5,230.2
+TN-SETC-902X-0140,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,11,4,0,Clear,0.5,72,18.1,223.0
+TN-23C-0141,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,6,2,0,Rain,0.32,53,25.2,6.3
+TN-CBE-OOTY-0142,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,15,5,0,Rain,0.38,38,27.5,44.0
+TN-MDU-201-0143,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,21,4,0,Clear,0.57,46,22.3,6.5
+TN-CBE-OOTY-0144,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,15,6,0,Clear,0.41,34,10.6,44.6
+TN-MDU-RMS-0145,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,22,2,0,Clear,0.56,30,16.2,81.0
+TN-MDU-201-0146,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,13,4,0,Rain,0.67,53,30.1,5.5
+TN-70H-0147,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,22,2,0,Monsoon_Heavy,0.5,34,42.7,7.9
+TN-CBE-OOTY-0148,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,0,1,Clear,0.71,87,21.0,47.8
+TN-23C-0149,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,12,4,0,Clear,0.37,53,14.1,7.5
+TN-TRY-SRM-0150,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,18,4,1,Fog,0.89,111,29.6,7.2
+TN-SETC-801X-0151,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,18,2,1,Clear,0.88,98,27.4,230.0
+TN-MDU-201-0152,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,8,5,1,Clear,0.84,126,25.4,6.0
+TN-570-0153,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,8,6,1,Rain,0.82,98,39.4,21.8
+TN-70H-0154,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,6,6,0,Clear,0.31,38,13.4,7.1
+TN-TRY-SRM-0155,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,11,4,0,Clear,0.57,44,17.1,5.5
+TN-SETC-801X-0156,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,5,2,0,Clear,0.64,64,18.5,214.0
+TN-70H-0157,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,9,0,1,Clear,0.91,100,29.6,8.1
+TN-CBE-101-0158,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,6,1,0,Fog,0.39,37,15.4,6.0
+TN-MDU-201-0159,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,21,4,0,Clear,0.4,44,17.5,4.7
+TN-TRY-401-0160,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,14,3,0,Fog,0.63,33,24.9,30.2
+TN-MDU-KODAI-0161,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,8,3,1,Fog,0.94,89,33.3,69.2
+TN-5E-0162,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,7,1,0,Clear,0.48,67,16.3,8.0
+TN-SETC-801X-0163,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,21,2,0,Rain,0.53,57,25.8,208.2
+TN-SETC-902X-0164,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,22,5,0,Clear,0.39,44,12.4,216.8
+TN-MDU-RMS-0165,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,18,5,1,Clear,0.78,105,26.4,86.7
+TN-5E-0166,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,0,1,Clear,0.92,90,28.5,9.8
+TN-MDU-201-0167,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,9,4,1,Clear,0.85,120,27.6,6.5
+TN-MDU-KODAI-0168,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,16,6,0,Fog,0.62,57,23.4,64.0
+TN-CBE-OOTY-0169,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,14,2,0,Clear,0.46,43,12.2,44.4
+TN-23C-0170,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,16,6,0,Monsoon_Heavy,0.57,47,44.3,8.1
+TN-TRY-SRM-0171,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,22,0,0,Monsoon_Heavy,0.82,74,49.0,6.0
+TN-CBE-OOTY-0172,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,15,2,0,Clear,0.28,39,10.5,41.9
+TN-5E-0173,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,5,0,0,Fog,0.44,54,14.0,7.9
+TN-MDU-201-0174,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,14,5,0,Clear,0.55,66,18.9,6.4
+TN-5E-0175,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,10,6,1,Monsoon_Heavy,0.91,90,51.7,9.6
+TN-SLM-ERD-0176,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,19,3,1,Clear,0.76,117,20.8,35.7
+TN-CBE-OOTY-0177,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,23,3,0,Monsoon_Heavy,0.7,32,45.0,48.5
+TN-101A-0178,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,5,1,0,Clear,0.63,38,22.8,9.5
+TN-23C-0179,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,5,3,0,Fog,0.39,38,12.1,7.5
+TN-TRY-401-0180,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,22,6,0,Fog,0.56,34,17.4,29.5
+TN-MDU-KODAI-0181,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,5,3,0,Clear,0.59,66,18.6,62.9
+TN-SETC-902X-0182,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,18,2,1,Clear,0.81,100,22.8,245.0
+TN-SLM-301-0183,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,16,0,0,Rain,0.68,45,33.3,22.5
+TN-21G-0184,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,17,6,1,Clear,0.89,99,26.7,10.3
+TN-TRY-401-0185,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,8,4,1,Monsoon_Heavy,0.95,107,53.7,33.1
+TN-SETC-902X-0186,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,9,1,1,Clear,0.74,97,20.8,239.0
+TN-SETC-902X-0187,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,7,1,0,Fog,0.42,66,16.4,218.2
+TN-SETC-108X-0188,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,15,6,0,Fog,0.34,58,7.8,69.6
+TN-CBE-OOTY-0189,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,13,4,0,Clear,0.36,34,10.6,43.1
+TN-101A-0190,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,16,6,0,Clear,0.23,35,9.4,8.8
+TN-SLM-301-0191,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,23,4,0,Fog,0.6,58,23.2,22.3
+TN-570-0192,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,15,4,0,Rain,0.53,33,29.0,20.4
+TN-CBE-PLK-0193,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,7,4,0,Fog,0.28,45,11.8,23.1
+TN-TRY-401-0194,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,21,4,0,Clear,0.36,48,11.3,27.8
+TN-SETC-801X-0195,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,6,0,Fog,0.49,34,14.7,205.5
+TN-MDU-RMS-0196,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,14,2,0,Fog,0.58,68,22.3,81.9
+TN-SETC-108X-0197,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,9,2,1,Clear,0.95,100,29.0,83.1
+TN-21G-0198,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,14,4,0,Rain,0.59,51,34.0,10.3
+TN-TRY-401-0199,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,7,5,0,Fog,0.39,53,8.9,27.3
+TN-570-0200,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,15,6,0,Rain,0.39,38,22.1,18.8
+TN-23C-0201,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,21,6,0,Monsoon_Heavy,0.78,63,45.7,7.7
+TN-SETC-801X-0202,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,9,4,1,Rain,0.84,96,41.7,227.3
+TN-11G-0203,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,19,0,1,Rain,0.89,100,44.4,8.7
+TN-SLM-301-0204,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,12,4,0,Clear,0.34,60,15.3,20.0
+TN-SETC-108X-0205,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,19,3,1,Clear,0.9,100,28.7,82.7
+TN-570-0206,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,9,6,1,Clear,0.71,115,26.2,21.0
+TN-23C-0207,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,21,6,0,Clear,0.33,40,9.4,7.7
+TN-5E-0208,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,18,0,1,Clear,0.91,107,32.7,9.2
+TN-MDU-RMS-0209,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,21,2,0,Clear,0.37,35,11.5,76.4
+TN-23C-0210,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,15,6,0,Clear,0.26,48,13.1,6.8
+TN-5E-0211,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,3,1,Monsoon_Heavy,0.9,90,49.2,8.8
+TN-5E-0212,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,22,5,0,Monsoon_Heavy,0.64,37,48.2,8.2
+TN-23C-0213,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,6,1,0,Rain,0.59,69,30.8,6.9
+TN-SLM-ERD-0214,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,22,0,0,Fog,0.43,45,16.4,32.2
+TN-70H-0215,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,16,1,0,Monsoon_Heavy,0.59,72,45.7,8.2
+TN-MDU-201-0216,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,7,4,0,Monsoon_Heavy,0.63,62,45.9,5.7
+TN-SLM-ERD-0217,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,6,5,0,Rain,0.74,46,37.9,35.4
+TN-21G-0218,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,16,1,0,Fog,0.5,36,18.9,10.1
+TN-CBE-PLK-0219,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,9,0,1,Clear,0.84,126,23.8,26.7
+TN-SLM-301-0220,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,20,5,1,Clear,0.91,89,30.7,24.8
+TN-101A-0221,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,14,1,0,Clear,0.56,32,16.6,9.4
+TN-MDU-RMS-0222,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,22,3,0,Clear,0.22,71,5.3,73.3
+TN-101A-0223,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,15,2,0,Clear,0.56,57,21.8,10.1
+TN-MDU-RMS-0224,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,15,1,0,Rain,0.61,53,35.6,82.9
+TN-21G-0225,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,18,0,1,Rain,0.96,96,42.7,10.7
+TN-21G-0226,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,15,5,0,Clear,0.34,68,13.7,8.7
+TN-SLM-301-0227,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,16,3,0,Clear,0.53,52,18.4,21.6
+TN-SETC-902X-0228,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,6,0,0,Fog,0.49,53,16.3,223.4
+TN-11G-0229,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,5,1,0,Monsoon_Heavy,0.71,58,43.6,7.4
+TN-SETC-902X-0230,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,16,2,0,Rain,0.73,32,36.3,239.2
+TN-MDU-201-0231,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,16,3,0,Clear,0.46,63,14.1,5.3
+TN-CBE-101-0232,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,12,0,0,Clear,0.53,61,17.6,7.0
+TN-23C-0233,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,13,6,0,Clear,0.52,43,21.6,7.1
+TN-SLM-ERD-0234,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,11,0,0,Clear,0.58,58,16.0,34.4
+TN-21G-0235,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,15,5,0,Clear,0.52,65,17.5,10.5
+TN-11G-0236,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,10,6,1,Clear,0.83,92,30.8,8.8
+TN-D70-0237,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,20,0,1,Clear,0.84,108,26.4,17.3
+TN-5E-0238,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,7,0,0,Clear,0.38,75,14.9,8.1
+TN-MDU-KODAI-0239,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,23,0,0,Clear,0.64,71,16.9,63.9
+TN-TRY-401-0240,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,16,1,0,Monsoon_Heavy,0.69,41,49.6,29.5
+TN-TRY-401-0241,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,6,6,0,Clear,0.43,49,11.4,27.7
+TN-D70-0242,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,16,4,0,Clear,0.58,46,16.2,16.2
+TN-CBE-101-0243,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,9,5,1,Clear,0.86,90,27.3,6.3
+TN-SETC-108X-0244,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,9,1,1,Fog,0.86,100,25.8,81.7
+TN-101A-0245,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,5,0,0,Clear,0.63,66,18.3,9.4
+TN-SETC-108X-0246,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,18,4,1,Fog,0.71,100,23.2,78.0
+TN-CBE-OOTY-0247,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,20,1,1,Fog,0.81,114,22.0,48.4
+TN-SLM-301-0248,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,18,3,1,Rain,0.85,123,35.8,24.3
+TN-CBE-PLK-0249,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,16,3,0,Clear,0.54,62,18.3,23.8
+TN-SLM-301-0250,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,8,2,1,Rain,0.86,91,35.3,24.5
+TN-SETC-801X-0251,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,18,1,1,Clear,0.91,100,30.8,230.6
+TN-11G-0252,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,20,4,1,Rain,0.93,104,41.4,7.9
+TN-MDU-RMS-0253,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,21,3,0,Clear,0.3,52,6.4,75.1
+TN-SETC-801X-0254,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,20,2,1,Monsoon_Heavy,0.9,91,52.9,231.1
+TN-MDU-201-0255,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,17,2,1,Clear,0.8,121,26.1,5.9
+TN-CBE-OOTY-0256,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,7,3,0,Monsoon_Heavy,0.6,65,42.5,47.2
+TN-SETC-801X-0257,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,8,1,1,Clear,0.8,100,26.0,224.1
+TN-5E-0258,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,11,4,0,Monsoon_Heavy,0.58,32,39.8,7.9
+TN-CBE-PLK-0259,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,20,4,1,Rain,0.84,117,35.5,27.0
+TN-CBE-PLK-0260,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,10,3,1,Monsoon_Heavy,0.98,104,56.7,27.2
+TN-TRY-401-0261,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,22,3,0,Fog,0.45,60,17.8,27.9
+TN-23C-0262,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,18,4,1,Clear,0.91,125,24.5,8.2
+TN-SETC-902X-0263,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,23,4,0,Clear,0.52,67,16.9,225.0
+TN-SETC-801X-0264,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,17,1,1,Fog,0.76,100,28.3,221.2
+TN-70H-0265,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,19,2,1,Rain,0.84,98,37.9,9.2
+TN-SLM-ERD-0266,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,6,5,0,Clear,0.43,65,12.8,32.8
+TN-TRY-401-0267,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,17,2,1,Clear,0.82,119,24.7,31.0
+TN-SETC-902X-0268,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,13,4,0,Rain,0.39,45,23.2,215.9
+TN-CBE-OOTY-0269,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,14,5,0,Clear,0.51,61,15.2,44.9
+TN-CBE-101-0270,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,14,0,0,Monsoon_Heavy,0.7,54,51.1,6.4
+TN-MDU-201-0271,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,9,2,1,Clear,0.77,90,23.2,6.0
+TN-CBE-101-0272,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,20,1,1,Clear,0.92,102,33.0,7.3
+TN-5E-0273,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,8,4,1,Fog,0.85,100,23.0,9.9
+TN-D70-0274,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,12,0,0,Clear,0.39,75,13.0,14.9
+TN-5E-0275,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,5,4,0,Clear,0.38,60,12.7,7.5
+TN-CBE-OOTY-0276,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,15,2,0,Fog,0.23,35,9.8,41.0
+TN-101A-0277,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,10,3,1,Clear,0.94,87,34.2,10.5
+TN-SLM-ERD-0278,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,10,5,1,Clear,0.93,85,27.6,37.6
+TN-CBE-PLK-0279,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,14,3,0,Fog,0.44,61,18.2,22.8
+TN-TRY-401-0280,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,19,2,1,Clear,0.91,106,25.8,31.9
+TN-CBE-101-0281,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,10,0,1,Fog,0.79,103,25.8,7.2
+TN-11G-0282,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,17,6,1,Rain,0.93,90,40.5,7.9
+TN-5E-0283,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,2,1,Clear,0.7,109,20.1,9.2
+TN-CBE-PLK-0284,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,14,4,0,Fog,0.46,46,16.7,23.9
+TN-101A-0285,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,8,3,1,Clear,0.74,128,23.7,10.8
+TN-CBE-OOTY-0286,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,8,5,1,Clear,0.8,99,23.0,48.4
+TN-5E-0287,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,19,5,1,Monsoon_Heavy,0.98,120,59.6,9.9
+TN-570-0288,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,12,5,0,Monsoon_Heavy,0.79,35,50.4,21.5
+TN-MDU-201-0289,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,7,4,0,Clear,0.23,65,12.0,4.7
+TN-TRY-SRM-0290,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,9,1,1,Clear,0.92,113,25.6,6.2
+TN-SETC-108X-0291,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,20,0,1,Monsoon_Heavy,0.98,88,55.5,83.6
+TN-SLM-301-0292,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,23,0,0,Monsoon_Heavy,0.61,49,46.8,22.0
+TN-70H-0293,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,11,4,0,Clear,0.22,52,9.9,7.4
+TN-101A-0294,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,7,3,0,Clear,0.33,41,13.8,9.5
+TN-SETC-902X-0295,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,18,2,1,Rain,0.92,100,40.0,251.8
+TN-TRY-SRM-0296,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,9,5,1,Clear,0.73,119,22.4,5.7
+TN-D70-0297,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,5,6,0,Clear,0.64,59,22.3,15.7
+TN-TRY-SRM-0298,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,17,6,1,Clear,0.76,107,21.2,5.9
+TN-23C-0299,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,6,6,0,Fog,0.39,31,10.9,6.4
+TN-SETC-801X-0300,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,3,0,Monsoon_Heavy,0.7,33,45.2,217.5
+TN-SLM-301-0301,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,12,4,0,Clear,0.54,33,14.5,22.6
+TN-D70-0302,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,23,2,0,Monsoon_Heavy,0.67,73,49.5,15.3
+TN-5E-0303,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,21,1,0,Rain,0.44,33,27.2,8.4
+TN-11G-0304,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,18,4,1,Rain,0.81,107,41.8,8.6
+TN-TRY-401-0305,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,15,5,0,Rain,0.48,49,26.8,28.8
+TN-SLM-ERD-0306,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,12,6,0,Clear,0.34,75,8.5,31.6
+TN-101A-0307,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,22,3,0,Rain,0.55,38,29.0,9.2
+TN-CBE-PLK-0308,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,7,3,0,Clear,0.24,42,4.7,21.8
+TN-SETC-801X-0309,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,6,0,Clear,0.28,67,11.9,192.6
+TN-SLM-ERD-0310,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,11,6,0,Clear,0.34,30,9.1,31.2
+TN-23C-0311,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,20,1,1,Fog,0.86,98,26.4,7.7
+TN-CBE-PLK-0312,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,14,3,0,Rain,0.54,52,28.0,23.9
+TN-SLM-ERD-0313,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,19,0,1,Fog,0.82,105,29.8,36.2
+TN-MDU-KODAI-0314,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,6,4,0,Clear,0.53,31,15.2,62.7
+TN-SETC-108X-0315,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,18,2,1,Clear,0.75,99,22.9,79.2
+TN-SLM-ERD-0316,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,22,5,0,Fog,0.35,61,16.2,32.0
+TN-SLM-ERD-0317,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,19,1,1,Fog,0.91,95,25.6,37.3
+TN-11G-0318,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,22,5,0,Clear,0.44,34,18.7,7.8
+TN-70H-0319,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,18,1,1,Fog,0.76,94,19.9,8.6
+TN-MDU-201-0320,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,6,4,0,Fog,0.5,69,20.2,5.9
+TN-70H-0321,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,5,4,0,Monsoon_Heavy,0.59,31,44.5,7.8
+TN-CBE-OOTY-0322,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,5,4,0,Fog,0.5,41,13.0,44.3
+TN-5E-0323,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,12,1,0,Monsoon_Heavy,0.64,52,43.6,8.5
+TN-MDU-201-0324,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,17,3,1,Monsoon_Heavy,0.96,99,53.5,6.9
+TN-21G-0325,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,6,0,0,Rain,0.47,65,27.4,9.9
+TN-11G-0326,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,7,3,0,Rain,0.59,51,31.8,8.4
+TN-23C-0327,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,21,0,0,Clear,0.3,74,14.0,6.9
+TN-101A-0328,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,7,5,0,Clear,0.6,66,20.9,9.2
+TN-CBE-PLK-0329,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,5,1,0,Monsoon_Heavy,0.46,75,43.2,24.3
+TN-CBE-OOTY-0330,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,10,4,1,Clear,0.85,109,28.6,49.7
+TN-MDU-RMS-0331,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,9,6,1,Fog,0.89,117,30.4,89.3
+TN-23C-0332,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,18,1,1,Clear,0.79,124,29.3,7.8
+TN-CBE-PLK-0333,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,5,5,0,Clear,0.55,58,17.9,24.0
+TN-MDU-RMS-0334,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,18,1,1,Fog,0.85,109,23.3,88.8
+TN-D70-0335,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,7,0,0,Clear,0.27,75,12.2,13.4
+TN-MDU-RMS-0336,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,15,2,0,Clear,0.24,49,8.2,74.5
+TN-23C-0337,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,9,0,1,Clear,0.81,120,26.3,7.9
+TN-70H-0338,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,7,2,0,Monsoon_Heavy,0.44,68,42.3,8.5
+TN-70H-0339,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,14,3,0,Rain,0.65,65,36.6,9.1
+TN-SETC-108X-0340,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,21,1,0,Fog,0.37,38,10.5,70.0
+TN-5E-0341,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,7,1,0,Rain,0.42,49,26.0,7.4
+TN-CBE-101-0342,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,12,5,0,Fog,0.42,69,11.4,5.4
+TN-CBE-OOTY-0343,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,5,3,0,Clear,0.58,54,21.6,45.8
+TN-CBE-PLK-0344,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,18,6,1,Fog,0.95,93,28.2,27.2
+TN-570-0345,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,20,2,1,Clear,0.95,105,28.1,22.7
+TN-SLM-ERD-0346,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,23,6,0,Clear,0.35,47,14.8,31.6
+TN-23C-0347,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,23,1,0,Monsoon_Heavy,0.85,41,53.6,8.2
+TN-SLM-301-0348,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,11,3,0,Clear,0.57,34,21.5,22.4
+TN-MDU-KODAI-0349,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,20,1,1,Fog,0.78,101,26.3,66.9
+TN-MDU-RMS-0350,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,7,3,0,Monsoon_Heavy,0.62,55,45.4,83.8
+TN-MDU-KODAI-0351,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,22,0,0,Clear,0.52,64,17.9,62.5
+TN-23C-0352,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,12,5,0,Fog,0.36,71,13.3,7.2
+TN-SETC-902X-0353,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,17,6,1,Clear,0.95,100,26.5,252.8
+TN-D70-0354,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,21,5,0,Monsoon_Heavy,0.65,74,46.7,15.6
+TN-MDU-RMS-0355,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,19,6,1,Fog,0.85,117,23.9,89.4
+TN-SLM-ERD-0356,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,8,2,1,Rain,0.98,90,39.4,38.7
+TN-5E-0357,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,16,2,0,Clear,0.4,43,13.7,7.8
+TN-23C-0358,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,19,5,1,Fog,0.82,89,24.3,8.6
+TN-23C-0359,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,5,6,0,Clear,0.49,73,18.9,8.1
+TN-D70-0360,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,21,1,0,Monsoon_Heavy,0.47,65,39.9,14.8
+TN-MDU-RMS-0361,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,10,1,1,Fog,0.87,110,23.4,89.2
+TN-570-0362,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,19,4,1,Rain,0.9,98,37.9,22.5
+TN-21G-0363,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,23,0,0,Monsoon_Heavy,0.48,50,38.2,9.0
+TN-SLM-ERD-0364,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,21,5,0,Clear,0.47,69,14.6,32.3
+TN-MDU-201-0365,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,19,4,1,Clear,0.91,104,32.6,6.4
+TN-5E-0366,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,15,0,0,Clear,0.34,41,10.6,7.3
+TN-MDU-RMS-0367,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,18,4,1,Clear,0.85,112,24.2,88.8
+TN-SETC-902X-0368,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,10,4,1,Clear,0.83,93,23.6,246.1
+TN-SETC-801X-0369,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,6,0,Clear,0.63,61,17.1,214.5
+TN-TRY-SRM-0370,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,21,5,0,Rain,0.48,61,27.1,6.5
+TN-SLM-ERD-0371,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,10,0,1,Monsoon_Heavy,0.91,99,51.9,36.9
+TN-TRY-SRM-0372,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,14,1,0,Rain,0.55,61,30.4,5.4
+TN-23C-0373,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,13,6,0,Monsoon_Heavy,0.77,53,50.0,8.4
+TN-SLM-301-0374,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,22,1,0,Rain,0.35,71,26.3,20.2
+TN-101A-0375,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,19,2,1,Clear,0.92,90,28.6,11.5
+TN-D70-0376,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,11,6,0,Fog,0.46,52,18.5,15.0
+TN-MDU-KODAI-0377,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,10,4,1,Clear,0.9,98,31.2,68.8
+TN-TRY-SRM-0378,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,13,4,0,Monsoon_Heavy,0.48,75,39.0,6.1
+TN-TRY-401-0379,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,8,1,1,Rain,0.98,102,46.2,31.9
+TN-5E-0380,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,12,1,0,Fog,0.34,45,14.1,8.3
+TN-SLM-ERD-0381,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,9,4,1,Fog,0.77,111,23.5,35.2
+TN-21G-0382,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,17,4,1,Fog,0.77,108,24.2,10.5
+TN-SETC-108X-0383,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,5,6,0,Fog,0.24,59,9.9,67.9
+TN-21G-0384,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,22,3,0,Clear,0.64,43,20.7,9.8
+TN-CBE-OOTY-0385,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,15,4,0,Monsoon_Heavy,0.46,61,42.9,45.1
+TN-101A-0386,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,6,0,0,Fog,0.55,59,13.6,10.4
+TN-11G-0387,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,19,3,1,Clear,0.96,112,27.6,9.0
+TN-5E-0388,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,14,1,0,Clear,0.24,53,6.5,7.5
+TN-SETC-902X-0389,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,10,0,1,Rain,0.96,99,41.7,253.5
+TN-23C-0390,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,5,1,0,Rain,0.34,67,21.2,7.4
+TN-70H-0391,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,5,5,0,Clear,0.57,57,20.3,8.1
+TN-D70-0392,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,17,0,1,Fog,0.91,91,27.1,17.5
+TN-5E-0393,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,17,6,1,Clear,0.87,128,24.4,9.3
+TN-70H-0394,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,10,3,1,Clear,0.89,125,30.4,9.6
+TN-SETC-801X-0395,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,19,6,1,Clear,0.72,91,19.9,218.8
+TN-MDU-RMS-0396,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,16,3,0,Clear,0.56,45,16.3,81.0
+TN-TRY-SRM-0397,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,14,6,0,Fog,0.21,72,11.2,5.0
+TN-SETC-801X-0398,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,21,1,0,Fog,0.38,71,8.9,199.3
+TN-D70-0399,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,20,3,1,Clear,0.76,125,25.1,16.2
+TN-70H-0400,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,16,2,0,Clear,0.37,66,11.9,7.8
+TN-11G-0401,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,20,6,1,Clear,0.7,89,18.1,7.6
+TN-101A-0402,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,17,4,1,Clear,0.86,117,29.7,10.4
+TN-MDU-RMS-0403,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,7,5,0,Monsoon_Heavy,0.64,39,43.7,83.3
+TN-TRY-401-0404,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,11,6,0,Clear,0.44,55,15.5,28.5
+TN-SETC-902X-0405,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,7,2,0,Fog,0.4,45,9.5,216.2
+TN-MDU-KODAI-0406,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,8,3,1,Monsoon_Heavy,0.98,104,57.4,70.5
+TN-11G-0407,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,8,0,1,Fog,0.74,85,20.7,8.9
+TN-TRY-401-0408,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,21,6,0,Fog,0.32,53,7.7,27.5
+TN-CBE-101-0409,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,8,6,1,Clear,0.79,112,23.1,6.0
+TN-SETC-108X-0410,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,7,3,0,Rain,0.53,33,29.4,74.0
+TN-MDU-201-0411,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,10,2,1,Clear,0.93,128,31.4,5.9
+TN-TRY-401-0412,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,5,0,0,Clear,0.31,60,9.6,27.7
+TN-11G-0413,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,6,4,0,Fog,0.53,56,14.9,7.3
+TN-CBE-PLK-0414,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,13,6,0,Clear,0.46,37,15.3,24.3
+TN-11G-0415,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,12,6,0,Monsoon_Heavy,0.84,55,47.8,8.3
+TN-CBE-OOTY-0416,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,14,2,0,Clear,0.45,30,13.8,44.0
+TN-CBE-OOTY-0417,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,12,3,0,Clear,0.47,61,20.1,45.1
+TN-TRY-SRM-0418,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,12,1,0,Clear,0.62,31,17.7,5.9
+TN-70H-0419,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,15,0,0,Fog,0.37,49,9.0,7.7
+TN-D70-0420,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,18,3,1,Clear,0.95,94,31.9,16.3
+TN-D70-0421,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,21,3,0,Fog,0.6,59,23.8,14.8
+TN-23C-0422,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,21,1,0,Fog,0.57,34,19.4,6.8
+TN-5E-0423,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,12,2,0,Clear,0.58,55,20.7,8.9
+TN-CBE-PLK-0424,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,19,2,1,Clear,0.72,97,19.8,25.8
+TN-23C-0425,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,9,0,1,Clear,0.82,105,25.3,8.1
+TN-570-0426,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,19,2,1,Rain,0.87,92,35.9,22.4
+TN-CBE-OOTY-0427,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,6,1,0,Clear,0.27,75,7.3,41.7
+TN-TRY-401-0428,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,6,5,0,Clear,0.32,41,6.9,26.9
+TN-SLM-301-0429,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,22,5,0,Monsoon_Heavy,0.51,59,38.2,22.1
+TN-23C-0430,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,5,0,0,Clear,0.26,55,8.2,7.1
+TN-SETC-902X-0431,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,7,4,0,Monsoon_Heavy,0.52,34,37.8,224.2
+TN-SETC-902X-0432,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,19,6,1,Clear,0.72,100,19.7,239.0
+TN-101A-0433,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,10,4,1,Rain,0.98,110,42.9,10.6
+TN-MDU-KODAI-0434,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,10,2,1,Clear,0.94,102,27.7,70.1
+TN-101A-0435,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,12,5,0,Clear,0.42,65,13.9,8.6
+TN-MDU-RMS-0436,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,9,3,1,Clear,0.87,118,25.3,89.9
+TN-TRY-SRM-0437,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,5,3,0,Fog,0.36,64,14.8,5.5
+TN-SETC-108X-0438,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,21,2,0,Rain,0.42,31,24.5,71.0
+TN-CBE-101-0439,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,6,6,0,Rain,0.54,67,34.2,7.1
+TN-23C-0440,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,12,5,0,Clear,0.32,33,13.5,7.8
+TN-SETC-108X-0441,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,17,2,1,Clear,0.75,100,22.4,79.0
+TN-MDU-201-0442,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,23,0,0,Fog,0.52,66,17.7,5.8
+TN-570-0443,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,20,4,1,Clear,0.75,87,20.3,20.7
+TN-D70-0444,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,5,4,0,Rain,0.3,69,19.8,13.5
+TN-11G-0445,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,15,0,0,Clear,0.27,75,13.4,7.6
+TN-TRY-401-0446,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,16,0,0,Clear,0.52,72,16.2,28.0
+TN-CBE-OOTY-0447,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,15,1,0,Clear,0.53,57,20.0,46.2
+TN-SETC-902X-0448,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,15,1,0,Fog,0.64,74,24.2,233.1
+TN-MDU-201-0449,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,12,5,0,Monsoon_Heavy,0.77,54,47.9,6.4
+TN-5E-0450,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,10,5,1,Clear,0.95,121,29.0,10.3
+TN-SETC-108X-0451,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,6,1,0,Monsoon_Heavy,0.54,69,40.2,74.2
+TN-SLM-ERD-0452,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,9,2,1,Fog,0.72,107,27.4,34.8
+TN-21G-0453,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,15,3,0,Clear,0.32,45,12.8,9.0
+TN-23C-0454,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,5,0,0,Rain,0.5,56,32.7,8.1
+TN-SLM-ERD-0455,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,17,2,1,Monsoon_Heavy,0.98,115,58.5,38.1
+TN-D70-0456,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,10,3,1,Clear,0.91,87,27.0,16.5
+TN-23C-0457,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,7,2,0,Clear,0.6,40,21.6,7.7
+TN-21G-0458,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,15,4,0,Monsoon_Heavy,0.8,75,46.3,11.3
+TN-11G-0459,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,18,1,1,Clear,0.73,98,27.7,8.0
+TN-TRY-SRM-0460,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,22,2,0,Fog,0.33,45,7.8,5.5
+TN-TRY-SRM-0461,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,20,1,1,Clear,0.79,112,21.5,7.0
+TN-SETC-902X-0462,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,20,1,1,Clear,0.71,95,24.0,238.4
+TN-SLM-ERD-0463,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,8,2,1,Rain,0.92,127,39.0,37.6
+TN-MDU-RMS-0464,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,10,2,1,Rain,0.9,113,36.4,89.7
+TN-CBE-101-0465,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,12,6,0,Clear,0.45,39,17.3,6.4
+TN-21G-0466,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,16,6,0,Monsoon_Heavy,0.59,67,41.7,9.3
+TN-MDU-RMS-0467,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,21,3,0,Monsoon_Heavy,0.71,60,48.5,84.8
+TN-CBE-OOTY-0468,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,7,3,0,Fog,0.22,66,11.7,41.8
+TN-SETC-801X-0469,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,9,0,1,Rain,0.84,95,42.9,227.3
+TN-5E-0470,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,6,3,0,Clear,0.64,57,18.0,9.2
+TN-5E-0471,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,13,2,0,Fog,0.61,34,16.1,8.7
+TN-TRY-SRM-0472,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,15,6,0,Clear,0.43,30,17.0,6.1
+TN-TRY-401-0473,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,18,0,1,Rain,0.84,121,39.5,31.8
+TN-23C-0474,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,8,4,1,Clear,0.9,119,31.9,8.9
+TN-CBE-101-0475,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,17,5,1,Rain,0.95,115,37.8,6.6
+TN-5E-0476,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,17,0,1,Rain,0.98,106,44.6,8.7
+TN-SLM-ERD-0477,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,13,2,0,Clear,0.35,49,10.3,32.4
+TN-23C-0478,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,12,1,0,Clear,0.64,58,23.2,7.4
+TN-MDU-KODAI-0479,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,7,1,0,Rain,0.4,56,27.7,60.1
+TN-MDU-201-0480,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,6,4,0,Clear,0.23,75,8.5,4.6
+TN-TRY-401-0481,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,23,0,0,Clear,0.29,42,13.2,26.4
+TN-SLM-301-0482,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,6,2,0,Fog,0.29,53,13.1,20.2
+TN-SETC-902X-0483,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,8,5,1,Clear,0.76,100,25.1,240.3
+TN-SLM-ERD-0484,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,23,4,0,Clear,0.35,46,14.2,32.1
+TN-CBE-OOTY-0485,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,5,3,0,Clear,0.27,66,12.1,41.5
+TN-D70-0486,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,12,5,0,Clear,0.32,56,11.2,14.9
+TN-70H-0487,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,20,1,1,Fog,0.75,85,21.5,8.7
+TN-CBE-OOTY-0488,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,13,3,0,Rain,0.68,59,31.7,47.3
+TN-TRY-401-0489,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,17,4,1,Clear,0.7,127,26.7,30.8
+TN-TRY-SRM-0490,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,14,2,0,Fog,0.25,34,7.5,5.2
+TN-CBE-PLK-0491,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,13,2,0,Fog,0.52,71,15.3,23.4
+TN-D70-0492,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,6,6,0,Monsoon_Heavy,0.58,50,45.5,15.8
+TN-SETC-902X-0493,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,20,2,1,Clear,0.94,100,28.7,252.1
+TN-SETC-108X-0494,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,11,2,0,Fog,0.52,73,17.4,74.1
+TN-MDU-201-0495,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,21,2,0,Clear,0.58,65,16.0,5.1
+TN-5E-0496,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,13,5,0,Monsoon_Heavy,0.74,41,52.7,9.6
+TN-SETC-902X-0497,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,7,1,0,Clear,0.3,49,9.8,211.0
+TN-MDU-201-0498,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,13,4,0,Clear,0.41,37,13.5,6.1
+TN-SETC-108X-0499,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,23,4,0,Clear,0.41,42,13.8,71.9
+TN-MDU-RMS-0500,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,21,2,0,Rain,0.32,39,19.8,75.5
+TN-MDU-KODAI-0501,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,23,3,0,Clear,0.34,75,8.8,57.8
+TN-CBE-PLK-0502,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,10,2,1,Fog,0.72,113,21.1,25.8
+TN-11G-0503,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,23,6,0,Clear,0.42,35,10.8,7.3
+TN-MDU-KODAI-0504,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,17,3,1,Rain,0.9,87,40.8,69.1
+TN-70H-0505,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,15,6,0,Monsoon_Heavy,0.49,73,36.7,8.4
+TN-D70-0506,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,16,2,0,Clear,0.25,62,9.8,13.4
+TN-101A-0507,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,14,2,0,Rain,0.63,68,32.6,9.8
+TN-5E-0508,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,15,3,0,Clear,0.54,40,21.7,9.1
+TN-MDU-RMS-0509,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,5,1,0,Clear,0.53,38,14.8,80.2
+TN-TRY-401-0510,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,10,0,1,Clear,0.88,87,26.8,32.0
+TN-TRY-SRM-0511,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,6,4,0,Clear,0.5,71,19.5,5.2
+TN-23C-0512,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,18,3,1,Rain,0.83,101,38.2,7.5
+TN-SETC-902X-0513,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,5,2,0,Rain,0.6,72,31.7,230.5
+TN-5E-0514,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,18,6,1,Clear,0.83,124,23.0,8.5
+TN-23C-0515,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,20,1,1,Monsoon_Heavy,0.95,101,58.0,9.1
+TN-MDU-201-0516,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,18,2,1,Clear,0.71,116,26.5,6.3
+TN-SLM-ERD-0517,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,15,1,0,Clear,0.21,35,11.5,31.0
+TN-SLM-ERD-0518,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,9,0,1,Monsoon_Heavy,0.92,91,57.7,37.6
+TN-SLM-301-0519,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,14,2,0,Rain,0.32,41,26.5,21.0
+TN-MDU-201-0520,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,15,3,0,Fog,0.25,32,4.6,4.6
+TN-SETC-902X-0521,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,10,2,1,Clear,0.93,100,27.3,252.6
+TN-MDU-201-0522,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,15,1,0,Clear,0.38,59,10.8,5.3
+TN-SLM-ERD-0523,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,18,5,1,Clear,0.73,88,27.7,36.1
+TN-23C-0524,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,18,4,1,Rain,0.98,128,42.3,8.6
+TN-MDU-201-0525,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,5,6,0,Fog,0.6,38,19.3,5.8
+TN-MDU-KODAI-0526,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,19,0,1,Clear,0.77,105,20.2,67.0
+TN-TRY-401-0527,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,23,5,0,Monsoon_Heavy,0.5,72,44.9,28.6
+TN-SETC-801X-0528,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,8,3,1,Fog,0.89,100,26.8,230.2
+TN-MDU-RMS-0529,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,9,6,1,Monsoon_Heavy,0.98,124,51.9,91.9
+TN-11G-0530,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,21,6,0,Rain,0.68,40,30.1,8.0
+TN-D70-0531,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,15,2,0,Clear,0.43,65,15.7,14.6
+TN-D70-0532,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,7,3,0,Rain,0.66,58,29.6,15.7
+TN-CBE-PLK-0533,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,8,3,1,Fog,0.87,91,26.7,25.7
+TN-TRY-SRM-0534,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,5,6,0,Clear,0.56,69,19.5,6.8
+TN-TRY-SRM-0535,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,11,5,0,Fog,0.41,51,12.6,5.1
+TN-D70-0536,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,19,2,1,Monsoon_Heavy,0.98,123,55.7,17.4
+TN-SLM-301-0537,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,8,0,1,Fog,0.76,106,23.0,23.4
+TN-CBE-OOTY-0538,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,22,4,0,Clear,0.52,32,20.7,45.3
+TN-MDU-KODAI-0539,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,8,2,1,Monsoon_Heavy,0.95,92,58.9,69.5
+TN-SLM-301-0540,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,11,5,0,Clear,0.25,56,4.9,20.2
+TN-SETC-108X-0541,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,8,6,1,Rain,0.92,100,45.2,81.7
+TN-SLM-ERD-0542,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,5,4,0,Fog,0.22,57,11.1,30.5
+TN-TRY-401-0543,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,10,5,1,Monsoon_Heavy,0.95,93,51.4,32.6
+TN-SETC-801X-0544,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,15,4,0,Rain,0.49,68,31.9,205.8
+TN-CBE-101-0545,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,17,2,1,Clear,0.82,93,22.8,7.0
+TN-TRY-401-0546,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,14,6,0,Fog,0.45,50,16.9,28.9
+TN-SETC-902X-0547,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,11,1,0,Clear,0.48,48,17.6,223.0
+TN-5E-0548,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,10,4,1,Monsoon_Heavy,0.98,105,57.8,9.9
+TN-TRY-SRM-0549,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,20,4,1,Monsoon_Heavy,0.98,111,57.5,7.5
+TN-TRY-SRM-0550,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,14,6,0,Rain,0.66,63,29.8,6.1
+TN-101A-0551,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,6,1,0,Clear,0.54,40,22.1,9.9
+TN-5E-0552,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,6,5,0,Clear,0.29,64,6.0,8.4
+TN-23C-0553,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,22,6,0,Clear,0.53,65,16.4,7.5
+TN-CBE-OOTY-0554,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,6,3,0,Rain,0.49,73,26.5,45.0
+TN-70H-0555,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,13,1,0,Monsoon_Heavy,0.79,58,53.2,9.3
+TN-SETC-902X-0556,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,16,6,0,Monsoon_Heavy,0.65,68,43.3,234.0
+TN-570-0557,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,14,3,0,Clear,0.64,34,17.9,20.0
+TN-TRY-401-0558,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,8,3,1,Clear,0.81,120,23.7,30.6
+TN-CBE-101-0559,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,5,2,0,Rain,0.62,39,28.0,7.2
+TN-SETC-801X-0560,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,6,0,Fog,0.48,72,14.1,205.2
+TN-TRY-SRM-0561,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,16,0,0,Fog,0.34,44,15.8,5.8
+TN-TRY-401-0562,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,10,3,1,Monsoon_Heavy,0.98,90,54.5,33.2
+TN-CBE-PLK-0563,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,15,2,0,Clear,0.3,69,10.8,23.3
+TN-SETC-902X-0564,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,5,0,0,Fog,0.36,45,15.9,214.5
+TN-SETC-801X-0565,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,12,0,0,Fog,0.6,54,23.2,212.9
+TN-MDU-RMS-0566,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,13,4,0,Fog,0.33,63,14.3,76.0
+TN-TRY-401-0567,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,19,3,1,Clear,0.78,126,22.1,30.9
+TN-23C-0568,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,10,6,1,Monsoon_Heavy,0.98,125,52.0,8.7
+TN-570-0569,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,18,6,1,Clear,0.75,112,25.3,21.9
+TN-5E-0570,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,5,3,0,Fog,0.35,35,8.2,7.4
+TN-CBE-101-0571,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,22,0,0,Monsoon_Heavy,0.77,46,48.8,6.6
+TN-MDU-RMS-0572,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,18,2,1,Clear,0.8,92,25.8,87.6
+TN-SETC-801X-0573,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,7,6,0,Fog,0.46,74,18.4,203.3
+TN-TRY-401-0574,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,8,2,1,Fog,0.78,90,22.9,31.6
+TN-MDU-RMS-0575,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,17,6,1,Fog,0.71,95,23.1,84.6
+TN-MDU-RMS-0576,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,22,2,0,Fog,0.26,73,12.8,75.3
+TN-SETC-902X-0577,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,16,0,0,Monsoon_Heavy,0.79,39,46.8,242.0
+TN-SETC-801X-0578,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,17,4,1,Monsoon_Heavy,0.98,100,53.3,235.8
+TN-MDU-201-0579,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,11,3,0,Fog,0.58,39,15.8,5.3
+TN-CBE-101-0580,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,11,0,0,Clear,0.5,66,19.7,6.8
+TN-TRY-SRM-0581,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,19,5,1,Monsoon_Heavy,0.92,127,50.2,6.0
+TN-SETC-108X-0582,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,20,2,1,Clear,0.73,100,21.0,77.8
+TN-21G-0583,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,11,2,0,Rain,0.5,69,29.9,10.1
+TN-5E-0584,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,23,4,0,Clear,0.56,57,15.3,8.2
+TN-D70-0585,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,18,2,1,Clear,0.73,106,26.8,16.0
+TN-MDU-201-0586,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,14,3,0,Monsoon_Heavy,0.45,71,41.0,6.1
+TN-5E-0587,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,22,1,0,Clear,0.53,70,13.6,7.7
+TN-70H-0588,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,21,5,0,Clear,0.57,67,17.7,8.3
+TN-101A-0589,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,22,2,0,Monsoon_Heavy,0.8,64,50.2,10.8
+TN-MDU-201-0590,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,17,1,1,Monsoon_Heavy,0.98,103,52.6,6.4
+TN-21G-0591,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,17,2,1,Monsoon_Heavy,0.9,100,56.6,11.4
+TN-SETC-801X-0592,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,10,6,1,Monsoon_Heavy,0.94,95,51.8,233.7
+TN-5E-0593,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,2,1,Clear,0.76,116,21.9,8.6
+TN-D70-0594,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,6,5,0,Clear,0.43,53,13.4,15.4
+TN-101A-0595,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,6,5,0,Clear,0.25,63,10.2,8.4
+TN-CBE-101-0596,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,23,4,0,Monsoon_Heavy,0.48,71,39.8,6.3
+TN-21G-0597,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,21,2,0,Rain,0.74,44,35.8,10.2
+TN-MDU-201-0598,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,20,6,1,Rain,0.98,85,42.9,5.8
+TN-11G-0599,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,12,0,0,Monsoon_Heavy,0.69,43,44.1,7.5
+TN-SETC-801X-0600,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,8,5,1,Clear,0.81,100,27.8,224.9
+TN-SLM-ERD-0601,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,20,1,1,Monsoon_Heavy,0.94,111,50.4,36.8
+TN-SETC-108X-0602,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,23,1,0,Clear,0.48,32,19.4,72.2
+TN-11G-0603,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,13,1,0,Monsoon_Heavy,0.83,68,55.6,8.6
+TN-CBE-OOTY-0604,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,7,1,0,Rain,0.57,60,33.9,45.4
+TN-MDU-KODAI-0605,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,9,6,1,Monsoon_Heavy,0.98,96,57.0,70.2
+TN-11G-0606,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,15,3,0,Monsoon_Heavy,0.67,44,45.5,7.4
+TN-70H-0607,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,11,4,0,Monsoon_Heavy,0.71,39,48.7,7.9
+TN-SETC-801X-0608,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,6,0,Monsoon_Heavy,0.63,37,41.7,214.2
+TN-SETC-801X-0609,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,22,6,0,Clear,0.6,73,20.8,212.1
+TN-MDU-201-0610,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,6,5,0,Monsoon_Heavy,0.59,60,46.8,5.6
+TN-SETC-108X-0611,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,23,0,0,Rain,0.36,60,26.7,70.9
+TN-21G-0612,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,14,4,0,Monsoon_Heavy,0.58,42,39.4,10.4
+TN-70H-0613,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,23,4,0,Clear,0.43,54,15.8,8.1
+TN-CBE-PLK-0614,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,18,2,1,Clear,0.74,126,24.5,25.1
+TN-TRY-SRM-0615,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,18,4,1,Clear,0.86,128,26.4,6.1
+TN-TRY-SRM-0616,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,22,3,0,Clear,0.37,65,12.5,6.6
+TN-SETC-108X-0617,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,16,6,0,Fog,0.38,38,16.1,70.9
+TN-D70-0618,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,19,6,1,Fog,0.95,91,27.4,16.8
+TN-CBE-PLK-0619,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,22,4,0,Fog,0.51,33,13.7,24.7
+TN-70H-0620,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,7,6,0,Clear,0.41,68,13.2,7.0
+TN-D70-0621,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,16,0,0,Monsoon_Heavy,0.42,54,43.0,14.5
+TN-SETC-902X-0622,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,21,2,0,Fog,0.63,33,24.4,232.8
+TN-SETC-902X-0623,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,20,3,1,Clear,0.75,100,27.9,240.3
+TN-570-0624,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,6,6,0,Monsoon_Heavy,0.63,74,43.0,19.9
+TN-101A-0625,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,16,1,0,Fog,0.2,40,3.8,8.3
+TN-MDU-RMS-0626,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,16,5,0,Rain,0.48,42,28.1,80.2
+TN-21G-0627,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,7,4,0,Clear,0.53,65,21.1,9.6
+TN-CBE-101-0628,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,12,4,0,Clear,0.4,55,14.2,5.6
+TN-MDU-KODAI-0629,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,21,0,0,Monsoon_Heavy,0.43,48,38.0,59.5
+TN-TRY-401-0630,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,13,4,0,Monsoon_Heavy,0.51,58,46.0,28.7
+TN-D70-0631,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,15,6,0,Rain,0.61,67,35.1,15.5
+TN-CBE-101-0632,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,7,3,0,Fog,0.55,44,19.6,5.9
+TN-CBE-PLK-0633,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,18,2,1,Monsoon_Heavy,0.98,101,53.6,26.5
+TN-CBE-PLK-0634,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,7,4,0,Clear,0.41,52,11.3,23.3
+TN-11G-0635,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,11,3,0,Fog,0.29,45,13.6,6.7
+TN-570-0636,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,12,6,0,Monsoon_Heavy,0.56,36,39.9,19.4
+TN-SLM-ERD-0637,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,5,6,0,Monsoon_Heavy,0.83,60,50.2,36.2
+TN-SETC-108X-0638,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,13,3,0,Clear,0.64,62,18.7,75.8
+TN-SETC-108X-0639,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,9,0,1,Monsoon_Heavy,0.98,100,59.9,82.8
+TN-MDU-201-0640,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,17,6,1,Fog,0.9,114,32.8,6.6
+TN-SLM-301-0641,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,15,5,0,Clear,0.21,43,6.7,19.0
+TN-MDU-201-0642,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,13,1,0,Monsoon_Heavy,0.52,47,41.8,5.9
+TN-MDU-201-0643,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,10,3,1,Rain,0.85,108,37.8,6.0
+TN-SLM-301-0644,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,10,4,1,Clear,0.95,128,27.6,23.7
+TN-CBE-101-0645,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,12,4,0,Rain,0.69,42,31.0,7.3
+TN-5E-0646,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,6,1,Clear,0.75,116,20.7,9.6
+TN-SETC-902X-0647,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,21,4,0,Fog,0.34,61,9.9,213.1
+TN-SETC-108X-0648,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,6,3,0,Clear,0.51,33,14.2,73.0
+TN-SETC-902X-0649,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,8,3,1,Fog,0.79,100,23.9,243.0
+TN-CBE-101-0650,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,16,0,0,Rain,0.35,73,28.2,5.5
+TN-SETC-108X-0651,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,22,1,0,Clear,0.36,73,12.4,70.6
+TN-SLM-301-0652,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,7,3,0,Monsoon_Heavy,0.53,70,46.5,22.3
+TN-SETC-902X-0653,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,15,3,0,Fog,0.48,55,19.0,221.5
+TN-11G-0654,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,15,1,0,Clear,0.34,48,13.6,7.5
+TN-MDU-RMS-0655,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,13,3,0,Clear,0.54,63,21.9,81.1
+TN-11G-0656,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,5,1,0,Fog,0.31,46,14.8,7.6
+TN-21G-0657,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,11,1,0,Rain,0.35,34,27.9,9.3
+TN-101A-0658,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,5,6,0,Rain,0.54,35,26.1,9.8
+TN-21G-0659,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,17,2,1,Clear,0.76,103,23.8,9.8
+TN-TRY-401-0660,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,10,0,1,Clear,0.87,105,30.9,31.6
+TN-TRY-SRM-0661,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,13,4,0,Rain,0.36,74,24.7,5.9
+TN-SLM-301-0662,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,23,3,0,Monsoon_Heavy,0.69,64,45.5,22.4
+TN-TRY-SRM-0663,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,12,6,0,Clear,0.4,53,12.7,5.2
+TN-70H-0664,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,5,4,0,Clear,0.35,60,12.3,8.0
+TN-SLM-ERD-0665,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,20,2,1,Clear,0.9,103,29.4,37.7
+TN-TRY-SRM-0666,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,16,1,0,Rain,0.7,57,33.6,5.8
+TN-SETC-902X-0667,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,17,6,1,Rain,0.86,90,38.6,247.1
+TN-SETC-801X-0668,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,13,2,0,Fog,0.53,47,16.6,208.4
+TN-11G-0669,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,9,2,1,Clear,0.87,124,27.2,8.8
+TN-SLM-ERD-0670,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,11,2,0,Clear,0.27,64,5.3,31.8
+TN-CBE-OOTY-0671,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,13,1,0,Fog,0.4,30,11.1,43.1
+TN-SLM-ERD-0672,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,11,2,0,Rain,0.44,61,31.2,32.6
+TN-101A-0673,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,15,0,0,Clear,0.23,55,4.5,8.7
+TN-570-0674,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,13,6,0,Rain,0.67,37,37.9,21.1
+TN-MDU-RMS-0675,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,19,1,1,Fog,0.96,97,29.9,91.7
+TN-TRY-401-0676,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,11,3,0,Rain,0.61,49,35.7,28.9
+TN-101A-0677,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,22,4,0,Clear,0.31,70,9.0,8.8
+TN-101A-0678,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,11,0,0,Clear,0.48,50,11.5,10.0
+TN-SETC-108X-0679,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,8,3,1,Clear,0.7,87,23.2,77.9
+TN-SETC-801X-0680,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,9,2,1,Clear,0.76,100,20.6,222.1
+TN-SETC-902X-0681,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,6,0,0,Clear,0.49,74,16.5,222.3
+TN-SLM-ERD-0682,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,12,2,0,Monsoon_Heavy,0.75,52,51.7,35.6
+TN-570-0683,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,5,5,0,Rain,0.46,38,25.1,18.7
+TN-SLM-301-0684,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,22,2,0,Monsoon_Heavy,0.71,42,48.4,22.9
+TN-CBE-PLK-0685,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,19,2,1,Monsoon_Heavy,0.98,120,52.8,27.3
+TN-SLM-301-0686,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,14,6,0,Clear,0.44,59,10.2,21.4
+TN-MDU-RMS-0687,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,10,0,1,Monsoon_Heavy,0.98,124,53.5,92.0
+TN-TRY-SRM-0688,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,17,1,1,Monsoon_Heavy,0.98,120,52.8,6.4
+TN-MDU-KODAI-0689,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,15,0,0,Clear,0.44,34,10.6,61.1
+TN-11G-0690,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,6,1,0,Clear,0.42,36,9.9,7.7
+TN-MDU-RMS-0691,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,20,4,1,Monsoon_Heavy,0.98,101,51.8,91.2
+TN-21G-0692,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,5,1,0,Fog,0.42,35,13.8,9.8
+TN-MDU-201-0693,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,22,5,0,Rain,0.67,75,29.6,6.1
+TN-TRY-401-0694,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,6,5,0,Clear,0.58,34,22.9,30.0
+TN-23C-0695,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,8,5,1,Clear,0.84,97,23.9,8.4
+TN-SETC-108X-0696,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,10,4,1,Fog,0.85,91,29.4,80.9
+TN-SLM-301-0697,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,18,0,1,Clear,0.91,120,27.9,23.8
+TN-11G-0698,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,22,4,0,Rain,0.72,50,35.6,9.0
+TN-MDU-201-0699,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,18,6,1,Fog,0.81,105,26.8,6.2
+TN-570-0700,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,17,6,1,Monsoon_Heavy,0.98,101,54.6,22.4
+TN-MDU-RMS-0701,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,5,5,0,Clear,0.64,68,16.3,83.0
+TN-CBE-OOTY-0702,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,5,2,0,Clear,0.3,50,6.2,42.9
+TN-CBE-101-0703,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,22,4,0,Monsoon_Heavy,0.66,66,43.2,5.7
+TN-MDU-201-0704,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,9,1,1,Clear,0.8,122,23.2,5.7
+TN-CBE-OOTY-0705,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,7,4,0,Rain,0.56,43,32.4,46.2
+TN-SLM-ERD-0706,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,10,3,1,Fog,0.88,91,28.8,36.6
+TN-SETC-108X-0707,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,17,0,1,Clear,0.94,100,28.3,83.3
+TN-MDU-KODAI-0708,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,8,6,1,Clear,0.89,123,32.1,68.8
+TN-SETC-902X-0709,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,17,0,1,Clear,0.84,100,27.1,245.6
+TN-TRY-401-0710,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,12,1,0,Clear,0.5,55,20.7,29.0
+TN-SETC-108X-0711,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,21,0,0,Clear,0.39,55,10.0,70.5
+TN-SLM-ERD-0712,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,23,5,0,Clear,0.45,46,11.3,32.8
+TN-5E-0713,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,9,3,1,Monsoon_Heavy,0.95,110,56.4,8.9
+TN-SETC-801X-0714,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,21,1,0,Clear,0.23,57,6.8,190.2
+TN-21G-0715,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,8,5,1,Rain,0.91,107,38.0,10.6
+TN-SETC-902X-0716,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,5,6,0,Clear,0.28,52,10.9,209.8
+TN-SLM-301-0717,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,9,3,1,Clear,0.94,99,27.0,24.1
+TN-21G-0718,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,8,5,1,Clear,0.76,124,28.1,11.1
+TN-CBE-OOTY-0719,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,5,2,0,Fog,0.56,49,17.9,45.0
+TN-570-0720,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,22,1,0,Clear,0.45,46,15.4,19.7
+TN-5E-0721,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,5,3,0,Monsoon_Heavy,0.81,63,46.7,8.5
+TN-CBE-OOTY-0722,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,11,6,0,Fog,0.48,33,15.6,45.5
+TN-21G-0723,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,17,5,1,Clear,0.87,127,26.3,10.1
+TN-CBE-OOTY-0724,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,17,1,1,Rain,0.93,91,45.0,50.7
+TN-SETC-801X-0725,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,22,0,0,Clear,0.29,59,10.7,193.5
+TN-101A-0726,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,12,4,0,Clear,0.35,55,14.2,8.3
+TN-MDU-201-0727,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,16,5,0,Clear,0.31,62,8.8,4.6
+TN-CBE-101-0728,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,17,6,1,Clear,0.95,102,27.5,6.7
+TN-MDU-RMS-0729,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,9,0,1,Fog,0.8,128,26.5,87.6
+TN-D70-0730,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,18,1,1,Monsoon_Heavy,0.94,104,58.4,16.7
+TN-TRY-SRM-0731,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,9,1,1,Fog,0.74,119,25.4,5.9
+TN-5E-0732,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,14,5,0,Fog,0.6,38,18.9,9.3
+TN-5E-0733,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,23,1,0,Clear,0.23,64,12.4,7.0
+TN-CBE-PLK-0734,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,9,5,1,Clear,0.9,111,32.7,26.3
+TN-SETC-902X-0735,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,13,1,0,Clear,0.25,41,4.7,207.8
+TN-SETC-801X-0736,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,13,4,0,Monsoon_Heavy,0.68,68,44.5,217.3
+TN-MDU-201-0737,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,7,5,0,Rain,0.36,68,24.0,5.7
+TN-11G-0738,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,17,3,1,Rain,0.84,97,36.2,8.2
+TN-70H-0739,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,13,3,0,Clear,0.53,42,19.7,7.3
+TN-SLM-301-0740,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,20,5,1,Clear,0.93,100,28.7,24.7
+TN-SETC-801X-0741,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,17,5,1,Clear,0.8,100,26.3,224.4
+TN-101A-0742,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,21,0,0,Rain,0.51,32,32.2,9.1
+TN-TRY-SRM-0743,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,17,5,1,Clear,0.85,118,29.4,7.4
+TN-570-0744,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,14,3,0,Rain,0.7,48,34.2,20.8
+TN-SETC-801X-0745,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,5,0,Monsoon_Heavy,0.81,59,53.8,224.9
+TN-TRY-401-0746,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,8,1,1,Monsoon_Heavy,0.98,119,52.6,32.4
+TN-SLM-301-0747,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,5,1,0,Rain,0.57,75,34.2,22.6
+TN-21G-0748,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,13,2,0,Fog,0.49,75,18.9,10.1
+TN-23C-0749,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,7,0,0,Fog,0.4,53,9.8,7.5
+TN-TRY-401-0750,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,10,3,1,Monsoon_Heavy,0.98,95,59.6,32.7
+TN-5E-0751,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,10,6,1,Clear,0.75,88,23.3,8.6
+TN-SLM-301-0752,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,14,5,0,Clear,0.25,38,13.1,19.1
+TN-CBE-101-0753,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,5,3,0,Rain,0.68,64,36.7,6.7
+TN-SLM-ERD-0754,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,12,1,0,Monsoon_Heavy,0.7,59,46.7,34.5
+TN-SETC-801X-0755,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,5,1,0,Monsoon_Heavy,0.53,70,42.9,208.4
+TN-101A-0756,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,10,1,1,Clear,0.87,87,24.4,9.7
+TN-SETC-108X-0757,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,14,2,0,Clear,0.22,56,12.5,66.5
+TN-CBE-OOTY-0758,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,23,6,0,Monsoon_Heavy,0.48,59,43.1,44.5
+TN-101A-0759,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,7,6,0,Clear,0.35,54,14.9,9.5
+TN-TRY-SRM-0760,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,7,2,0,Rain,0.36,74,27.5,5.5
+TN-MDU-KODAI-0761,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,21,1,0,Fog,0.29,33,6.7,58.0
+TN-SETC-902X-0762,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,21,0,0,Rain,0.63,68,36.3,233.1
+TN-CBE-OOTY-0763,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,4,1,Clear,0.77,121,29.1,48.3
+TN-5E-0764,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,23,3,0,Monsoon_Heavy,0.73,61,48.3,8.3
+TN-SETC-801X-0765,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,12,5,0,Clear,0.64,30,17.3,214.5
+TN-23C-0766,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,11,6,0,Monsoon_Heavy,0.85,56,47.9,7.9
+TN-SETC-902X-0767,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,11,0,0,Fog,0.29,48,8.0,208.9
+TN-CBE-OOTY-0768,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,21,4,0,Clear,0.55,37,19.7,45.4
+TN-SETC-108X-0769,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,5,6,0,Clear,0.29,51,14.0,68.6
+TN-SLM-ERD-0770,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,6,5,0,Clear,0.42,70,13.7,33.1
+TN-CBE-PLK-0771,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,19,6,1,Rain,0.98,88,45.9,26.9
+TN-CBE-PLK-0772,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,22,4,0,Clear,0.29,73,8.7,23.1
+TN-MDU-201-0773,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,7,1,0,Clear,0.58,51,23.3,6.0
+TN-11G-0774,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,23,4,0,Rain,0.38,37,28.2,7.8
+TN-CBE-PLK-0775,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,6,2,0,Rain,0.34,45,22.5,23.3
+TN-CBE-OOTY-0776,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,11,4,0,Clear,0.28,53,12.5,42.5
+TN-21G-0777,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,19,4,1,Clear,0.91,117,25.7,10.6
+TN-SLM-ERD-0778,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,21,2,0,Clear,0.26,36,12.2,31.6
+TN-5E-0779,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,11,5,0,Clear,0.41,75,17.1,7.5
+TN-CBE-OOTY-0780,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,6,5,0,Monsoon_Heavy,0.79,51,49.9,48.1
+TN-TRY-401-0781,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,14,0,0,Monsoon_Heavy,0.74,70,52.2,30.3
+TN-570-0782,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,14,2,0,Monsoon_Heavy,0.54,58,44.2,19.6
+TN-11G-0783,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,13,0,0,Clear,0.63,65,20.5,7.4
+TN-MDU-201-0784,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,22,2,0,Clear,0.26,75,12.0,5.4
+TN-11G-0785,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,7,2,0,Monsoon_Heavy,0.8,64,50.0,7.7
+TN-SLM-ERD-0786,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,6,0,0,Rain,0.32,57,22.1,31.8
+TN-SETC-108X-0787,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,19,4,1,Clear,0.78,97,26.8,79.6
+TN-TRY-SRM-0788,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,7,6,0,Rain,0.56,35,33.1,6.8
+TN-SLM-301-0789,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,8,3,1,Clear,0.88,114,27.6,24.7
+TN-5E-0790,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,13,2,0,Rain,0.38,72,23.4,8.7
+TN-CBE-PLK-0791,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,19,3,1,Clear,0.72,92,21.8,25.3
+TN-11G-0792,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,14,6,0,Clear,0.47,38,15.7,7.4
+TN-23C-0793,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,15,4,0,Fog,0.23,49,8.7,6.7
+TN-MDU-KODAI-0794,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,12,4,0,Clear,0.45,60,14.0,60.3
+TN-SETC-108X-0795,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,18,6,1,Rain,0.95,100,42.4,82.5
+TN-21G-0796,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,23,6,0,Rain,0.35,68,23.7,9.4
+TN-SLM-301-0797,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,10,2,1,Rain,0.82,91,39.8,23.7
+TN-MDU-RMS-0798,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,15,3,0,Fog,0.5,35,14.0,79.6
+TN-SETC-108X-0799,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,5,6,0,Clear,0.5,58,16.8,73.0
+TN-SETC-108X-0800,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,19,1,1,Clear,0.88,100,26.1,81.9
+TN-CBE-OOTY-0801,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,5,1,Clear,0.96,122,25.9,51.9
+TN-MDU-RMS-0802,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,9,6,1,Clear,0.72,120,27.3,84.6
+TN-TRY-SRM-0803,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,16,0,0,Clear,0.59,45,18.6,6.3
+TN-SETC-902X-0804,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,15,5,0,Rain,0.48,57,28.3,222.5
+TN-SLM-ERD-0805,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,9,1,1,Monsoon_Heavy,0.98,108,59.0,37.4
+TN-5E-0806,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,9,0,1,Clear,0.87,94,29.6,9.2
+TN-MDU-KODAI-0807,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,9,0,1,Clear,0.87,111,30.8,68.9
+TN-SETC-801X-0808,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,18,4,1,Clear,0.82,100,26.6,225.5
+TN-MDU-201-0809,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,12,1,0,Rain,0.57,66,30.6,6.1
+TN-TRY-401-0810,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,13,3,0,Monsoon_Heavy,0.66,32,50.6,30.0
+TN-MDU-201-0811,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,8,4,1,Rain,0.98,90,39.7,6.8
+TN-CBE-101-0812,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,19,4,1,Clear,0.84,124,23.0,6.8
+TN-21G-0813,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,22,6,0,Monsoon_Heavy,0.54,33,46.3,9.9
+TN-70H-0814,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,20,3,1,Monsoon_Heavy,0.98,121,58.0,8.9
+TN-CBE-OOTY-0815,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,14,1,0,Clear,0.51,68,19.0,45.5
+TN-SETC-108X-0816,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,13,0,0,Fog,0.41,40,14.5,71.5
+TN-CBE-OOTY-0817,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,5,2,0,Rain,0.34,62,19.9,43.4
+TN-CBE-101-0818,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,9,4,1,Clear,0.77,101,20.2,6.0
+TN-11G-0819,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,23,5,0,Clear,0.5,53,19.3,7.2
+TN-D70-0820,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,20,1,1,Monsoon_Heavy,0.98,106,60.3,17.9
+TN-SETC-801X-0821,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,9,6,1,Rain,0.98,100,45.3,234.9
+TN-SLM-301-0822,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,10,1,1,Monsoon_Heavy,0.98,107,51.9,24.1
+TN-23C-0823,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,6,1,0,Rain,0.48,49,27.7,8.1
+TN-TRY-SRM-0824,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,12,3,0,Fog,0.52,60,15.0,6.1
+TN-MDU-KODAI-0825,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,5,2,0,Rain,0.47,50,31.8,61.2
+TN-101A-0826,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,8,4,1,Fog,0.79,112,26.2,10.6
+TN-CBE-101-0827,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,15,2,0,Clear,0.56,46,19.7,6.1
+TN-D70-0828,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,23,6,0,Clear,0.43,73,16.1,14.2
+TN-TRY-SRM-0829,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,5,5,0,Clear,0.57,30,17.8,6.2
+TN-SLM-301-0830,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,16,1,0,Fog,0.33,42,7.2,20.6
+TN-101A-0831,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,11,4,0,Fog,0.25,37,5.3,9.0
+TN-MDU-RMS-0832,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,23,6,0,Clear,0.6,74,16.7,82.3
+TN-21G-0833,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,19,2,1,Rain,0.98,127,45.3,10.8
+TN-11G-0834,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,7,2,0,Clear,0.37,51,17.1,6.9
+TN-CBE-101-0835,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,10,3,1,Clear,0.83,97,27.4,6.3
+TN-SLM-ERD-0836,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,8,1,1,Monsoon_Heavy,0.98,98,56.9,37.3
+TN-SLM-301-0837,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,13,0,0,Clear,0.23,66,10.4,20.3
+TN-70H-0838,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,20,1,1,Fog,0.87,87,29.1,8.4
+TN-CBE-PLK-0839,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,17,4,1,Clear,0.83,116,26.2,26.0
+TN-21G-0840,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,22,1,0,Clear,0.37,74,15.5,9.4
+TN-SETC-108X-0841,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,22,2,0,Clear,0.51,55,12.8,74.3
+TN-SETC-902X-0842,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,7,2,0,Monsoon_Heavy,0.78,51,46.1,242.2
+TN-CBE-OOTY-0843,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,11,1,0,Monsoon_Heavy,0.42,54,40.5,43.6
+TN-MDU-RMS-0844,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,8,5,1,Fog,0.79,90,28.7,87.0
+TN-570-0845,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,9,0,1,Clear,0.71,122,20.4,20.8
+TN-TRY-SRM-0846,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,14,3,0,Monsoon_Heavy,0.83,58,55.6,5.7
+TN-CBE-PLK-0847,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,6,2,0,Fog,0.22,37,5.5,22.2
+TN-TRY-401-0848,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,19,5,1,Monsoon_Heavy,0.94,122,52.3,31.5
+TN-5E-0849,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,5,1,Clear,0.82,124,22.0,9.4
+TN-5E-0850,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,5,1,0,Fog,0.22,49,11.0,7.0
+TN-SETC-801X-0851,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,10,6,1,Monsoon_Heavy,0.92,91,50.6,231.9
+TN-SETC-801X-0852,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,12,0,0,Clear,0.39,73,12.3,198.6
+TN-SETC-108X-0853,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,22,1,0,Clear,0.58,43,21.3,75.1
+TN-CBE-PLK-0854,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,7,0,0,Clear,0.26,56,6.3,21.9
+TN-11G-0855,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,19,1,1,Monsoon_Heavy,0.91,91,56.4,8.7
+TN-MDU-RMS-0856,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,10,0,1,Rain,0.82,85,35.2,87.2
+TN-SETC-902X-0857,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,23,2,0,Rain,0.61,60,33.5,230.4
+TN-SETC-902X-0858,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,13,4,0,Rain,0.49,41,29.2,222.1
+TN-11G-0859,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,20,4,1,Clear,0.86,104,25.9,7.6
+TN-D70-0860,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,11,0,0,Monsoon_Heavy,0.84,69,50.5,17.0
+TN-TRY-SRM-0861,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,21,1,0,Rain,0.65,72,30.4,5.5
+TN-23C-0862,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,9,5,1,Rain,0.93,95,42.9,7.5
+TN-SETC-902X-0863,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,16,2,0,Clear,0.4,51,14.6,217.6
+TN-SLM-301-0864,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,6,0,0,Fog,0.22,64,5.2,20.2
+TN-SLM-ERD-0865,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,21,0,0,Clear,0.6,58,20.3,33.9
+TN-570-0866,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,15,1,0,Clear,0.35,36,9.6,18.7
+TN-570-0867,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,17,1,1,Clear,0.82,116,22.1,21.5
+TN-570-0868,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,19,1,1,Rain,0.9,114,42.5,22.3
+TN-CBE-101-0869,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,11,2,0,Clear,0.21,66,3.8,5.1
+TN-SLM-301-0870,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,19,3,1,Clear,0.9,99,32.0,24.2
+TN-SETC-902X-0871,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,10,4,1,Monsoon_Heavy,0.98,90,55.1,255.6
+TN-570-0872,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,23,3,0,Rain,0.43,57,28.5,18.9
+TN-CBE-PLK-0873,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,18,4,1,Clear,0.93,122,33.4,27.6
+TN-70H-0874,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,18,0,1,Clear,0.96,117,26.1,9.1
+TN-SLM-ERD-0875,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,8,3,1,Rain,0.86,120,41.6,37.1
+TN-MDU-KODAI-0876,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,11,1,0,Clear,0.33,71,15.9,57.5
+TN-CBE-OOTY-0877,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,10,5,1,Rain,0.98,122,38.6,51.3
+TN-5E-0878,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,17,1,1,Clear,0.86,125,22.8,9.4
+TN-MDU-RMS-0879,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,15,4,0,Clear,0.33,47,13.2,76.4
+TN-SETC-108X-0880,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,11,6,0,Fog,0.24,51,10.8,66.8
+TN-MDU-201-0881,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,6,0,0,Rain,0.46,69,23.2,5.3
+TN-SETC-902X-0882,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,22,5,0,Clear,0.45,43,11.7,220.0
+TN-TRY-SRM-0883,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,8,5,1,Rain,0.98,122,46.2,7.1
+TN-D70-0884,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,15,2,0,Clear,0.43,57,12.4,14.0
+TN-MDU-201-0885,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,19,3,1,Monsoon_Heavy,0.98,92,55.6,6.4
+TN-TRY-SRM-0886,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,14,3,0,Monsoon_Heavy,0.57,73,47.6,6.6
+TN-21G-0887,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,11,3,0,Clear,0.24,41,6.8,9.8
+TN-23C-0888,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,10,2,1,Clear,0.88,116,24.8,7.7
+TN-SETC-902X-0889,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,5,2,0,Rain,0.74,64,39.6,239.5
+TN-MDU-KODAI-0890,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,19,5,1,Fog,0.71,97,18.9,65.9
+TN-D70-0891,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,21,5,0,Clear,0.39,51,14.6,15.0
+TN-SLM-ERD-0892,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,23,5,0,Fog,0.44,65,14.2,32.3
+TN-5E-0893,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,14,1,0,Clear,0.3,53,14.7,8.3
+TN-101A-0894,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,9,2,1,Clear,0.82,95,27.2,9.8
+TN-TRY-SRM-0895,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,14,1,0,Clear,0.58,74,22.5,6.6
+TN-11G-0896,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,12,0,0,Clear,0.65,66,17.6,7.6
+TN-11G-0897,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,11,4,0,Fog,0.22,50,12.4,6.4
+TN-SLM-301-0898,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,22,1,0,Monsoon_Heavy,0.54,31,41.8,21.8
+TN-5E-0899,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,19,2,1,Clear,0.7,119,26.8,8.5
+TN-CBE-OOTY-0900,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,20,2,1,Monsoon_Heavy,0.98,121,58.0,52.1
+TN-CBE-PLK-0901,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,8,5,1,Rain,0.98,93,44.5,26.6
+TN-70H-0902,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,17,4,1,Clear,0.82,90,24.5,8.9
+TN-570-0903,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,23,4,0,Clear,0.55,47,15.3,19.3
+TN-SLM-301-0904,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,7,4,0,Rain,0.39,50,26.1,20.8
+TN-101A-0905,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,16,3,0,Clear,0.52,57,15.9,9.4
+TN-CBE-OOTY-0906,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,16,2,0,Clear,0.64,65,17.0,47.2
+TN-SLM-301-0907,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,18,6,1,Rain,0.88,112,42.0,23.7
+TN-SETC-108X-0908,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,7,1,0,Clear,0.34,63,16.1,69.0
+TN-SETC-108X-0909,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,17,0,1,Clear,0.81,100,25.0,80.0
+TN-SETC-108X-0910,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,9,1,1,Clear,0.92,100,29.6,81.5
+TN-CBE-OOTY-0911,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,23,2,0,Rain,0.55,59,27.5,46.2
+TN-5E-0912,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,13,2,0,Fog,0.58,60,15.5,8.8
+TN-CBE-OOTY-0913,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,1,1,Rain,0.98,126,40.6,50.7
+TN-CBE-101-0914,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,20,0,1,Monsoon_Heavy,0.98,122,55.7,7.0
+TN-CBE-101-0915,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,20,5,1,Clear,0.8,121,21.2,6.3
+TN-SETC-108X-0916,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,6,1,0,Clear,0.41,74,10.5,70.7
+TN-CBE-101-0917,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,16,3,0,Fog,0.61,52,15.7,6.1
+TN-SETC-902X-0918,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,7,4,0,Clear,0.54,41,20.1,226.4
+TN-11G-0919,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,22,2,0,Clear,0.57,73,21.3,7.4
+TN-MDU-201-0920,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,8,4,1,Monsoon_Heavy,0.98,94,51.5,6.4
+TN-MDU-201-0921,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,20,3,1,Clear,0.94,95,26.1,5.7
+TN-D70-0922,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,11,6,0,Monsoon_Heavy,0.68,63,50.0,16.2
+TN-23C-0923,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,18,3,1,Clear,0.73,93,27.2,7.8
+TN-CBE-OOTY-0924,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,16,1,0,Rain,0.7,68,34.7,48.5
+TN-11G-0925,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,14,0,0,Fog,0.57,44,15.3,8.1
+TN-D70-0926,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,14,1,0,Clear,0.26,35,8.6,14.4
+TN-23C-0927,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,7,0,0,Rain,0.64,32,30.0,6.9
+TN-TRY-401-0928,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,23,0,0,Rain,0.35,46,19.9,27.0
+TN-70H-0929,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,8,6,1,Clear,0.94,98,30.5,8.5
+TN-MDU-201-0930,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,5,0,0,Clear,0.58,47,22.9,5.5
+TN-11G-0931,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,21,6,0,Fog,0.48,62,16.5,6.9
+TN-SETC-108X-0932,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,5,4,0,Clear,0.52,48,14.1,74.1
+TN-70H-0933,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,8,1,1,Monsoon_Heavy,0.98,115,54.7,9.2
+TN-SLM-301-0934,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,8,1,1,Clear,0.96,112,27.7,23.9
+TN-23C-0935,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,15,0,0,Rain,0.35,38,24.0,6.8
+TN-CBE-OOTY-0936,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,22,5,0,Clear,0.24,61,5.2,41.2
+TN-SETC-801X-0937,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,14,5,0,Rain,0.4,56,23.6,200.5
+TN-570-0938,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,7,6,0,Rain,0.72,53,32.2,21.9
+TN-SLM-ERD-0939,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,8,3,1,Rain,0.94,128,38.0,37.0
+TN-MDU-RMS-0940,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,23,0,0,Fog,0.62,40,16.2,83.9
+TN-CBE-PLK-0941,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,11,4,0,Rain,0.36,57,26.3,22.5
+TN-SETC-108X-0942,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,23,2,0,Fog,0.62,52,19.9,76.0
+TN-MDU-RMS-0943,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,20,4,1,Clear,0.74,114,20.2,85.5
+TN-SLM-ERD-0944,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,12,5,0,Clear,0.21,33,10.8,30.4
+TN-70H-0945,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,10,3,1,Monsoon_Heavy,0.98,94,54.1,9.3
+TN-21G-0946,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,21,6,0,Rain,0.66,42,31.4,10.2
+TN-TRY-401-0947,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,13,4,0,Clear,0.56,64,18.7,29.8
+TN-101A-0948,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,18,0,1,Rain,0.92,109,40.6,9.9
+TN-11G-0949,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,22,5,0,Clear,0.6,40,19.4,7.2
+TN-MDU-RMS-0950,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,20,6,1,Clear,0.85,116,28.4,88.9
+TN-SETC-108X-0951,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,20,3,1,Monsoon_Heavy,0.98,100,51.9,83.2
+TN-SETC-108X-0952,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,17,4,1,Fog,0.79,100,23.6,78.7
+TN-101A-0953,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,9,6,1,Clear,0.79,122,20.9,11.0
+TN-CBE-PLK-0954,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,17,0,1,Rain,0.89,107,39.4,25.8
+TN-D70-0955,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,12,1,0,Fog,0.34,35,15.4,13.6
+TN-CBE-OOTY-0956,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,8,2,1,Clear,0.71,105,18.6,48.1
+TN-MDU-KODAI-0957,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,23,4,0,Rain,0.42,74,25.8,59.2
+TN-CBE-PLK-0958,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,17,4,1,Rain,0.88,91,42.7,25.8
+TN-570-0959,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,15,3,0,Monsoon_Heavy,0.77,72,48.2,21.5
+TN-MDU-201-0960,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,18,1,1,Rain,0.97,89,45.7,6.4
+TN-CBE-OOTY-0961,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,13,0,0,Clear,0.65,55,23.7,47.2
+TN-21G-0962,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,23,0,0,Monsoon_Heavy,0.55,34,43.6,9.9
+TN-MDU-KODAI-0963,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,11,2,0,Clear,0.49,49,16.2,60.9
+TN-TRY-SRM-0964,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,15,1,0,Rain,0.48,69,28.0,6.2
+TN-TRY-SRM-0965,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,10,0,1,Fog,0.88,96,28.6,6.1
+TN-SLM-301-0966,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,13,5,0,Monsoon_Heavy,0.76,57,53.2,23.5
+TN-101A-0967,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,21,1,0,Clear,0.41,45,10.7,9.6
+TN-CBE-OOTY-0968,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,3,1,Clear,0.92,89,30.3,51.2
+TN-CBE-101-0969,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,14,5,0,Clear,0.32,68,8.7,5.5
+TN-5E-0970,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,11,0,0,Clear,0.56,49,18.0,8.6
+TN-MDU-KODAI-0971,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,18,5,1,Clear,0.75,102,20.7,65.6
+TN-CBE-101-0972,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,22,1,0,Fog,0.58,61,21.4,5.6
+TN-21G-0973,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,15,4,0,Clear,0.59,56,22.8,10.3
+TN-21G-0974,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,17,6,1,Fog,0.92,100,25.6,11.3
+TN-23C-0975,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,21,5,0,Monsoon_Heavy,0.83,63,49.2,8.7
+TN-D70-0976,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,8,6,1,Clear,0.79,122,27.3,16.8
+TN-D70-0977,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,18,1,1,Clear,0.73,98,27.6,15.9
+TN-CBE-101-0978,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,23,0,0,Rain,0.54,74,33.7,6.0
+TN-MDU-KODAI-0979,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,20,5,1,Clear,0.95,94,28.8,70.0
+TN-CBE-OOTY-0980,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,5,5,0,Monsoon_Heavy,0.42,72,41.8,43.2
+TN-D70-0981,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,13,4,0,Rain,0.44,74,25.5,15.3
+TN-23C-0982,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,22,6,0,Clear,0.59,54,14.8,8.4
+TN-CBE-101-0983,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,14,0,0,Clear,0.33,40,15.1,6.2
+TN-SETC-902X-0984,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,18,6,1,Clear,0.77,90,27.5,242.3
+TN-SLM-ERD-0985,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,18,6,1,Clear,0.89,91,31.1,37.4
+TN-TRY-401-0986,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,7,2,0,Rain,0.57,65,32.7,29.1
+TN-70H-0987,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,6,5,0,Fog,0.28,58,12.5,6.9
+TN-MDU-RMS-0988,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,11,5,0,Clear,0.34,35,8.2,76.0
+TN-SETC-902X-0989,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,9,6,1,Monsoon_Heavy,0.98,100,55.5,256.2
+TN-5E-0990,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,13,1,0,Fog,0.47,50,18.3,7.8
+TN-MDU-KODAI-0991,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,16,1,0,Rain,0.69,66,31.7,65.7
+TN-TRY-SRM-0992,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,12,0,0,Rain,0.39,74,28.4,5.0
+TN-SETC-801X-0993,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,18,4,1,Clear,0.74,100,20.7,220.8
+TN-70H-0994,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,21,3,0,Rain,0.67,61,30.2,8.7
+TN-570-0995,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,13,2,0,Fog,0.42,38,13.5,18.8
+TN-570-0996,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,14,5,0,Fog,0.29,41,9.4,17.9
+TN-CBE-OOTY-0997,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,13,1,0,Monsoon_Heavy,0.6,45,43.3,46.6
+TN-SLM-301-0998,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,7,0,0,Rain,0.36,50,28.6,20.4
+TN-570-0999,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,17,5,1,Rain,0.98,101,39.1,22.6
+TN-101A-1000,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,15,1,0,Rain,0.71,68,38.8,10.9
+TN-SETC-801X-1001,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,6,0,0,Clear,0.43,54,12.6,201.5
+TN-MDU-201-1002,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,9,4,1,Clear,0.85,101,24.0,6.2
+TN-CBE-PLK-1003,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,19,1,1,Clear,0.78,118,24.3,25.4
+TN-CBE-PLK-1004,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,6,1,0,Rain,0.69,47,36.4,25.9
+TN-CBE-OOTY-1005,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,13,4,0,Clear,0.43,57,17.9,43.8
+TN-SLM-ERD-1006,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,9,4,1,Fog,0.87,113,23.6,36.3
+TN-D70-1007,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,10,0,1,Rain,0.87,114,39.0,17.5
+TN-SLM-ERD-1008,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,6,3,0,Clear,0.64,65,20.6,34.6
+TN-5E-1009,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,8,2,1,Clear,0.75,103,21.1,8.4
+TN-TRY-401-1010,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,13,4,0,Fog,0.46,67,19.8,27.4
+TN-SETC-108X-1011,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,10,3,1,Clear,0.76,100,25.9,79.5
+TN-70H-1012,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,14,5,0,Fog,0.25,53,9.8,8.2
+TN-CBE-PLK-1013,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,9,0,1,Clear,0.82,127,25.9,26.3
+TN-CBE-101-1014,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,5,2,0,Clear,0.5,58,14.9,6.6
+TN-SETC-108X-1015,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,9,1,1,Clear,0.91,100,27.2,81.3
+TN-21G-1016,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,22,4,0,Rain,0.34,46,20.8,10.1
+TN-MDU-RMS-1017,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,7,0,0,Clear,0.27,55,7.7,75.2
+TN-SETC-902X-1018,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,9,0,1,Clear,0.83,100,28.5,246.3
+TN-SETC-801X-1019,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,9,2,1,Fog,0.72,100,23.2,219.4
+TN-MDU-RMS-1020,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,20,2,1,Monsoon_Heavy,0.98,90,58.2,92.2
+TN-SETC-801X-1021,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,10,3,1,Fog,0.81,87,25.9,225.8
+TN-D70-1022,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,9,3,1,Monsoon_Heavy,0.98,118,52.2,17.1
+TN-21G-1023,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,20,2,1,Clear,0.96,128,33.9,11.6
+TN-TRY-401-1024,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,18,2,1,Monsoon_Heavy,0.91,89,57.6,32.0
+TN-TRY-401-1025,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,18,3,1,Clear,0.82,121,28.9,31.0
+TN-SETC-108X-1026,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,7,6,0,Monsoon_Heavy,0.41,72,38.5,71.7
+TN-MDU-RMS-1027,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,6,0,0,Rain,0.69,49,32.5,85.2
+TN-SLM-301-1028,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,13,2,0,Clear,0.29,35,12.4,20.4
+TN-23C-1029,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,18,4,1,Clear,0.7,92,18.1,8.1
+TN-SLM-301-1030,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,17,6,1,Fog,0.95,123,32.0,24.0
+TN-SETC-801X-1031,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,16,5,0,Fog,0.63,73,19.5,213.6
+TN-5E-1032,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,9,0,1,Clear,0.73,86,25.2,8.4
+TN-70H-1033,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,11,3,0,Fog,0.27,45,9.0,7.7
+TN-TRY-SRM-1034,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,11,0,0,Clear,0.55,39,17.8,5.3
+TN-11G-1035,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,9,5,1,Fog,0.82,116,25.8,8.9
+TN-SETC-108X-1036,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,12,1,0,Clear,0.46,55,11.3,71.5
+TN-SETC-902X-1037,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,18,3,1,Rain,0.98,100,45.0,256.4
+TN-101A-1038,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,20,3,1,Rain,0.93,124,45.3,11.4
+TN-SLM-ERD-1039,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,12,5,0,Clear,0.44,57,15.4,32.8
+TN-CBE-101-1040,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,18,3,1,Clear,0.83,126,25.0,7.1
+TN-70H-1041,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,10,2,1,Fog,0.75,107,23.4,8.6
+TN-SETC-108X-1042,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,15,4,0,Fog,0.5,38,19.9,73.6
+TN-MDU-RMS-1043,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,18,6,1,Fog,0.87,108,30.3,89.6
+TN-11G-1044,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,11,2,0,Fog,0.54,72,17.5,7.2
+TN-11G-1045,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,20,0,1,Rain,0.98,116,41.1,8.2
+TN-101A-1046,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,5,2,0,Clear,0.36,40,9.4,9.7
+TN-TRY-401-1047,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,6,6,0,Clear,0.35,37,13.1,26.6
+TN-D70-1048,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,20,2,1,Clear,0.9,87,30.9,16.9
+TN-5E-1049,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,21,4,0,Fog,0.25,33,12.8,7.6
+TN-SLM-301-1050,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,8,0,1,Monsoon_Heavy,0.98,91,58.8,23.7
+TN-23C-1051,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,10,5,1,Clear,0.93,108,26.3,7.9
+TN-SLM-301-1052,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,21,3,0,Fog,0.59,39,20.5,21.8
+TN-5E-1053,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,8,6,1,Clear,0.81,111,28.2,8.2
+TN-SLM-ERD-1054,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,15,2,0,Monsoon_Heavy,0.48,47,39.8,33.5
+TN-MDU-201-1055,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,12,1,0,Monsoon_Heavy,0.59,44,40.9,5.7
+TN-MDU-KODAI-1056,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,19,6,1,Monsoon_Heavy,0.98,108,59.9,70.1
+TN-70H-1057,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,21,0,0,Clear,0.35,55,16.3,7.1
+TN-101A-1058,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,17,6,1,Clear,0.87,126,24.5,10.7
+TN-SETC-902X-1059,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,21,2,0,Rain,0.48,73,29.7,222.9
+TN-CBE-PLK-1060,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,16,0,0,Clear,0.61,69,23.6,25.0
+TN-SLM-301-1061,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,11,4,0,Monsoon_Heavy,0.75,71,48.5,22.8
+TN-SETC-902X-1062,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,17,6,1,Clear,0.93,90,25.2,251.9
+TN-5E-1063,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,21,4,0,Clear,0.3,62,11.0,7.9
+TN-SETC-902X-1064,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,10,0,1,Clear,0.93,100,30.2,251.8
+TN-CBE-OOTY-1065,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,4,1,Clear,0.89,108,26.0,50.2
+TN-23C-1066,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,6,6,0,Fog,0.62,58,18.3,8.1
+TN-SLM-301-1067,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,15,1,0,Fog,0.65,66,22.9,23.2
+TN-TRY-SRM-1068,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,12,2,0,Clear,0.33,75,12.1,5.1
+TN-MDU-RMS-1069,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,21,5,0,Clear,0.25,63,9.7,74.8
+TN-MDU-201-1070,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,19,0,1,Clear,0.89,111,24.4,5.5
+TN-5E-1071,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,20,1,1,Rain,0.82,128,38.3,9.3
+TN-TRY-401-1072,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,17,6,1,Clear,0.85,125,26.3,31.4
+TN-SLM-ERD-1073,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,18,6,1,Clear,0.74,93,23.6,35.5
+TN-TRY-401-1074,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,21,0,0,Fog,0.3,60,6.3,26.3
+TN-TRY-SRM-1075,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,16,0,0,Monsoon_Heavy,0.78,37,46.5,6.6
+TN-101A-1076,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,21,1,0,Clear,0.37,53,10.8,9.1
+TN-5E-1077,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,9,6,1,Monsoon_Heavy,0.98,104,59.4,9.0
+TN-SLM-ERD-1078,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,5,0,0,Monsoon_Heavy,0.56,32,42.6,34.0
+TN-SETC-108X-1079,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,19,2,1,Rain,0.92,100,37.8,81.7
+TN-SETC-902X-1080,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,19,6,1,Rain,0.97,94,45.9,254.6
+TN-SETC-801X-1081,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,18,3,1,Clear,0.93,100,29.8,233.1
+TN-SLM-301-1082,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,13,5,0,Clear,0.59,75,14.9,22.3
+TN-CBE-OOTY-1083,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,22,5,0,Clear,0.49,35,13.4,45.1
+TN-SETC-108X-1084,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,6,4,0,Monsoon_Heavy,0.49,60,41.2,72.2
+TN-TRY-SRM-1085,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,10,0,1,Clear,0.9,100,31.5,7.2
+TN-SETC-108X-1086,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,19,0,1,Monsoon_Heavy,0.98,100,56.7,83.6
+TN-70H-1087,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,15,3,0,Clear,0.39,63,11.6,7.3
+TN-23C-1088,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,8,4,1,Clear,0.77,96,22.4,7.3
+TN-CBE-OOTY-1089,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,18,5,1,Clear,0.72,105,20.2,48.3
+TN-CBE-OOTY-1090,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,17,0,1,Clear,0.74,105,21.5,48.9
+TN-23C-1091,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,6,1,0,Clear,0.54,67,15.3,7.5
+TN-TRY-401-1092,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,17,0,1,Clear,0.72,114,23.6,29.7
+TN-70H-1093,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,18,5,1,Clear,0.94,86,27.6,9.8
+TN-23C-1094,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,12,6,0,Monsoon_Heavy,0.69,38,45.4,7.6
+TN-21G-1095,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,21,1,0,Clear,0.37,40,15.1,9.4
+TN-MDU-KODAI-1096,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,22,3,0,Clear,0.2,59,11.7,56.2
+TN-SETC-902X-1097,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,10,0,1,Clear,0.94,100,27.7,252.4
+TN-MDU-RMS-1098,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,16,6,0,Fog,0.3,62,8.5,74.9
+TN-TRY-SRM-1099,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,23,0,0,Clear,0.24,74,5.3,4.9
+TN-TRY-SRM-1100,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,13,3,0,Clear,0.47,50,19.1,6.7
+TN-SETC-902X-1101,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,13,6,0,Fog,0.4,45,15.0,216.6
+TN-570-1102,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,19,4,1,Clear,0.7,93,23.8,20.0
+TN-SLM-ERD-1103,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,5,0,0,Fog,0.28,65,13.5,31.4
+TN-MDU-RMS-1104,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,22,0,0,Fog,0.49,64,12.0,80.6
+TN-SLM-301-1105,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,8,2,1,Rain,0.98,107,41.9,25.1
+TN-70H-1106,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,8,3,1,Clear,0.94,113,25.3,9.4
+TN-CBE-101-1107,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,16,1,0,Clear,0.57,70,16.8,6.7
+TN-D70-1108,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,20,2,1,Clear,0.77,123,22.0,15.7
+TN-SETC-902X-1109,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,17,0,1,Clear,0.85,100,24.0,246.4
+TN-SETC-108X-1110,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,23,1,0,Clear,0.46,34,11.9,73.1
+TN-D70-1111,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,21,5,0,Clear,0.29,73,5.9,14.9
+TN-TRY-SRM-1112,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,13,5,0,Monsoon_Heavy,0.8,30,54.4,6.7
+TN-SETC-902X-1113,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,6,6,0,Clear,0.39,56,11.2,216.6
+TN-SLM-301-1114,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,20,2,1,Monsoon_Heavy,0.98,99,51.8,25.2
+TN-TRY-SRM-1115,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,19,2,1,Clear,0.8,106,21.7,6.6
+TN-70H-1116,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,12,5,0,Rain,0.73,45,32.7,8.2
+TN-21G-1117,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,8,0,1,Rain,0.91,86,41.6,11.1
+TN-CBE-PLK-1118,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,13,1,0,Clear,0.41,51,16.8,23.8
+TN-TRY-401-1119,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,12,0,0,Monsoon_Heavy,0.68,36,48.0,30.2
+TN-21G-1120,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,6,0,0,Rain,0.44,74,22.8,8.9
+TN-SLM-301-1121,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,6,2,0,Monsoon_Heavy,0.68,34,43.3,21.9
+TN-101A-1122,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,14,6,0,Rain,0.48,69,30.2,9.0
+TN-SETC-801X-1123,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,5,3,0,Rain,0.51,57,32.2,206.8
+TN-CBE-PLK-1124,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,5,3,0,Monsoon_Heavy,0.55,42,39.5,23.4
+TN-21G-1125,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,23,6,0,Clear,0.61,38,21.0,9.6
+TN-MDU-KODAI-1126,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,20,5,1,Monsoon_Heavy,0.98,100,52.6,69.4
+TN-5E-1127,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,14,4,0,Rain,0.53,71,31.7,8.1
+TN-TRY-SRM-1128,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,9,1,1,Rain,0.88,106,38.0,7.4
+TN-TRY-401-1129,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,23,5,0,Fog,0.27,45,9.7,27.2
+TN-101A-1130,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,18,2,1,Clear,0.95,125,33.7,11.2
+TN-CBE-PLK-1131,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,11,5,0,Rain,0.61,59,32.7,24.3
+TN-SETC-108X-1132,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,23,2,0,Monsoon_Heavy,0.53,51,39.4,73.8
+TN-101A-1133,MTC_CHENNAI,101A,Koyambedu CMBT,Chennai Central Station,14.8,20,1,1,Clear,0.87,99,27.3,10.0
+TN-SLM-ERD-1134,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,15,6,0,Fog,0.37,55,9.8,32.8
+TN-MDU-201-1135,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,5,0,0,Clear,0.21,37,4.6,5.1
+TN-SETC-902X-1136,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,23,6,0,Clear,0.22,31,5.4,204.6
+TN-D70-1137,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,13,5,0,Clear,0.35,65,9.7,13.9
+TN-11G-1138,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,13,0,0,Clear,0.57,38,17.5,8.3
+TN-23C-1139,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,15,1,0,Clear,0.41,53,16.6,7.5
+TN-TRY-401-1140,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,18,5,1,Clear,0.73,93,26.1,30.0
+TN-MDU-RMS-1141,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,16,2,0,Monsoon_Heavy,0.59,70,41.9,81.6
+TN-SETC-801X-1142,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,23,1,0,Monsoon_Heavy,0.53,39,40.8,207.1
+TN-CBE-101-1143,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,9,6,1,Monsoon_Heavy,0.98,116,53.3,6.4
+TN-SLM-ERD-1144,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,7,1,0,Monsoon_Heavy,0.57,71,45.9,33.7
+TN-TRY-401-1145,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,19,1,1,Clear,0.89,118,30.0,32.2
+TN-SLM-ERD-1146,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,20,2,1,Monsoon_Heavy,0.98,122,57.2,37.5
+TN-570-1147,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,19,6,1,Clear,0.8,104,24.8,21.3
+TN-11G-1148,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,16,2,0,Monsoon_Heavy,0.44,35,37.9,7.5
+TN-D70-1149,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,23,0,0,Rain,0.53,51,28.7,15.1
+TN-MDU-KODAI-1150,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,16,6,0,Rain,0.44,54,22.4,60.3
+TN-CBE-101-1151,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,7,2,0,Clear,0.33,62,11.5,6.2
+TN-CBE-101-1152,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,12,0,0,Clear,0.23,32,8.8,5.5
+TN-CBE-PLK-1153,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,13,2,0,Fog,0.57,73,21.7,23.8
+TN-SETC-801X-1154,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,9,6,1,Fog,0.89,100,23.8,229.5
+TN-MDU-201-1155,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,17,3,1,Monsoon_Heavy,0.98,85,55.6,6.4
+TN-5E-1156,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,17,1,1,Clear,0.89,98,28.0,9.3
+TN-TRY-SRM-1157,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,19,5,1,Rain,0.89,90,38.5,6.1
+TN-MDU-KODAI-1158,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,11,3,0,Rain,0.68,31,32.8,64.9
+TN-5E-1159,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,14,5,0,Clear,0.42,72,17.1,7.9
+TN-MDU-KODAI-1160,TNSTC_MADURAI,MDU-KODAI,Madurai Arapalayam,Kodaikanal Bus Stand,115.0,18,5,1,Rain,0.98,119,41.1,70.3
+TN-SETC-108X-1161,SETC_EXPRESS,SETC-108X,Chennai CMBT,Puducherry Bus Stand,155.0,6,1,0,Clear,0.64,51,21.3,76.7
+TN-SETC-801X-1162,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,23,6,0,Rain,0.74,43,39.7,219.9
+TN-MDU-RMS-1163,TNSTC_MADURAI,MDU-RMS,Madurai Mattuthavani,Rameswaram Temple Stand,172.0,11,3,0,Clear,0.35,58,13.3,76.3
+TN-11G-1164,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,8,5,1,Monsoon_Heavy,0.95,123,54.9,8.1
+TN-21G-1165,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,17,2,1,Clear,0.76,127,24.5,10.4
+TN-MDU-201-1166,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,21,0,0,Clear,0.35,56,11.0,6.2
+TN-5E-1167,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,22,3,0,Rain,0.63,54,36.5,9.3
+TN-5E-1168,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,11,2,0,Rain,0.67,72,33.4,8.9
+TN-CBE-OOTY-1169,TNSTC_COIMBATORE,CBE-OOTY,Coimbatore New Bus Stand,Ooty Central Bus Stand,86.0,23,1,0,Monsoon_Heavy,0.72,59,46.1,47.1
+TN-5E-1170,MTC_CHENNAI,5E,Besant Nagar,Vadapalani Bus Terminus,13.0,19,0,1,Rain,0.96,100,42.5,10.1
+TN-SLM-ERD-1171,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,19,3,1,Monsoon_Heavy,0.91,90,51.9,37.9
+TN-SLM-301-1172,TNSTC_SALEM,SLM-301,Salem New Bus Stand,Yercaud Hill Top,32.0,16,5,0,Fog,0.56,55,19.3,22.4
+TN-11G-1173,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,18,1,1,Clear,0.93,112,29.0,9.3
+TN-11G-1174,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,23,0,0,Rain,0.61,32,29.5,8.5
+TN-CBE-101-1175,TNSTC_COIMBATORE,CBE-101,Coimbatore Gandhipuram,Singanallur Bus Stand,9.5,22,2,0,Fog,0.61,74,21.8,7.1
+TN-SLM-ERD-1176,TNSTC_SALEM,SLM-ERD,Salem Central Stand,Erode Bus Stand,64.0,18,6,1,Monsoon_Heavy,0.93,108,50.6,36.8
+TN-CBE-PLK-1177,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,18,3,1,Clear,0.77,117,20.5,24.9
+TN-SETC-902X-1178,SETC_EXPRESS,SETC-902X,Chennai CMBT,Coimbatore Gandhipuram,505.0,19,3,1,Clear,0.89,97,27.3,248.7
+TN-23C-1179,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,9,2,1,Fog,0.89,116,27.9,7.5
+TN-D70-1180,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,19,1,1,Rain,0.98,95,39.9,16.3
+TN-23C-1181,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,10,2,1,Clear,0.84,110,23.7,8.4
+TN-70H-1182,MTC_CHENNAI,70H,SRM Ramapuram,T. Nagar Market,12.5,13,1,0,Rain,0.46,43,29.2,8.6
+TN-TRY-SRM-1183,TNSTC_TRICHY,TRY-SRM,Trichy Chatram,Srirangam Temple,9.0,11,3,0,Fog,0.22,70,10.9,5.8
+TN-23C-1184,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,17,5,1,Clear,0.82,123,21.6,8.5
+TN-570-1185,MTC_CHENNAI,570,Koyambedu CMBT,Siruseri IT Park OMR,34.5,12,2,0,Clear,0.29,31,9.5,19.4
+TN-CBE-PLK-1186,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,11,5,0,Fog,0.23,36,11.1,22.5
+TN-11G-1187,MTC_CHENNAI,11G,K.K. Nagar,Broadway Bus Terminus,12.0,10,0,1,Rain,0.93,105,39.8,8.8
+TN-SETC-801X-1188,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,11,4,0,Rain,0.72,37,32.7,218.8
+TN-CBE-PLK-1189,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,10,0,1,Rain,0.97,85,41.6,27.1
+TN-21G-1190,MTC_CHENNAI,21G,Guindy Station,Broadway Bus Terminus,15.2,13,5,0,Monsoon_Heavy,0.57,34,47.1,9.8
+TN-SETC-801X-1191,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,20,0,1,Fog,0.84,100,23.7,227.6
+TN-SETC-801X-1192,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,15,5,0,Fog,0.37,74,9.3,197.5
+TN-CBE-PLK-1193,TNSTC_COIMBATORE,CBE-PLK,Coimbatore Ukkadam,Pollachi Bus Stand,42.0,20,0,1,Clear,0.7,122,22.0,25.3
+TN-D70-1194,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,21,4,0,Fog,0.64,44,16.4,16.1
+TN-23C-1195,MTC_CHENNAI,23C,Adayar Depot,Egmore Railway Station,11.4,14,1,0,Fog,0.39,45,14.3,6.4
+TN-MDU-201-1196,TNSTC_MADURAI,MDU-201,Madurai Mattuthavani,Madurai Periyar Bus Stand,8.2,20,2,1,Clear,0.74,98,25.0,5.6
+TN-SETC-801X-1197,SETC_EXPRESS,SETC-801X,Chennai CMBT,Madurai Mattuthavani,460.0,19,5,1,Clear,0.73,100,24.7,220.5
+TN-TRY-401-1198,TNSTC_TRICHY,TRY-401,Trichy Central Bus Stand,Thanjavur Old Bus Stand,56.0,18,5,1,Clear,0.9,99,31.6,31.6
+TN-D70-1199,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,11,4,0,Clear,0.61,72,24.2,16.0
+TN-D70-1200,MTC_CHENNAI,D70,Ambattur OT,Velachery Railway Station,26.0,17,4,1,Clear,0.75,125,19.6,16.8

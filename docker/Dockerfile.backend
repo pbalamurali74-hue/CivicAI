@@ -1,0 +1,18 @@
+FROM python:3.14-slim
+
+WORKDIR /app
+
+COPY data/ /app/data/
+COPY backend/ /app/backend/
+COPY ml/ /app/ml/
+
+RUN pip install --no-cache-dir fastapi uvicorn sqlalchemy pydantic joblib scikit-learn pandas numpy networkx websockets python-jose passlib bcrypt email-validator
+
+# Train ML models
+RUN python /app/ml/train_models.py
+
+ENV PYTHONPATH=/app/backend
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

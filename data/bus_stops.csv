@@ -1,0 +1,51 @@
+stop_id,stop_name,latitude,longitude
+STOP-001,SRM Ramapuram Campus,13.0315,80.1812
+STOP-002,DLF IT Park / Ramapuram,13.0285,80.177
+STOP-003,Miot Hospital Junction,13.0232,80.1772
+STOP-004,Manapakkam Water Works,13.018,80.179
+STOP-005,Kathipara Junction / Guindy,13.007,80.202
+STOP-006,Guindy Bus Terminus,13.009,80.205
+STOP-007,Saidapet Metro / Bus Stand,13.022,80.223
+STOP-008,Nandanam Signal,13.029,80.239
+STOP-009,T. Nagar Bus Terminus,13.04,80.233
+STOP-010,Vadapalani Bus Terminus,13.05,80.212
+STOP-011,Ashok Pillar Junction,13.035,80.211
+STOP-012,KK Nagar Bus Depot,13.041,80.199
+STOP-013,Koyambedu CMBT,13.0694,80.1948
+STOP-014,Porur Roundana,13.038,80.156
+STOP-015,Iyyapanthangal Bus Depot,13.039,80.138
+STOP-016,Chennai Central Railway Station,13.0827,80.2755
+STOP-017,Egmore Railway Station,13.078,80.261
+STOP-018,Gemini Flyover / Thousand Lights,13.056,80.251
+STOP-019,Adyar Signal / Bus Stand,13.001,80.256
+STOP-020,Velachery Bus Stand,12.978,80.221
+STOP-021,Tambaram Railway Station West,12.925,80.1
+STOP-022,Chromepet Bus Stand,12.952,80.141
+STOP-023,Airport Cargo Terminal,12.981,80.163
+STOP-024,Tirusulam / Airport Metro,12.988,80.167
+STOP-025,Meenambakkam Bus Stop,12.994,80.178
+STOP-026,Valasaravakkam,13.044,80.173
+STOP-027,Virugambakkam Market,13.053,80.191
+STOP-028,Liberty / Kodambakkam,13.052,80.224
+STOP-029,PNS / Panagal Park,13.042,80.231
+STOP-030,Luz Corner / Mylapore,13.033,80.268
+STOP-031,Marina Beach / Light House,13.041,80.28
+STOP-032,High Court / Broadway,13.089,80.286
+STOP-033,Mint Terminus / Washermanpet,13.108,80.28
+STOP-034,Anna Nagar West Depot,13.088,80.198
+STOP-035,Anna Arch / Aminjikarai,13.076,80.218
+STOP-036,Kilpauk Medical College,13.078,80.244
+STOP-037,Royapettah Signal,13.056,80.264
+STOP-038,Thiruvanmiyur Bus Depot,12.986,80.259
+STOP-039,ECR Tollgate / Palavakkam,12.962,80.257
+STOP-040,Sholinganallur Junction,12.901,80.227
+STOP-041,OMR Navalur / TCS,12.848,80.226
+STOP-042,Siruseri IT Park,12.825,80.218
+STOP-043,Medavakkam Junction,12.918,80.192
+STOP-044,Perumbakkam,12.898,80.19
+STOP-045,Camp Road / Selaiyur,12.913,80.141
+STOP-046,Perungalathur Junction,12.905,80.089
+STOP-047,Vandalur Zoo,12.89,80.08
+STOP-048,Poonamallee Bus Stand,13.048,80.091
+STOP-049,Avadi Bus Depot,13.116,80.101
+STOP-050,Ambattur OT,13.114,80.154

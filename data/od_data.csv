@@ -1,0 +1,201 @@
+trip_id,origin_stop_id,dest_stop_id,origin_name,dest_name,passenger_count,transfers_count,preferred_hour
+1,STOP-001,STOP-005,SRM Ramapuram,Guindy,80,0,17
+2,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,114,1,18
+3,STOP-005,STOP-016,Guindy,Chennai Central,24,0,8
+4,STOP-005,STOP-016,Guindy,Chennai Central,18,0,19
+5,STOP-014,STOP-013,Porur,Koyambedu CMBT,117,0,8
+6,STOP-014,STOP-013,Porur,Koyambedu CMBT,103,0,9
+7,STOP-010,STOP-016,Vadapalani,Chennai Central,96,0,19
+8,STOP-020,STOP-042,Velachery,Siruseri IT Park,67,0,9
+9,STOP-021,STOP-005,Tambaram,Guindy,78,0,8
+10,STOP-014,STOP-013,Porur,Koyambedu CMBT,66,0,8
+11,STOP-021,STOP-005,Tambaram,Guindy,31,0,8
+12,STOP-005,STOP-016,Guindy,Chennai Central,59,0,17
+13,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,18,1,17
+14,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,66,1,19
+15,STOP-021,STOP-005,Tambaram,Guindy,57,0,17
+16,STOP-005,STOP-016,Guindy,Chennai Central,105,0,18
+17,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,35,1,8
+18,STOP-014,STOP-013,Porur,Koyambedu CMBT,70,0,19
+19,STOP-010,STOP-016,Vadapalani,Chennai Central,110,0,17
+20,STOP-001,STOP-005,SRM Ramapuram,Guindy,43,0,10
+21,STOP-020,STOP-042,Velachery,Siruseri IT Park,61,0,19
+22,STOP-020,STOP-042,Velachery,Siruseri IT Park,92,0,10
+23,STOP-021,STOP-005,Tambaram,Guindy,37,0,17
+24,STOP-021,STOP-005,Tambaram,Guindy,64,0,19
+25,STOP-005,STOP-016,Guindy,Chennai Central,17,0,8
+26,STOP-005,STOP-016,Guindy,Chennai Central,61,0,8
+27,STOP-020,STOP-042,Velachery,Siruseri IT Park,57,0,9
+28,STOP-001,STOP-005,SRM Ramapuram,Guindy,109,0,17
+29,STOP-021,STOP-005,Tambaram,Guindy,97,0,8
+30,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,108,1,10
+31,STOP-014,STOP-013,Porur,Koyambedu CMBT,119,0,17
+32,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,102,1,10
+33,STOP-001,STOP-005,SRM Ramapuram,Guindy,68,0,17
+34,STOP-021,STOP-005,Tambaram,Guindy,53,0,9
+35,STOP-010,STOP-016,Vadapalani,Chennai Central,72,0,9
+36,STOP-020,STOP-042,Velachery,Siruseri IT Park,81,0,10
+37,STOP-021,STOP-005,Tambaram,Guindy,17,0,17
+38,STOP-020,STOP-042,Velachery,Siruseri IT Park,106,0,19
+39,STOP-014,STOP-013,Porur,Koyambedu CMBT,49,0,19
+40,STOP-001,STOP-005,SRM Ramapuram,Guindy,83,0,18
+41,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,57,1,9
+42,STOP-001,STOP-005,SRM Ramapuram,Guindy,61,0,8
+43,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,88,1,9
+44,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,83,1,8
+45,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,16,1,10
+46,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,20,1,18
+47,STOP-014,STOP-013,Porur,Koyambedu CMBT,23,0,9
+48,STOP-001,STOP-005,SRM Ramapuram,Guindy,94,0,18
+49,STOP-010,STOP-016,Vadapalani,Chennai Central,70,0,18
+50,STOP-021,STOP-005,Tambaram,Guindy,54,0,17
+51,STOP-020,STOP-042,Velachery,Siruseri IT Park,51,0,18
+52,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,65,1,10
+53,STOP-010,STOP-016,Vadapalani,Chennai Central,66,0,8
+54,STOP-014,STOP-013,Porur,Koyambedu CMBT,112,0,10
+55,STOP-021,STOP-005,Tambaram,Guindy,81,0,18
+56,STOP-005,STOP-016,Guindy,Chennai Central,109,0,9
+57,STOP-021,STOP-005,Tambaram,Guindy,82,0,9
+58,STOP-020,STOP-042,Velachery,Siruseri IT Park,75,0,18
+59,STOP-005,STOP-016,Guindy,Chennai Central,66,0,10
+60,STOP-014,STOP-013,Porur,Koyambedu CMBT,113,0,19
+61,STOP-020,STOP-042,Velachery,Siruseri IT Park,45,0,9
+62,STOP-010,STOP-016,Vadapalani,Chennai Central,51,0,18
+63,STOP-014,STOP-013,Porur,Koyambedu CMBT,59,0,8
+64,STOP-001,STOP-005,SRM Ramapuram,Guindy,16,0,19
+65,STOP-020,STOP-042,Velachery,Siruseri IT Park,16,0,9
+66,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,23,1,19
+67,STOP-021,STOP-005,Tambaram,Guindy,24,0,19
+68,STOP-021,STOP-005,Tambaram,Guindy,62,0,10
+69,STOP-005,STOP-016,Guindy,Chennai Central,101,0,19
+70,STOP-001,STOP-005,SRM Ramapuram,Guindy,94,0,10
+71,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,111,1,8
+72,STOP-005,STOP-016,Guindy,Chennai Central,112,0,19
+73,STOP-005,STOP-016,Guindy,Chennai Central,65,0,8
+74,STOP-010,STOP-016,Vadapalani,Chennai Central,35,0,17
+75,STOP-014,STOP-013,Porur,Koyambedu CMBT,105,0,17
+76,STOP-001,STOP-005,SRM Ramapuram,Guindy,103,0,10
+77,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,56,1,18
+78,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,106,1,18
+79,STOP-014,STOP-013,Porur,Koyambedu CMBT,64,0,9
+80,STOP-020,STOP-042,Velachery,Siruseri IT Park,61,0,19
+81,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,117,1,17
+82,STOP-014,STOP-013,Porur,Koyambedu CMBT,92,0,10
+83,STOP-001,STOP-005,SRM Ramapuram,Guindy,110,0,9
+84,STOP-005,STOP-016,Guindy,Chennai Central,110,0,9
+85,STOP-010,STOP-016,Vadapalani,Chennai Central,60,0,17
+86,STOP-021,STOP-005,Tambaram,Guindy,36,0,10
+87,STOP-005,STOP-016,Guindy,Chennai Central,73,0,10
+88,STOP-010,STOP-016,Vadapalani,Chennai Central,33,0,8
+89,STOP-010,STOP-016,Vadapalani,Chennai Central,32,0,17
+90,STOP-021,STOP-005,Tambaram,Guindy,48,0,18
+91,STOP-020,STOP-042,Velachery,Siruseri IT Park,80,0,18
+92,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,68,1,18
+93,STOP-010,STOP-016,Vadapalani,Chennai Central,89,0,18
+94,STOP-021,STOP-005,Tambaram,Guindy,119,0,10
+95,STOP-020,STOP-042,Velachery,Siruseri IT Park,74,0,8
+96,STOP-020,STOP-042,Velachery,Siruseri IT Park,45,0,10
+97,STOP-021,STOP-005,Tambaram,Guindy,115,0,17
+98,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,84,1,19
+99,STOP-021,STOP-005,Tambaram,Guindy,22,0,17
+100,STOP-010,STOP-016,Vadapalani,Chennai Central,98,0,9
+101,STOP-021,STOP-005,Tambaram,Guindy,34,0,8
+102,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,55,1,17
+103,STOP-014,STOP-013,Porur,Koyambedu CMBT,87,0,17
+104,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,52,1,18
+105,STOP-005,STOP-016,Guindy,Chennai Central,98,0,9
+106,STOP-021,STOP-005,Tambaram,Guindy,19,0,18
+107,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,20,1,10
+108,STOP-005,STOP-016,Guindy,Chennai Central,48,0,10
+109,STOP-005,STOP-016,Guindy,Chennai Central,97,0,18
+110,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,91,1,9
+111,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,112,1,17
+112,STOP-001,STOP-005,SRM Ramapuram,Guindy,40,0,8
+113,STOP-001,STOP-005,SRM Ramapuram,Guindy,65,0,8
+114,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,17,1,17
+115,STOP-005,STOP-016,Guindy,Chennai Central,65,0,19
+116,STOP-005,STOP-016,Guindy,Chennai Central,48,0,17
+117,STOP-014,STOP-013,Porur,Koyambedu CMBT,18,0,18
+118,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,31,1,8
+119,STOP-010,STOP-016,Vadapalani,Chennai Central,39,0,18
+120,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,101,1,19
+121,STOP-020,STOP-042,Velachery,Siruseri IT Park,79,0,18
+122,STOP-010,STOP-016,Vadapalani,Chennai Central,75,0,9
+123,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,118,1,17
+124,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,112,1,10
+125,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,94,1,19
+126,STOP-021,STOP-005,Tambaram,Guindy,90,0,19
+127,STOP-010,STOP-016,Vadapalani,Chennai Central,86,0,8
+128,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,21,1,19
+129,STOP-021,STOP-005,Tambaram,Guindy,56,0,10
+130,STOP-021,STOP-005,Tambaram,Guindy,59,0,19
+131,STOP-014,STOP-013,Porur,Koyambedu CMBT,38,0,10
+132,STOP-010,STOP-016,Vadapalani,Chennai Central,41,0,9
+133,STOP-021,STOP-005,Tambaram,Guindy,35,0,9
+134,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,23,1,9
+135,STOP-001,STOP-005,SRM Ramapuram,Guindy,20,0,8
+136,STOP-021,STOP-005,Tambaram,Guindy,117,0,8
+137,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,70,1,8
+138,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,97,1,17
+139,STOP-005,STOP-016,Guindy,Chennai Central,29,0,18
+140,STOP-001,STOP-005,SRM Ramapuram,Guindy,102,0,8
+141,STOP-005,STOP-016,Guindy,Chennai Central,20,0,10
+142,STOP-021,STOP-005,Tambaram,Guindy,82,0,9
+143,STOP-010,STOP-016,Vadapalani,Chennai Central,51,0,9
+144,STOP-010,STOP-016,Vadapalani,Chennai Central,117,0,19
+145,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,33,1,8
+146,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,109,1,10
+147,STOP-014,STOP-013,Porur,Koyambedu CMBT,120,0,9
+148,STOP-014,STOP-013,Porur,Koyambedu CMBT,59,0,8
+149,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,85,1,17
+150,STOP-005,STOP-016,Guindy,Chennai Central,62,0,9
+151,STOP-010,STOP-016,Vadapalani,Chennai Central,67,0,17
+152,STOP-014,STOP-013,Porur,Koyambedu CMBT,106,0,17
+153,STOP-010,STOP-016,Vadapalani,Chennai Central,112,0,18
+154,STOP-010,STOP-016,Vadapalani,Chennai Central,85,0,17
+155,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,24,1,9
+156,STOP-005,STOP-016,Guindy,Chennai Central,24,0,19
+157,STOP-020,STOP-042,Velachery,Siruseri IT Park,75,0,9
+158,STOP-001,STOP-005,SRM Ramapuram,Guindy,120,0,18
+159,STOP-010,STOP-016,Vadapalani,Chennai Central,58,0,10
+160,STOP-010,STOP-016,Vadapalani,Chennai Central,15,0,9
+161,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,72,1,17
+162,STOP-001,STOP-005,SRM Ramapuram,Guindy,43,0,8
+163,STOP-021,STOP-005,Tambaram,Guindy,22,0,10
+164,STOP-021,STOP-005,Tambaram,Guindy,91,0,19
+165,STOP-001,STOP-005,SRM Ramapuram,Guindy,95,0,19
+166,STOP-021,STOP-005,Tambaram,Guindy,24,0,18
+167,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,57,1,9
+168,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,77,1,8
+169,STOP-005,STOP-016,Guindy,Chennai Central,43,0,17
+170,STOP-001,STOP-005,SRM Ramapuram,Guindy,50,0,19
+171,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,66,1,8
+172,STOP-021,STOP-005,Tambaram,Guindy,19,0,10
+173,STOP-005,STOP-016,Guindy,Chennai Central,37,0,19
+174,STOP-020,STOP-042,Velachery,Siruseri IT Park,103,0,9
+175,STOP-021,STOP-005,Tambaram,Guindy,28,0,19
+176,STOP-005,STOP-016,Guindy,Chennai Central,63,0,8
+177,STOP-020,STOP-042,Velachery,Siruseri IT Park,119,0,10
+178,STOP-020,STOP-042,Velachery,Siruseri IT Park,16,0,18
+179,STOP-010,STOP-016,Vadapalani,Chennai Central,79,0,19
+180,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,58,1,19
+181,STOP-021,STOP-005,Tambaram,Guindy,60,0,10
+182,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,30,1,9
+183,STOP-010,STOP-016,Vadapalani,Chennai Central,78,0,8
+184,STOP-001,STOP-005,SRM Ramapuram,Guindy,64,0,17
+185,STOP-014,STOP-013,Porur,Koyambedu CMBT,102,0,19
+186,STOP-021,STOP-005,Tambaram,Guindy,64,0,10
+187,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,43,1,19
+188,STOP-005,STOP-016,Guindy,Chennai Central,99,0,19
+189,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,77,1,8
+190,STOP-001,STOP-005,SRM Ramapuram,Guindy,120,0,19
+191,STOP-010,STOP-016,Vadapalani,Chennai Central,40,0,9
+192,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,73,1,19
+193,STOP-010,STOP-016,Vadapalani,Chennai Central,49,0,19
+194,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,27,1,18
+195,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,19,1,9
+196,STOP-001,STOP-009,SRM Ramapuram,T. Nagar,118,1,19
+197,STOP-014,STOP-013,Porur,Koyambedu CMBT,88,0,9
+198,STOP-001,STOP-016,SRM Ramapuram,Chennai Central,107,1,10
+199,STOP-001,STOP-005,SRM Ramapuram,Guindy,116,0,8
+200,STOP-021,STOP-005,Tambaram,Guindy,66,0,10

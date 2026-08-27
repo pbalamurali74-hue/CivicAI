@@ -1,0 +1,37 @@
+office_id,name,category,address,pincode,city,latitude,longitude,phone,opening_hours
+OFF-001,Guindy Police Station,Police,"GST Road, Guindy, Chennai",600032,Chennai,13.0067,80.202,044-22500100,24 Hours
+OFF-002,Ashok Nagar Police Station,Police,"1st Block, Ashok Nagar, Chennai",600083,Chennai,13.0355,80.2115,044-24891100,24 Hours
+OFF-003,Koyambedu Police Station,Police,"Near CMBT Bus Stand, Koyambedu, Chennai",600107,Chennai,13.0694,80.1948,044-24792200,24 Hours
+OFF-004,Vadapalani Police Station,Police,"Arcot Road, Vadapalani, Chennai",600026,Chennai,13.05,80.2121,044-24833300,24 Hours
+OFF-005,Adyar Police Station,Police,"L.B. Road, Adyar, Chennai",600020,Chennai,13.0012,80.2565,044-24414400,24 Hours
+OFF-006,Porur Police Station,Police,"Mount Poonamallee Road, Porur, Chennai",600116,Chennai,13.0382,80.1565,044-24765500,24 Hours
+OFF-007,Mambalam Police Station,Police,"Madley Road, T. Nagar, Chennai",600017,Chennai,13.0418,80.2341,044-24346600,24 Hours
+OFF-008,Government Multi Super Speciality Hospital,Hospital,"Omandurar Estate, Anna Salai, Chennai",600002,Chennai,13.0684,80.2743,044-25305000,24 Hours Emergency
+OFF-009,MIOT International Hospital,Hospital,"Mount Poonamallee Road, Manapakkam, Chennai",600089,Chennai,13.0232,80.1772,044-42002288,24 Hours
+OFF-010,SRM Specialty Hospital & Medical College,Hospital,"Bharathi Salai, Ramapuram, Chennai",600089,Chennai,13.0315,80.1812,044-30603060,24 Hours
+OFF-011,Royapettah Government Hospital,Hospital,"West Cott Road, Royapettah, Chennai",600014,Chennai,13.056,80.2642,044-28483051,24 Hours Emergency
+OFF-012,Government Peripheral Hospital,Hospital,"KK Nagar, Chennai",600078,Chennai,13.039,80.198,044-24741122,24 Hours Emergency
+OFF-013,Ramapuram EB Office (TANGEDCO),EB,"Vallal Pari Salai, Ramapuram, Chennai",600089,Chennai,13.0335,80.1795,044-22490123,09:00 AM - 05:00 PM
+OFF-014,Guindy TANGEDCO Section Office,EB,"GST Road, Guindy, Chennai",600032,Chennai,13.0089,80.2045,044-22501234,09:00 AM - 05:00 PM
+OFF-015,KK Nagar TANGEDCO Electricity Office,EB,"12th Main Road, KK Nagar, Chennai",600078,Chennai,13.041,80.201,044-24719876,09:00 AM - 05:00 PM
+OFF-016,Porur TANGEDCO Substation Office,EB,"Trunk Road, Porur, Chennai",600116,Chennai,13.0395,80.158,044-24769988,09:00 AM - 05:00 PM
+OFF-017,Ashok Nagar Sub-Registrar Office (SRO),SRO,"10th Avenue, Ashok Nagar, Chennai",600083,Chennai,13.0368,80.2134,044-24893456,10:00 AM - 05:30 PM
+OFF-018,Virugambakkam Sub-Registrar Office,SRO,"Arcot Road, Virugambakkam, Chennai",600092,Chennai,13.0532,80.1912,044-23771122,10:00 AM - 05:30 PM
+OFF-019,Saidapet Sub-Registrar Office,SRO,"Jeonis Road, Saidapet, Chennai",600015,Chennai,13.0225,80.2241,044-24355544,10:00 AM - 05:30 PM
+OFF-020,Joint Sub-Registrar Office South Chennai,SRO,"Fanepet, Nandanam, Chennai",600035,Chennai,13.0289,80.2389,044-24330011,10:00 AM - 05:30 PM
+OFF-021,Chennai South RTO (KK Nagar),Transport,"Inner Ring Road, KK Nagar, Chennai",600078,Chennai,13.0425,80.1995,044-24747700,09:30 AM - 05:00 PM
+OFF-022,Chennai Central RTO (Ayanavaram),Transport,"Konnur High Road, Ayanavaram, Chennai",600023,Chennai,13.0988,80.2344,044-26742211,09:30 AM - 05:00 PM
+OFF-023,Poonamallee RTO Unit Office,Transport,"Trunk Road, Poonamallee, Chennai",600056,Chennai,13.0488,80.0911,044-26493322,09:30 AM - 05:00 PM
+OFF-024,Greater Chennai Corporation Zone 11 Office,Municipality,"Arcot Road, Valasaravakkam, Chennai",600087,Chennai,13.044,80.173,044-24860011,10:00 AM - 05:00 PM
+OFF-025,Greater Chennai Corporation Ripon Building (HQ),Municipality,"EVR Periyar Salai, Park Town, Chennai",600003,Chennai,13.0827,80.2755,044-25384520,10:00 AM - 05:30 PM
+OFF-026,Zone 13 Corporation Office (Adyar),Municipality,"L.B. Road, Adyar, Chennai",600020,Chennai,13.0035,80.258,044-24425566,10:00 AM - 05:00 PM
+OFF-027,Guindy Taluk Revenue Office,Municipality,"GST Road, Guindy, Chennai",600032,Chennai,13.0075,80.203,044-22502233,10:00 AM - 05:00 PM
+OFF-028,T. Nagar Post Office & Passport Seva Kendra,Municipality,"Thyagaraya Road, T. Nagar, Chennai",600017,Chennai,13.0405,80.233,044-24341100,09:00 AM - 04:00 PM
+OFF-029,Ramapuram Village Panchayat Office,Municipality,"Mount-Poonamallee Link Road, Ramapuram",600089,Chennai,13.0308,80.1802,044-22498899,10:00 AM - 05:00 PM
+OFF-030,Tambaram City Municipal Corporation HQ,Municipality,"GST Road, Tambaram, Chennai",600045,Chennai,12.9249,80.1,044-22260022,10:00 AM - 05:00 PM
+OFF-031,Marina Beach Promenade,Attraction,"Marina Beach Road, Triplicane, Chennai",600005,Chennai,13.0475,80.2824,044-25384520,24 Hours
+OFF-032,Kapaleeshwarar Historic Temple,Attraction,"Vinayaka Nagar Colony, Mylapore, Chennai",600004,Chennai,13.0339,80.2685,044-24943783,06:00 AM - 09:00 PM
+OFF-033,Guindy National Park & Snake Park,Attraction,"Rangeguindy, Guindy, Chennai",600025,Chennai,13.006,80.221,044-22353087,09:00 AM - 05:30 PM
+OFF-034,St. Thomas Mount Viewpoint & Church,Attraction,"St. Thomas Mount, Chennai",600016,Chennai,13.0042,80.1985,044-22340889,06:00 AM - 08:00 PM
+OFF-035,Valluvar Kottam Heritage Monument,Attraction,"34 Village Road, Nungambakkam, Chennai",600034,Chennai,13.0578,80.2415,044-28170022,09:00 AM - 06:00 PM
+OFF-036,Express Avenue Mall & Royapettah Center,Attraction,"2 Club House Road, Royapettah, Chennai",600002,Chennai,13.0602,80.2642,044-42244224,10:00 AM - 10:00 PM

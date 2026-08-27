@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=civicai_secret_key_super_secure_hackathon_2026
+      - DATABASE_URL=sqlite:///./civicai.db
+    volumes:
+      - ./backend/app/ml/saved_models:/app/backend/app/ml/saved_models
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
