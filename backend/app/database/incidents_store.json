@@ -1,14 +1,14 @@
 [
   {
-    "incident_id": "INC-2026-0554",
-    "id": "INC-2026-0554",
+    "incident_id": "INC-2026-0673",
+    "id": "INC-2026-0673",
     "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div.",
     "hazard_type": "POTHOLE",
     "title": "Verified Pothole",
     "confidence": 92.0,
     "severity": "CRITICAL",
     "civic_risk_score": 85,
-    "timestamp": "23:05:22",
+    "timestamp": "03:21:09",
     "latitude": 13.0067,
     "longitude": 80.2025,
     "gps_accuracy": null,
@@ -49,9 +49,9 @@
           "confidence": 0.92,
           "lat": 13.0067,
           "lng": 80.2025,
-          "timestamp": 1788543322.838497,
+          "timestamp": 1788558669.98676,
           "image_evidence": null,
-          "observation_id": "INC-2026-0554"
+          "observation_id": "INC-2026-0673"
         }
       ]
     },
@@ -64,7 +64,7 @@
     },
     "work_order": {
       "created": true,
-      "work_order_id": "GCC-ROAD-4331",
+      "work_order_id": "GCC-ROAD-4736",
       "status": "WORK_ORDER_CREATED",
       "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div."
     },
@@ -76,6 +76,309 @@
     "work_order_status": "WORK_ORDER_CREATED",
     "assigned_crew": "GCC-PWD-Dispatched",
     "resolution_notes": "Verified by automated SIH test suite"
+  },
+  {
+    "incident_id": "INC-2026-0581",
+    "id": "INC-2026-0581",
+    "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div.",
+    "hazard_type": "POTHOLE",
+    "title": "Verified Pothole",
+    "confidence": 92.0,
+    "severity": "CRITICAL",
+    "civic_risk_score": 85,
+    "timestamp": "02:31:08",
+    "latitude": 13.0067,
+    "longitude": 80.2025,
+    "gps_accuracy": null,
+    "location_name": "Route 70H Transit Corridor, Chennai",
+    "vehicle_id": "TEST-BUS-01",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "left": "22%",
+      "top": "52%",
+      "width": "36%",
+      "height": "28%"
+    },
+    "verification_status": "SINGLE_BUS_UNVERIFIED",
+    "multi_bus_consensus": {
+      "cluster_id": "CLUS-POT-6202",
+      "hazard_type": "POTHOLE",
+      "observations_count": 1,
+      "distinct_buses_count": 1,
+      "observing_buses": [
+        "TEST-BUS-01"
+      ],
+      "centroid_lat": 13.0067,
+      "centroid_lng": 80.2025,
+      "fused_confidence": 0.92,
+      "consensus_status": "SINGLE_BUS_UNVERIFIED",
+      "severity": "MEDIUM",
+      "work_order_priority": "P3_MONITORING",
+      "auto_work_order_triggered": false,
+      "spatial_radius_meters": 15.0,
+      "temporal_window_minutes": 30.0,
+      "evidence_count": 0,
+      "member_observations": [
+        {
+          "bus_id": "TEST-BUS-01",
+          "route_id": "70H",
+          "hazard_type": "POTHOLE",
+          "confidence": 0.92,
+          "lat": 13.0067,
+          "lng": 80.2025,
+          "timestamp": 1788555668.620096,
+          "image_evidence": null,
+          "observation_id": "INC-2026-0581"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 350,
+      "vehicles_alerted": 7,
+      "caution_message": "\u26a0\ufe0f POTHOLE detected ahead. Reduce speed."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-ROAD-4439",
+      "status": "WORK_ORDER_CREATED",
+      "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div."
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    },
+    "work_order_status": "WORK_ORDER_CREATED",
+    "assigned_crew": "GCC-PWD-Dispatched",
+    "resolution_notes": "Verified by automated SIH test suite"
+  },
+  {
+    "incident_id": "INC-2026-0651",
+    "id": "INC-2026-0651",
+    "department": "Greater Chennai Corporation \u2014 Solid Waste Management (SWM)",
+    "hazard_type": "GARBAGE_SPILL",
+    "title": "GARBAGE SPILL",
+    "confidence": 40.6,
+    "severity": "LOW",
+    "civic_risk_score": 63,
+    "timestamp": "23:27:13",
+    "latitude": 13.031808,
+    "longitude": 80.181374,
+    "gps_accuracy": 87.66666666666667,
+    "location_name": "Route 70H Transit Corridor, Chennai",
+    "vehicle_id": "BUS-104A",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "left": "12%",
+      "top": "0%",
+      "width": "88%",
+      "height": "100%"
+    },
+    "verification_status": "SINGLE_BUS_UNVERIFIED",
+    "multi_bus_consensus": {
+      "cluster_id": "CLUS-GAR-31181",
+      "hazard_type": "GARBAGE_SPILL",
+      "observations_count": 1,
+      "distinct_buses_count": 1,
+      "observing_buses": [
+        "BUS-104A"
+      ],
+      "centroid_lat": 13.031808,
+      "centroid_lng": 80.181374,
+      "fused_confidence": 0.406,
+      "consensus_status": "SINGLE_BUS_UNVERIFIED",
+      "severity": "MEDIUM",
+      "work_order_priority": "P3_MONITORING",
+      "auto_work_order_triggered": false,
+      "spatial_radius_meters": 15.0,
+      "temporal_window_minutes": 30.0,
+      "evidence_count": 0,
+      "member_observations": [
+        {
+          "bus_id": "BUS-104A",
+          "route_id": "70H",
+          "hazard_type": "GARBAGE_SPILL",
+          "confidence": 0.406,
+          "lat": 13.031807880509541,
+          "lng": 80.18137364751917,
+          "timestamp": 1788544633.370608,
+          "image_evidence": null,
+          "observation_id": "INC-2026-0651"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 350,
+      "vehicles_alerted": 7,
+      "caution_message": "\u26a0\ufe0f GARBAGE SPILL detected ahead. Reduce speed."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-ROAD-4401",
+      "status": "DETECTED",
+      "department": "Greater Chennai Corporation \u2014 Solid Waste Management (SWM)"
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-0609",
+    "id": "INC-2026-0609",
+    "department": "Greater Chennai Traffic Police (GCTP) & Road Safety Cell",
+    "hazard_type": "PEDESTRIAN_HAZARD",
+    "title": "PEDESTRIAN HAZARD (IN TRAVEL LANE)",
+    "confidence": 39.1,
+    "severity": "CRITICAL",
+    "civic_risk_score": 83,
+    "timestamp": "23:27:00",
+    "latitude": 13.031808,
+    "longitude": 80.181374,
+    "gps_accuracy": 87.66666666666667,
+    "location_name": "Route 70H Transit Corridor, Chennai",
+    "vehicle_id": "BUS-104A",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "left": "49%",
+      "top": "22%",
+      "width": "20%",
+      "height": "42%"
+    },
+    "verification_status": "SINGLE_BUS_UNVERIFIED",
+    "multi_bus_consensus": {
+      "cluster_id": "CLUS-PED-31181",
+      "hazard_type": "PEDESTRIAN_HAZARD",
+      "observations_count": 1,
+      "distinct_buses_count": 1,
+      "observing_buses": [
+        "BUS-104A"
+      ],
+      "centroid_lat": 13.031808,
+      "centroid_lng": 80.181374,
+      "fused_confidence": 0.391,
+      "consensus_status": "SINGLE_BUS_UNVERIFIED",
+      "severity": "MEDIUM",
+      "work_order_priority": "P3_MONITORING",
+      "auto_work_order_triggered": false,
+      "spatial_radius_meters": 15.0,
+      "temporal_window_minutes": 30.0,
+      "evidence_count": 0,
+      "member_observations": [
+        {
+          "bus_id": "BUS-104A",
+          "route_id": "70H",
+          "hazard_type": "PEDESTRIAN_HAZARD",
+          "confidence": 0.391,
+          "lat": 13.031807880509541,
+          "lng": 80.18137364751917,
+          "timestamp": 1788544620.699563,
+          "image_evidence": null,
+          "observation_id": "INC-2026-0609"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 350,
+      "vehicles_alerted": 7,
+      "caution_message": "\u26a0\ufe0f PEDESTRIAN HAZARD detected ahead. Reduce speed."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-ROAD-4781",
+      "status": "DETECTED",
+      "department": "Greater Chennai Traffic Police (GCTP) & Road Safety Cell"
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-0993",
+    "id": "INC-2026-0993",
+    "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div.",
+    "hazard_type": "POTHOLE",
+    "title": "POTHOLE",
+    "confidence": 56.0,
+    "severity": "HIGH",
+    "civic_risk_score": 77,
+    "timestamp": "23:26:55",
+    "latitude": 13.031808,
+    "longitude": 80.181374,
+    "gps_accuracy": 87.66666666666667,
+    "location_name": "Route 70H Transit Corridor, Chennai",
+    "vehicle_id": "BUS-104A",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "left": "22%",
+      "top": "35%",
+      "width": "35%",
+      "height": "30%"
+    },
+    "verification_status": "SINGLE_BUS_UNVERIFIED",
+    "multi_bus_consensus": {
+      "cluster_id": "CLUS-POT-31181",
+      "hazard_type": "POTHOLE",
+      "observations_count": 1,
+      "distinct_buses_count": 1,
+      "observing_buses": [
+        "BUS-104A"
+      ],
+      "centroid_lat": 13.031808,
+      "centroid_lng": 80.181374,
+      "fused_confidence": 0.56,
+      "consensus_status": "SINGLE_BUS_UNVERIFIED",
+      "severity": "MEDIUM",
+      "work_order_priority": "P3_MONITORING",
+      "auto_work_order_triggered": false,
+      "spatial_radius_meters": 15.0,
+      "temporal_window_minutes": 30.0,
+      "evidence_count": 0,
+      "member_observations": [
+        {
+          "bus_id": "BUS-104A",
+          "route_id": "70H",
+          "hazard_type": "POTHOLE",
+          "confidence": 0.56,
+          "lat": 13.031807880509541,
+          "lng": 80.18137364751917,
+          "timestamp": 1788544615.941507,
+          "image_evidence": null,
+          "observation_id": "INC-2026-0993"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 350,
+      "vehicles_alerted": 7,
+      "caution_message": "\u26a0\ufe0f POTHOLE detected ahead. Reduce speed."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-ROAD-4546",
+      "status": "DETECTED",
+      "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div."
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
   },
   {
     "incident_id": "INC-2026-0912",

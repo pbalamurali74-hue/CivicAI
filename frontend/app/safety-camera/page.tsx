@@ -132,6 +132,24 @@ const PRESENTATION_STEPS = [
   { step: 10, title: "10. Scalable Smart City Impact", subtitle: "Zero dedicated survey vehicles. Dynamic 100% city road monitoring 365 days a year." }
 ];
 
+const VALID_HAZARD_CLASSES = new Set([
+  "POTHOLE", "PEDESTRIAN_HAZARD", "WATERLOGGING",
+  "POTENTIAL_MISSING_SIGN", "DAMAGED_SIGN", "GARBAGE_SPILL"
+]);
+
+const normalizeHazardClass = (rawClass: string): string | null => {
+  if (!rawClass) return null;
+  const u = rawClass.toUpperCase().trim();
+  if (VALID_HAZARD_CLASSES.has(u)) return u;
+  if (u.startsWith("POTHOLE")) return "POTHOLE";
+  if (u.startsWith("PEDESTRIAN")) return "PEDESTRIAN_HAZARD";
+  if (u.startsWith("WATER") || u.startsWith("FLOOD")) return "WATERLOGGING";
+  if (u.includes("MISSING") && u.includes("SIGN")) return "POTENTIAL_MISSING_SIGN";
+  if (u.includes("DAMAGED") && u.includes("SIGN")) return "DAMAGED_SIGN";
+  if (u.includes("GARBAGE") || u.includes("WASTE") || u.includes("SPILL")) return "GARBAGE_SPILL";
+  return null;
+};
+
 export default function SafetyCameraPage() {
   const [source, setSource] = useState<CameraSource>("DEVICE_CAMERA");
   const [hazardClass, setHazardClass] = useState<HazardClass>("POTHOLE");
@@ -143,15 +161,15 @@ export default function SafetyCameraPage() {
   // Real YOLO Live Inference State
   const [liveDetections, setLiveDetections] = useState<any[]>([]);
   const [inferenceFps, setInferenceFps] = useState<number>(0);
-  const [inferenceLatencyMs, setInferenceLatencyMs] = useState<number>(9.8);
-  const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.35);
+  const [inferenceLatencyMs, setInferenceLatencyMs] = useState<number>(0);
+  const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.60);
   const [isModelInferring, setIsModelInferring] = useState<boolean>(false);
   const [hardwareAcceleration, setHardwareAcceleration] = useState<string>("MPS (Apple Silicon)");
   const [activeEngineName, setActiveEngineName] = useState<string>("six_hazard_yolov8n_best.pt");
   const [engineMode, setEngineMode] = useState<"REAL_AI" | "DEMO_PRESET">("REAL_AI");
   const [enableFaceBlur, setEnableFaceBlur] = useState<boolean>(true);
   const [enablePlateBlur, setEnablePlateBlur] = useState<boolean>(true);
-  const [roadHealthIndex, setRoadHealthIndex] = useState<number>(86);
+  const [roadHealthIndex, setRoadHealthIndex] = useState<number>(100);
   const [showAiDebugPanel, setShowAiDebugPanel] = useState<boolean>(true);
   const [incidentCreatedAlert, setIncidentCreatedAlert] = useState<string | null>(null);
 
@@ -178,61 +196,18 @@ export default function SafetyCameraPage() {
   const trackHitsRef = useRef<Map<string, number>>(new Map());
 
   // Incident & Detection State
-  const [activeIncident, setActiveIncident] = useState<any>({
-    incident_id: "INC-2026-00421",
-    hazard_type: "POTHOLE",
-    title: "Severe Deep Asphalt Pothole",
-    confidence: 94.8,
-    severity: "HIGH",
-    civic_risk_score: 87,
-    timestamp: "19:42:18",
-    latitude: 13.0067,
-    longitude: 80.2020,
-    gps_status: "TRANSIT_DEFAULT",
-    location_name: "Guindy Kathipara Underpass, Chennai",
-    vehicle_id: "BUS-104A",
-    route_id: "70H (SRM ➔ Guindy ➔ T. Nagar)",
-    camera_id: "CAM-FRONT (Front Road AI Camera)",
-    bounding_box: { left: "22%", top: "52%", width: "36%", height: "28%" },
-    danger_zone_active: false,
-    verification_status: "MULTI_VEHICLE_VERIFIED",
-    multi_vehicle_verification: {
-      status: "MULTI_VEHICLE_VERIFIED",
-      bus_count: 3,
-      verification_confidence: 98.4,
-      reporting_vehicles: [
-        {"vehicle_id": "BUS-104A", "confidence": 94.8, "delta_m": 0.0, "time_delta": "0s"},
-        {"vehicle_id": "BUS-102", "confidence": 91.3, "delta_m": 4.2, "time_delta": "+3m"},
-        {"vehicle_id": "BUS-103", "confidence": 95.2, "delta_m": 2.8, "time_delta": "+6m"}
-      ]
-    },
-    connected_vehicle_broadcast: {
-      alert_status: "ACTIVE_BROADCAST",
-      alert_type: "ROAD_HAZARD_WARNING",
-      broadcast_radius_m: 350,
-      vehicles_alerted: 7,
-      caution_message: "⚠️ ROAD HAZARD AHEAD: Deep Pothole detected 180m ahead. Slow down and proceed carefully."
-    },
-    work_order: {
-      created: true,
-      work_order_id: "GCC-ROAD-4092",
-      status: "ASSIGNED",
-      department: "Greater Chennai Corporation (GCC) — Ward 168 Roads Div."
-    }
-  });
+  // null = no active incident (NO_HAZARD). Populated ONLY by genuine confirmed YOLO detections.
+  const [activeIncident, setActiveIncident] = useState<any>(null);
 
-  const [connectedVehiclesList, setConnectedVehiclesList] = useState<any[]>([
-    { vehicle: "MTC Bus 70H-02", type: "Bus", distance_m: 120, speed_kmh: 36, ack_status: "RECEIVED" },
-    { vehicle: "Ambulance TN-01-G-1102", type: "Emergency", distance_m: 160, speed_kmh: 48, ack_status: "RECEIVED" },
-    { vehicle: "Chennai Cab TN-09-CB-4491", type: "Car", distance_m: 210, speed_kmh: 42, ack_status: "RECEIVED" },
-    { vehicle: "Auto TN-07-R-2210", type: "Auto", distance_m: 240, speed_kmh: 28, ack_status: "RECEIVED" },
-    { vehicle: "Delivery Van TN-02-D-9092", type: "Van", distance_m: 280, speed_kmh: 33, ack_status: "RECEIVED" },
-    { vehicle: "MTC Bus 101A-05", type: "Bus", distance_m: 310, speed_kmh: 30, ack_status: "RECEIVED" },
-    { vehicle: "Private Car TN-10-AZ-5511", type: "Car", distance_m: 340, speed_kmh: 40, ack_status: "RECEIVED" }
-  ]);
+  // Detection State Machine
+  const [detectionState, setDetectionState] = useState<"NO_HAZARD" | "DETECTING" | "HAZARD_CANDIDATE" | "CONFIRMED_HAZARD">("NO_HAZARD");
+  const [candidateClass, setCandidateClass] = useState<string | null>(null);
+  const [consecutiveHits, setConsecutiveHits] = useState<number>(0);
+
+  const [connectedVehiclesList, setConnectedVehiclesList] = useState<any[]>([]);
 
   const [recentIncidents, setRecentIncidents] = useState<any[]>([]);
-  const [workOrderStatus, setWorkOrderStatus] = useState<string>("ASSIGNED");
+  const [workOrderStatus, setWorkOrderStatus] = useState<string>("DETECTED");
   const [isDetectionLoading, setIsDetectionLoading] = useState<boolean>(false);
 
   // REAL BROWSER GEOLOCATION TRACKER (Requirement 10)
@@ -246,12 +221,12 @@ export default function SafetyCameraPage() {
             accuracy: pos.coords.accuracy,
             status: "ACQUIRED"
           });
-          setActiveIncident((prev: any) => ({
+          setActiveIncident((prev: any) => prev ? ({
             ...prev,
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude,
             gps_status: `ACQUIRED (±${Math.round(pos.coords.accuracy)}m)`
-          }));
+          }) : null);
         },
         (err) => {
           console.log("Browser Geolocation unavailable or permission denied:", err.message);
@@ -377,11 +352,15 @@ export default function SafetyCameraPage() {
     };
   }, []);
 
-  // REAL YOLO LIVE FRAME INFERENCE LOOP (Continuous Frame Sampling 7-8 FPS)
+  // REAL YOLO LIVE FRAME INFERENCE LOOP (Continuous Frame Sampling ~7 FPS)
   useEffect(() => {
     if (!isWebcamActive || engineMode !== "REAL_AI") return;
 
     let isActive = true;
+    let localHits = 0;
+    let localMisses = 0;
+    let localCandidateClass: string | null = null;
+
     const intervalId = setInterval(async () => {
       if (isInferringRef.current || !videoRef.current) return;
       const video = videoRef.current;
@@ -402,9 +381,8 @@ export default function SafetyCameraPage() {
         ctx.drawImage(video, 0, 0, 416, 416);
         const base64 = canvas.toDataURL("image/jpeg", 0.65);
 
-        // Effective coordinates (browser GPS or Route 70H corridor)
-        const effLat = browserGps.lat || 13.0067;
-        const effLng = browserGps.lng || 80.2025;
+        const effLat = browserGps.lat ?? null;
+        const effLng = browserGps.lng ?? null;
 
         // Call genuine YOLO endpoint
         const res = await detectHazardFrame(base64, confidenceThreshold);
@@ -420,84 +398,154 @@ export default function SafetyCameraPage() {
           lastInferTimeRef.current = now;
         }
 
-        if (isActive && res && res.status === "SUCCESS") {
+        if (!isActive) return;
+
+        if (res && res.status === "SUCCESS") {
           const rawDets = res.detections || [];
-          setLiveDetections(rawDets);
 
-          if (rawDets.length > 0) {
-            // Find top hazard detection
-            const topDet = rawDets.reduce((prev: any, curr: any) => 
-              (curr.risk_score || curr.civic_risk_score || 0) > (prev?.risk_score || prev?.civic_risk_score || 0) ? curr : prev, rawDets[0]
-            );
+          // STRICT FILTER: Only accept validated classes with confidence >= threshold
+          const validDets = rawDets.filter((det: any) => {
+            const rawConf = det.confidence ?? det.confidence_score ?? det.score ?? null;
+            if (rawConf === null || rawConf === undefined) return false;
+            const conf = rawConf > 1.0 ? rawConf / 100.0 : rawConf;
+            if (conf < confidenceThreshold) return false;
+            return normalizeHazardClass(det.class_name || det.class || "") !== null;
+          });
 
-            if (topDet) {
-              const hType = topDet.class_name || topDet.class || "POTHOLE";
-              const hits = (trackHitsRef.current.get(hType) || 0) + 1;
-              trackHitsRef.current.set(hType, hits);
+          setLiveDetections(validDets);
 
-              const confPct = Math.round((topDet.confidence || 0.85) * 1000) / 10;
-              const box = {
-                left: `${Math.round((topDet.box_normalized?.x || 0.22) * 100)}%`,
-                top: `${Math.round((topDet.box_normalized?.y || 0.35) * 100)}%`,
-                width: `${Math.round((topDet.box_normalized?.w || 0.35) * 100)}%`,
-                height: `${Math.round((topDet.box_normalized?.h || 0.30) * 100)}%`
-              };
+          if (validDets.length > 0) {
+            // Find top hazard detection by highest confidence
+            const topDet = validDets.reduce((best: any, curr: any) => {
+              const bc = best.confidence ?? best.confidence_score ?? best.score ?? 0;
+              const cc = curr.confidence ?? curr.confidence_score ?? curr.score ?? 0;
+              const bConf = bc > 1.0 ? bc / 100.0 : bc;
+              const cConf = cc > 1.0 ? cc / 100.0 : cc;
+              return cConf > bConf ? curr : best;
+            }, validDets[0]);
 
-              // Compute 5-factor transparent risk score
-              const baseSev = topDet.severity === "CRITICAL" ? 35 : topDet.severity === "HIGH" ? 25 : 15;
-              const confPts = Math.round((topDet.confidence || 0.8) * 25);
-              const corrPts = 15;
-              const recPts = hits >= 3 ? 15 : 10;
-              const densPts = 8;
-              const calculatedRisk = Math.min(100, baseSev + confPts + corrPts + recPts + densPts);
+            const rawConf = topDet.confidence ?? topDet.confidence_score ?? topDet.score ?? 0;
+            const normalizedConf = rawConf > 1.0 ? rawConf / 100.0 : rawConf;
+            const hType = normalizeHazardClass(topDet.class_name || topDet.class || "");
 
-              setActiveIncident((prev: any) => ({
-                ...prev,
-                hazard_type: hType,
-                title: topDet.label || hType.replace("_", " "),
-                confidence: confPct,
-                severity: topDet.severity || "HIGH",
-                civic_risk_score: calculatedRisk,
-                bounding_box: box,
-                timestamp: new Date().toLocaleTimeString(),
-                danger_zone_active: topDet.is_in_danger_corridor || false
-              }));
+            if (!hType) {
+              localMisses++;
+              localHits = 0;
+            } else if (hType === localCandidateClass || localCandidateClass === null) {
+              localCandidateClass = hType;
+              localMisses = 0;
+              localHits++;
+              setCandidateClass(hType);
+              setConsecutiveHits(localHits);
+              setDetectionState(localHits >= 3 ? "CONFIRMED_HAZARD" : "HAZARD_CANDIDATE");
 
-              // AUTOMATIC INCIDENT PERSISTENCE (When seen across >= 3 frame hits)
-              if (hits === 3) {
-                try {
-                  const incRes = await createHazardIncident({
-                    hazard_type: hType,
-                    confidence: topDet.confidence,
-                    lat: effLat,
-                    lng: effLng,
-                    gps_accuracy: browserGps.accuracy || 8.0,
-                    severity: topDet.severity || "HIGH",
-                    civic_risk_score: calculatedRisk,
-                    bus_id: "BUS-104A",
-                    camera_id: "CAM-FRONT",
-                    route_id: "70H",
-                    title: topDet.label || `Live Detected ${hType}`,
-                    bounding_box: box
-                  });
+              if (localHits >= 3) {
+                const confPct = Math.round(normalizedConf * 100);
+                const box = {
+                  left: `${Math.round((topDet.box_normalized?.x ?? 0.22) * 100)}%`,
+                  top: `${Math.round((topDet.box_normalized?.y ?? 0.35) * 100)}%`,
+                  width: `${Math.round((topDet.box_normalized?.w ?? 0.35) * 100)}%`,
+                  height: `${Math.round((topDet.box_normalized?.h ?? 0.30) * 100)}%`
+                };
 
-                  if (incRes && incRes.status === "SUCCESS") {
-                    setIncidentCreatedAlert(`✓ INCIDENT AUTO-CREATED: #${incRes.incident.incident_id} (Work Order Dispatched)`);
-                    setRecentIncidents((prev) => [incRes.incident, ...prev.slice(0, 5)]);
-                    setTimeout(() => setIncidentCreatedAlert(null), 6000);
+                const baseSev = topDet.severity === "CRITICAL" ? 30 : topDet.severity === "HIGH" ? 25 : 15;
+                const confPts = Math.round(normalizedConf * 25);
+                const corrPts = localHits >= 6 ? 20 : 15;
+                const recPts = localHits >= 10 ? 15 : 10;
+                const densPts = 8;
+                const calculatedRisk = Math.min(100, baseSev + confPts + corrPts + recPts + densPts);
+
+                setActiveIncident({
+                  incident_id: null,
+                  hazard_type: hType,
+                  title: topDet.label || hType.replace(/_/g, " "),
+                  confidence: confPct,
+                  severity: topDet.severity || "HIGH",
+                  civic_risk_score: calculatedRisk,
+                  bounding_box: box,
+                  timestamp: new Date().toLocaleTimeString(),
+                  latitude: effLat,
+                  longitude: effLng,
+                  gps_status: browserGps.status,
+                  vehicle_id: "BUS-104A",
+                  route_id: "70H",
+                  camera_id: "CAM-FRONT",
+                  location_name: effLat ? `${effLat.toFixed(4)}°N, ${effLng?.toFixed(4)}°E` : "Route 70H Corridor",
+                  danger_zone_active: topDet.is_in_danger_corridor || false,
+                  verification_status: "SINGLE_BUS_OBSERVATION",
+                  multi_bus_consensus: null,
+                  connected_vehicle_broadcast: null,
+                  work_order: null
+                });
+
+                // Update Road Health Index dynamically
+                const penalty = Math.min(60, validDets.length * 10 + (topDet.severity === "CRITICAL" ? 20 : 10));
+                setRoadHealthIndex(Math.max(30, 100 - penalty));
+
+                // AUTOMATIC INCIDENT PERSISTENCE: Exactly at 3 consecutive frames
+                if (localHits === 3) {
+                  try {
+                    const incRes = await createHazardIncident({
+                      hazard_type: hType,
+                      confidence: normalizedConf,
+                      lat: effLat ?? undefined,
+                      lng: effLng ?? undefined,
+                      gps_accuracy: browserGps.accuracy || 8.0,
+                      severity: topDet.severity || "HIGH",
+                      civic_risk_score: calculatedRisk,
+                      bus_id: "BUS-104A",
+                      camera_id: "CAM-FRONT",
+                      route_id: "70H",
+                      title: topDet.label || `Live Detected ${hType}`,
+                      bounding_box: box
+                    });
+
+                    if (incRes && incRes.status === "SUCCESS" && incRes.incident) {
+                      setActiveIncident((prev: any) => prev ? {
+                        ...prev,
+                        incident_id: incRes.incident.incident_id,
+                        work_order: incRes.incident.work_order || null,
+                        multi_bus_consensus: incRes.consensus || null,
+                        connected_vehicle_broadcast: incRes.incident.connected_vehicle_broadcast || null
+                      } : null);
+                      setRecentIncidents((prev) => [incRes.incident, ...prev.slice(0, 5)]);
+                      setIncidentCreatedAlert(`✓ INCIDENT AUTO-CREATED: #${incRes.incident.incident_id} (Work Order Dispatched)`);
+                      setTimeout(() => setIncidentCreatedAlert(null), 6000);
+                    }
+                  } catch (e) {
+                    console.warn("Incident creation error:", e);
                   }
-                } catch (e) {
-                  console.warn("Incident creation error:", e);
                 }
               }
-
-              // Update Road Health Index dynamically
-              const penalty = Math.min(65, rawDets.length * 10 + (topDet.severity === "CRITICAL" ? 20 : 10));
-              setRoadHealthIndex(Math.max(25, 100 - penalty));
+            } else {
+              // Different class detected: reset candidate
+              localCandidateClass = hType;
+              localHits = 1;
+              localMisses = 0;
+              setCandidateClass(hType);
+              setConsecutiveHits(1);
+              setDetectionState("HAZARD_CANDIDATE");
             }
           } else {
-            // Road clear
-            setRoadHealthIndex((prev) => Math.min(96, prev + 1));
+            // Road clear or below confidence threshold
+            localMisses++;
+            localHits = Math.max(0, localHits - 1);
+            setConsecutiveHits(localHits);
+
+            if (localMisses >= 5) {
+              localHits = 0;
+              localMisses = 0;
+              localCandidateClass = null;
+              setCandidateClass(null);
+              setConsecutiveHits(0);
+              setDetectionState("NO_HAZARD");
+              setActiveIncident(null);
+              setLiveDetections([]);
+              setRoadHealthIndex((prev) => Math.min(100, prev + 2));
+            } else {
+              setDetectionState(localHits > 0 ? "HAZARD_CANDIDATE" : "NO_HAZARD");
+              setRoadHealthIndex((prev) => Math.min(100, prev + 1));
+            }
           }
         }
       } catch (e) {
@@ -506,7 +554,7 @@ export default function SafetyCameraPage() {
         isInferringRef.current = false;
         setIsModelInferring(false);
       }
-    }, 140); // 7-8 FPS frame rate
+    }, 140);
 
     return () => {
       isActive = false;
@@ -514,8 +562,9 @@ export default function SafetyCameraPage() {
     };
   }, [isWebcamActive, engineMode, confidenceThreshold, browserGps]);
 
-  // Handle Manual/Benchmark Selection
+  // Handle Manual/Benchmark Selection (Strictly for Benchmark/Demo Mode)
   const handleSelectHazardBenchmark = async (targetHazard: HazardClass) => {
+    if (engineMode !== "DEMO_PRESET") return; // Never override real AI with preset
     setHazardClass(targetHazard);
     const preset = HAZARD_PRESETS[targetHazard] || HAZARD_PRESETS.POTHOLE;
 
@@ -1106,8 +1155,8 @@ export default function SafetyCameraPage() {
                 );
               })}
 
-              {/* FALLBACK / BENCHMARK PRESET BOUNDING BOX (When Camera is Idle or in Benchmark Mode) */}
-              {(!isWebcamActive || engineMode === "DEMO_PRESET" || liveDetections.length === 0) && (
+              {/* DEMO PRESET BOUNDING BOX: Shown ONLY in DEMO_PRESET mode when an incident is active */}
+              {engineMode === "DEMO_PRESET" && activeIncident && (
                 <div
                   className={`absolute border-2 rounded-lg p-1.5 transition-all duration-500 animate-pulse shadow-2xl pointer-events-none ${
                     activeIncident.severity === "CRITICAL"
@@ -1130,7 +1179,7 @@ export default function SafetyCameraPage() {
                       ? "bg-orange-600 text-white" 
                       : "bg-amber-400 text-zinc-950"
                   }`}>
-                    <span>{activeIncident.title || hazardClass.replace("_", " ")}</span>
+                    <span>🎯 DEMO: {activeIncident.title || hazardClass.replace(/_/g, " ")}</span>
                     <span>({activeIncident.confidence}%)</span>
                   </div>
 
@@ -1143,18 +1192,51 @@ export default function SafetyCameraPage() {
                 </div>
               )}
 
+              {/* NO HAZARD STATUS OVERLAY: Camera active in REAL_AI mode with zero confirmed hazards */}
+              {isWebcamActive && engineMode === "REAL_AI" && detectionState === "NO_HAZARD" && (
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="bg-black/60 backdrop-blur-md px-6 py-4 rounded-2xl border border-emerald-500/40 text-center space-y-1">
+                    <div className="text-emerald-400 font-black text-lg flex items-center justify-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                      <span>NO HAZARD DETECTED</span>
+                    </div>
+                    <div className="text-zinc-300 text-xs font-mono font-bold">AI MONITORING ACTIVE</div>
+                    <div className="text-zinc-400 text-[10px] font-mono">Detections: 0 • Threshold: {(confidenceThreshold * 100).toFixed(0)}%</div>
+                  </div>
+                </div>
+              )}
+
+              {/* CANDIDATE DETECTION OVERLAY */}
+              {isWebcamActive && engineMode === "REAL_AI" && detectionState === "HAZARD_CANDIDATE" && candidateClass && (
+                <div className="absolute bottom-16 left-3 bg-amber-900/80 backdrop-blur-md px-3 py-2 rounded-xl border border-amber-400/50 pointer-events-none">
+                  <div className="text-amber-300 font-black text-xs">⏳ CANDIDATE: {candidateClass.replace(/_/g, " ")}</div>
+                  <div className="text-amber-400/70 text-[10px] font-mono">Confirming... ({consecutiveHits}/3 frames)</div>
+                </div>
+              )}
+
               {/* Bottom Telemetry Status Bar */}
               <div className="absolute bottom-3 left-3 right-3 bg-black/85 backdrop-blur-md px-3 py-2 rounded-xl border border-white/20 text-xs font-bold text-white flex flex-wrap items-center justify-between gap-2 pointer-events-none">
                 <div className="flex items-center gap-2">
-                  <span className={activeIncident.severity === "CRITICAL" ? "text-rose-400 font-black" : activeIncident.severity === "HIGH" ? "text-orange-400 font-black" : "text-amber-400 font-black"}>
-                    {activeIncident.severity === "CRITICAL" ? "🚨 " : "⚠️ "}
-                    {activeIncident.title}
-                  </span>
-                  <span className="font-mono text-zinc-300">Confidence: {activeIncident.confidence}%</span>
+                  {activeIncident && (detectionState === "CONFIRMED_HAZARD" || engineMode === "DEMO_PRESET") ? (
+                    <span className={activeIncident.severity === "CRITICAL" ? "text-rose-400 font-black" : activeIncident.severity === "HIGH" ? "text-orange-400 font-black" : "text-amber-400 font-black"}>
+                      {activeIncident.severity === "CRITICAL" ? "🚨 " : "⚠️ "}
+                      {activeIncident.title} — {activeIncident.confidence}%
+                    </span>
+                  ) : (
+                    <span className="text-emerald-400 font-mono">
+                      ✓ NO HAZARD — AI Monitoring Active
+                    </span>
+                  )}
                 </div>
                 <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-400">
-                  <span>GPS: {activeIncident.latitude ? `${activeIncident.latitude.toFixed(4)}°N, ${activeIncident.longitude?.toFixed(4)}°E` : "GPS Unavailable"}</span>
-                  <span>TIME: {activeIncident.timestamp}</span>
+                  {activeIncident?.latitude ? (
+                    <span>GPS: {activeIncident.latitude.toFixed(4)}°N, {activeIncident.longitude?.toFixed(4)}°E</span>
+                  ) : browserGps.status === "ACQUIRED" ? (
+                    <span>GPS: {browserGps.lat?.toFixed(4)}°N, {browserGps.lng?.toFixed(4)}°E</span>
+                  ) : (
+                    <span>GPS: Awaiting Fix</span>
+                  )}
+                  <span>TIME: {activeIncident?.timestamp || new Date().toLocaleTimeString()}</span>
                 </div>
               </div>
             </div>
@@ -1197,7 +1279,7 @@ export default function SafetyCameraPage() {
                   <div className="p-2.5 rounded-xl bg-zinc-800/80 border border-zinc-700/60 space-y-0.5">
                     <span className="text-[10px] text-zinc-400 font-mono block">DETECTION COUNT</span>
                     <span className="font-bold text-rose-400 font-mono text-[11px]">
-                      {isWebcamActive ? `${liveDetections.length} Objects in Frame` : "1 Preserved"}
+                      {isWebcamActive ? `${liveDetections.length} Objects in Frame` : "Camera Inactive"}
                     </span>
                   </div>
                 </div>
@@ -1260,6 +1342,34 @@ export default function SafetyCameraPage() {
               </div>
             )}
 
+            {/* REAL-TIME DETECTION STATE BANNER */}
+            {isWebcamActive && engineMode === "REAL_AI" && (
+              <div className={`p-3 rounded-2xl border text-xs font-bold flex items-center justify-between ${
+                detectionState === "CONFIRMED_HAZARD"
+                  ? "bg-rose-50 border-rose-300 text-rose-900"
+                  : detectionState === "HAZARD_CANDIDATE"
+                  ? "bg-amber-50 border-amber-300 text-amber-900"
+                  : "bg-emerald-50 border-emerald-300 text-emerald-900"
+              }`}>
+                <div className="flex items-center gap-2">
+                  <span className={`w-2 h-2 rounded-full ${
+                    detectionState === "CONFIRMED_HAZARD" ? "bg-rose-500 animate-pulse" :
+                    detectionState === "HAZARD_CANDIDATE" ? "bg-amber-500 animate-pulse" :
+                    "bg-emerald-500"
+                  }`} />
+                  <span className="font-black">
+                    {detectionState === "CONFIRMED_HAZARD" ? `🚨 CONFIRMED: ${activeIncident?.hazard_type}` :
+                     detectionState === "HAZARD_CANDIDATE" ? `⏳ CANDIDATE: ${candidateClass?.replace(/_/g, " ")} (${consecutiveHits}/3 frames)` :
+                     detectionState === "DETECTING" ? "🔍 DETECTING..." :
+                     "✓ NO HAZARD DETECTED — AI MONITORING ACTIVE"}
+                  </span>
+                </div>
+                <div className="font-mono text-[10px]">
+                  Threshold: {(confidenceThreshold * 100).toFixed(0)}% | Dets: {liveDetections.length}
+                </div>
+              </div>
+            )}
+
             {/* Bottom Hardware Tickers */}
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-[10px] font-mono font-bold pt-1">
               <div className="p-2 bg-zinc-50 rounded-xl border border-zinc-200">
@@ -1268,7 +1378,7 @@ export default function SafetyCameraPage() {
               </div>
               <div className="p-2 bg-zinc-50 rounded-xl border border-zinc-200">
                 <span className="text-zinc-400 block">TIMESTAMP</span>
-                <span className="text-zinc-800">{activeIncident.timestamp}</span>
+                <span className="text-zinc-800">{activeIncident?.timestamp || new Date().toLocaleTimeString()}</span>
               </div>
               <div className="p-2 bg-zinc-50 rounded-xl border border-zinc-200">
                 <span className="text-zinc-400 block">ACTIVE RUNTIME</span>
@@ -1280,7 +1390,11 @@ export default function SafetyCameraPage() {
               </div>
               <div className="p-2 bg-zinc-50 rounded-xl border border-zinc-200 col-span-2 sm:col-span-1">
                 <span className="text-zinc-400 block">V2X BROADCAST</span>
-                <span className="text-rose-700">📡 7 VEHICLES ALERTED</span>
+                <span className={activeIncident?.connected_vehicle_broadcast ? "text-rose-700" : "text-zinc-400"}>
+                  {activeIncident?.connected_vehicle_broadcast
+                    ? `📡 ${activeIncident.connected_vehicle_broadcast.vehicles_alerted || 0} ALERTED`
+                    : "📡 STANDBY"}
+                </span>
               </div>
             </div>
           </div>
@@ -1293,39 +1407,48 @@ export default function SafetyCameraPage() {
                 <h4 className="font-black text-sm text-[#212121]">Captured Evidence Frame</h4>
               </div>
               <span className="text-[10px] font-mono text-zinc-500 font-bold">
-                Incident #{activeIncident.incident_id}
+                {activeIncident?.incident_id ? `Incident #${activeIncident.incident_id}` : "No Incident Yet"}
               </span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <div className="relative w-full sm:w-48 h-28 bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 shrink-0">
-                <img
-                  src={
-                    HAZARD_PRESETS[hazardClass]?.img ||
-                    "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=500&auto=format&fit=crop&q=80"
-                  }
-                  alt="Evidence Thumbnail"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 border-2 border-amber-400/80 m-2 rounded pointer-events-none" />
-                <span className="absolute bottom-1 right-1 bg-black/80 text-amber-400 text-[8px] font-mono px-1 rounded">
-                  EVIDENCE SNAPSHOT
-                </span>
-              </div>
+            {activeIncident ? (
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <div className="relative w-full sm:w-48 h-28 bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 shrink-0">
+                  <img
+                    src={
+                      HAZARD_PRESETS[activeIncident.hazard_type as HazardClass]?.img ||
+                      HAZARD_PRESETS[hazardClass]?.img ||
+                      "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=500&auto=format&fit=crop&q=80"
+                    }
+                    alt="Evidence Thumbnail"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 border-2 border-amber-400/80 m-2 rounded pointer-events-none" />
+                  <span className="absolute bottom-1 right-1 bg-black/80 text-amber-400 text-[8px] font-mono px-1 rounded">
+                    EVIDENCE SNAPSHOT
+                  </span>
+                </div>
 
-              <div className="space-y-1 text-xs text-zinc-600 w-full font-medium">
-                <div className="font-black text-[#212121] text-sm">{activeIncident.title}</div>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px]">
-                  <span>📍 {activeIncident.location_name}</span>
-                  <span>🕐 {activeIncident.timestamp}</span>
-                  <span>🚌 Unit: <strong>{activeIncident.vehicle_id}</strong></span>
-                  <span>📷 Camera: <strong>{activeIncident.camera_id}</strong></span>
-                </div>
-                <div className="pt-1 text-[11px] text-zinc-500 font-normal">
-                  Privacy face and license plate anonymization applied locally at edge prior to metadata transmission.
+                <div className="space-y-1 text-xs text-zinc-600 w-full font-medium">
+                  <div className="font-black text-[#212121] text-sm">{activeIncident.title}</div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px]">
+                    <span>📍 {activeIncident.location_name || "Route 70H"}</span>
+                    <span>🕐 {activeIncident.timestamp}</span>
+                    <span>🚌 Unit: <strong>{activeIncident.vehicle_id || "BUS-104A"}</strong></span>
+                    <span>📷 Camera: <strong>{activeIncident.camera_id || "CAM-FRONT"}</strong></span>
+                  </div>
+                  <div className="pt-1 text-[11px] text-zinc-500 font-normal">
+                    Privacy face and license plate anonymization applied locally at edge prior to metadata transmission.
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <div className="text-center text-zinc-400 py-6 space-y-1">
+                <Eye className="w-8 h-8 text-zinc-300 mx-auto" />
+                <div className="text-xs font-bold text-zinc-500">No Evidence Captured</div>
+                <div className="text-[10px] text-zinc-400">Snapshot auto-generated upon confirmed hazard detection.</div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -1349,15 +1472,26 @@ export default function SafetyCameraPage() {
             <div className="grid grid-cols-2 gap-3 text-center">
               <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-1">
                 <span className="text-[10px] font-mono text-zinc-500 font-bold block">CIVIC RISK SCORE</span>
-                <span className="text-4xl font-black font-mono tracking-tight" style={{
-                  color: activeIncident.civic_risk_score >= 80 ? "#EF4444" : "#F59E0B"
-                }}>
-                  {activeIncident.civic_risk_score}
-                  <span className="text-sm text-zinc-400 font-bold">/100</span>
-                </span>
-                <span className="block text-[9px] font-black uppercase text-rose-600">
-                  {activeIncident.severity}
-                </span>
+                {activeIncident ? (
+                  <>
+                    <span className="text-4xl font-black font-mono tracking-tight" style={{
+                      color: activeIncident.civic_risk_score >= 80 ? "#EF4444" : "#F59E0B"
+                    }}>
+                      {activeIncident.civic_risk_score}
+                      <span className="text-sm text-zinc-400 font-bold">/100</span>
+                    </span>
+                    <span className="block text-[9px] font-black uppercase text-rose-600">
+                      {activeIncident.severity}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-4xl font-black font-mono text-zinc-300">—</span>
+                    <span className="block text-[9px] font-bold uppercase text-zinc-400">
+                      Pending Detection
+                    </span>
+                  </>
+                )}
               </div>
 
               <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-1">
@@ -1380,24 +1514,28 @@ export default function SafetyCameraPage() {
                 FORMULA: Severity(35) + Confidence(25) + Corridor(15) + Recurrence(15) + Density(10)
               </div>
               <div className="flex justify-between text-[11px]">
-                <span>1. Hazard Severity Weight ({activeIncident.severity}):</span>
-                <span className="font-mono font-bold text-zinc-900">+35 pts</span>
+                <span>1. Hazard Severity Weight ({activeIncident?.severity || "—"}):</span>
+                <span className="font-mono font-bold text-zinc-900">
+                  {activeIncident ? `+${activeIncident.severity === "CRITICAL" ? 30 : activeIncident.severity === "HIGH" ? 25 : 15} pts` : "—"}
+                </span>
               </div>
               <div className="flex justify-between text-[11px]">
-                <span>2. YOLO Confidence ({activeIncident.confidence}%):</span>
-                <span className="font-mono font-bold text-zinc-900">+24 pts</span>
+                <span>2. YOLO Confidence ({activeIncident?.confidence ? `${activeIncident.confidence}%` : "—"}):</span>
+                <span className="font-mono font-bold text-zinc-900">
+                  {activeIncident ? `+${Math.round((activeIncident.confidence / 100) * 25)} pts` : "—"}
+                </span>
               </div>
               <div className="flex justify-between text-[11px]">
                 <span>3. Road Importance (Route 70H Bus Corridor):</span>
-                <span className="font-mono font-bold text-zinc-900">+15 pts</span>
+                <span className="font-mono font-bold text-zinc-900">{activeIncident ? "+15 pts" : "—"}</span>
               </div>
               <div className="flex justify-between text-[11px]">
                 <span>4. Multi-Bus Recurrence (&ge;2 Sightings):</span>
-                <span className="font-mono font-bold text-amber-700">+10 pts</span>
+                <span className="font-mono font-bold text-amber-700">{activeIncident?.multi_bus_consensus ? "+15 pts" : "+0 pts"}</span>
               </div>
               <div className="flex justify-between text-[11px]">
                 <span>5. Traffic Density & Exposure Factor:</span>
-                <span className="font-mono font-bold text-zinc-900">+8 pts</span>
+                <span className="font-mono font-bold text-zinc-900">{activeIncident ? "+8 pts" : "—"}</span>
               </div>
             </div>
           </div>
@@ -1409,58 +1547,59 @@ export default function SafetyCameraPage() {
                 <Radio className="w-5 h-5 text-rose-600 animate-pulse" />
                 <h3 className="font-black text-sm text-[#212121]">Connected Vehicle Alert (V2X)</h3>
               </div>
-              <span className="text-[10px] font-black bg-rose-100 text-rose-950 border border-rose-300 px-2 py-0.5 rounded uppercase">
-                Active Broadcast
+              <span className={`text-[10px] font-black border px-2 py-0.5 rounded uppercase ${
+                activeIncident?.connected_vehicle_broadcast
+                  ? "bg-rose-100 text-rose-950 border-rose-300"
+                  : "bg-zinc-100 text-zinc-600 border-zinc-300"
+              }`}>
+                {activeIncident?.connected_vehicle_broadcast ? "Active Broadcast" : "Standby"}
               </span>
             </div>
 
-            {/* Simulated In-Cabin Caution Card */}
-            <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-rose-700 font-black">
-                <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0" />
-                <span>
-                  {activeIncident.hazard_type === "POTHOLE" 
-                    ? "⚠️ ROAD HAZARD AHEAD: POTHOLE DETECTED" 
-                    : activeIncident.hazard_type === "PEDESTRIAN_HAZARD"
-                    ? "⚠️ PEDESTRIAN HAZARD: CARRIAGE-WAY PROXIMITY"
-                    : `⚠️ HAZARD AHEAD: ${activeIncident.hazard_type}`}
-                </span>
+            {activeIncident?.connected_vehicle_broadcast ? (
+              <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 space-y-2 text-xs">
+                <div className="flex items-center gap-2 text-rose-700 font-black">
+                  <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0" />
+                  <span>⚠️ HAZARD AHEAD: {activeIncident.hazard_type?.replace(/_/g, " ")}</span>
+                </div>
+                <div className="font-mono text-[11px] text-zinc-700 space-y-0.5 pl-6">
+                  <div>Severity: <strong className="text-rose-600">{activeIncident.severity}</strong></div>
+                  <div>Confidence: <strong>{activeIncident.confidence}%</strong></div>
+                </div>
+                <div className="pt-2 border-t border-rose-200/80 flex justify-between items-center text-[10px] font-mono text-zinc-500">
+                  <span>BROADCAST RADIUS: 350m</span>
+                  <span className="text-rose-700 font-black">
+                    VEHICLES ALERTED: {activeIncident.connected_vehicle_broadcast.vehicles_alerted || 0}
+                  </span>
+                </div>
               </div>
-
-              <div className="font-mono text-[11px] text-zinc-700 space-y-0.5 pl-6">
-                <div>Distance: <strong>140 m Ahead</strong></div>
-                <div>Severity: <strong className="text-rose-600">{activeIncident.severity}</strong></div>
-                <div>Confidence: <strong>{activeIncident.confidence}%</strong></div>
+            ) : (
+              <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 text-center text-xs text-zinc-500 font-medium space-y-1">
+                <Radio className="w-6 h-6 text-zinc-300 mx-auto" />
+                <div className="font-bold text-zinc-400">No Active Road-Hazard Broadcast</div>
+                <div className="text-[10px]">V2X alerts are dispatched only after a CONFIRMED hazard incident is created by real AI inference.</div>
               </div>
+            )}
 
-              <p className="text-[11px] text-rose-950 font-bold pl-6">
-                Slow down and proceed carefully. Dynamic safety directive broadcast to approaching transit units.
-              </p>
-
-              <div className="pt-2 border-t border-rose-200/80 flex justify-between items-center text-[10px] font-mono text-zinc-500">
-                <span>BROADCAST RADIUS: 350m</span>
-                <span className="text-rose-700 font-black">VEHICLES ALERTED: 7</span>
-              </div>
-            </div>
-
-            {/* List of Alerted Vehicles */}
-            <div className="space-y-1.5">
-              <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase block">Nearby Alerted Fleet:</span>
-              <div className="space-y-1 max-h-[140px] overflow-y-auto pr-1">
-                {connectedVehiclesList.map((v, idx) => (
-                  <div key={idx} className="p-2 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-between text-[11px]">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs">🚗</span>
-                      <span className="font-bold text-zinc-800">{v.vehicle}</span>
+            {connectedVehiclesList.length > 0 && (
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase block">Nearby Alerted Fleet:</span>
+                <div className="space-y-1 max-h-[140px] overflow-y-auto pr-1">
+                  {connectedVehiclesList.map((v, idx) => (
+                    <div key={idx} className="p-2 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-between text-[11px]">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs">🚗</span>
+                        <span className="font-bold text-zinc-800">{v.vehicle}</span>
+                      </div>
+                      <div className="flex items-center gap-2 font-mono text-[10px]">
+                        <span className="text-zinc-500">{v.distance_m}m</span>
+                        <span className="text-emerald-700 font-black">✓ ACK</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2 font-mono text-[10px]">
-                      <span className="text-zinc-500">{v.distance_m}m</span>
-                      <span className="text-emerald-700 font-black">✓ ACK</span>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* MULTI-BUS SPATIAL-TEMPORAL CONSENSUS (REQUIREMENT 12) */}
@@ -1470,8 +1609,10 @@ export default function SafetyCameraPage() {
                 <Bus className="w-5 h-5 text-amber-600" />
                 <h3 className="font-black text-sm text-[#212121]">Multi-Bus Spatial Consensus (Req 12)</h3>
               </div>
-              <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded">
-                Bayesian Fused: 98.5%
+              <span className="text-[10px] font-mono font-bold bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded text-emerald-700">
+                {activeIncident?.multi_bus_consensus?.consensus_status === "MULTI_BUS_CORROBORATED"
+                  ? `Bayesian Fused: ${Math.round((activeIncident.multi_bus_consensus.fused_confidence || 0) * 100)}%`
+                  : "Awaiting Corroboration"}
               </span>
             </div>
 
@@ -1482,20 +1623,23 @@ export default function SafetyCameraPage() {
               </code>
             </p>
 
-            <div className="space-y-2 text-xs">
-              <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200 flex justify-between items-center font-mono">
-                <span>BUS-104A (Route 70H):</span>
-                <span className="font-bold text-emerald-700">94.8% • 0s ago</span>
+            {activeIncident?.multi_bus_consensus?.observing_buses?.length > 0 ? (
+              <div className="space-y-2 text-xs">
+                {activeIncident.multi_bus_consensus.observing_buses.map((busId: string, idx: number) => (
+                  <div key={idx} className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200 flex justify-between items-center font-mono">
+                    <span>{busId}:</span>
+                    <span className="font-bold text-emerald-700">
+                      {Math.round((activeIncident.multi_bus_consensus.fused_confidence || 0) * 100)}% fused
+                    </span>
+                  </div>
+                ))}
               </div>
-              <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200 flex justify-between items-center font-mono">
-                <span>BUS-102 (Route 101A):</span>
-                <span className="font-bold text-emerald-700">91.3% • +3m ago</span>
+            ) : (
+              <div className="p-3 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-500 text-center">
+                <div className="font-bold text-zinc-400 mb-1">Single Bus Observation</div>
+                <div className="text-[10px]">Multi-bus corroboration occurs automatically when a second fleet bus detects the same hazard within 15m and 30 minutes.</div>
               </div>
-              <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200 flex justify-between items-center font-mono">
-                <span>BUS-103 (Route 23C):</span>
-                <span className="font-bold text-emerald-700">95.2% • +6m ago</span>
-              </div>
-            </div>
+            )}
           </div>
 
           {/* MUNICIPAL WORK ORDER LIFECYCLE (9 STAGES - REQUIREMENT 14) */}
@@ -1506,24 +1650,33 @@ export default function SafetyCameraPage() {
                 <h3 className="font-black text-sm text-[#212121]">GCC Municipal Work Order (Req 14)</h3>
               </div>
               <span className="text-[10px] font-mono font-bold bg-indigo-50 text-indigo-800 border border-indigo-200 px-2 py-0.5 rounded">
-                #GCC-ROAD-4092
+                {activeIncident?.work_order?.work_order_id
+                  ? `#${activeIncident.work_order.work_order_id}`
+                  : activeIncident ? "Pending Dispatch" : "No Active Incident"}
               </span>
             </div>
 
-            <div className="space-y-2 text-xs text-zinc-600">
-              <div className="flex justify-between">
-                <span>Department:</span>
-                <strong className="text-zinc-900">GCC Ward 168 Roads Div.</strong>
+            {activeIncident?.work_order ? (
+              <div className="space-y-2 text-xs text-zinc-600">
+                <div className="flex justify-between">
+                  <span>Department:</span>
+                  <strong className="text-zinc-900">{activeIncident.work_order.department || "GCC Municipal Works"}</strong>
+                </div>
+                <div className="flex justify-between">
+                  <span>Status:</span>
+                  <strong className="text-indigo-800">{activeIncident.work_order.status || "CREATED"}</strong>
+                </div>
+                <div className="flex justify-between">
+                  <span>Target SLA:</span>
+                  <strong className="text-amber-800">Within 24 Hours (Persistent)</strong>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span>Assigned Contractor:</span>
-                <strong className="text-zinc-900">L&T Infrastructure South</strong>
+            ) : (
+              <div className="p-3 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-500 text-center">
+                <div className="font-bold text-zinc-400 mb-1">No Work Order Active</div>
+                <div className="text-[10px]">A GCC municipal work order is automatically created after the AI system confirms a hazard from 3 consecutive detection frames.</div>
               </div>
-              <div className="flex justify-between">
-                <span>Target SLA:</span>
-                <strong className="text-amber-800">Within 24 Hours (Persistent)</strong>
-              </div>
-            </div>
+            )}
 
             {/* 9-STAGE WORK ORDER STATUS BUTTONS */}
             <div className="pt-2 border-t border-zinc-100 space-y-1.5">
