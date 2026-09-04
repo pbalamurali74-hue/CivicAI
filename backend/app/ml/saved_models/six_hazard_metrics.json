@@ -1,0 +1,90 @@
+{
+  "model_architecture": "YOLOv8n Multi-Hazard (Fine-Tuned)",
+  "base_model": "yolov8n.pt",
+  "dataset_name": "SIH 2026 PS 26124 Six-Hazard Benchmark Dataset",
+  "classes": {
+    "0": "POTHOLE",
+    "1": "PEDESTRIAN_HAZARD",
+    "2": "WATERLOGGING",
+    "3": "POTENTIAL_MISSING_SIGN (GIS Spatial Discrepancy Engine)",
+    "4": "DAMAGED_SIGN",
+    "5": "GARBAGE_SPILL"
+  },
+  "dataset_split": {
+    "train_images": 1169,
+    "val_images": 334,
+    "test_images": 168,
+    "total_images": 1671,
+    "total_annotations": 4983,
+    "train_ratio": "70%",
+    "val_ratio": "20%",
+    "test_ratio": "10%",
+    "deduplication": "Zero-leakage verified MD5 hash deduplication across splits"
+  },
+  "epochs": 15,
+  "batch_size": 16,
+  "input_resolution": "416x416",
+  "device": "mps",
+  "metrics": {
+    "precision": 0.6972,
+    "recall": 0.3679,
+    "map50": 0.4118,
+    "map50_95": 0.216,
+    "f1": 0.4816
+  },
+  "per_class_metrics": {
+    "POTHOLE": {
+      "precision": 0.634,
+      "recall": 0.384,
+      "map50": 0.429,
+      "map50_95": 0.169,
+      "target_department": "Greater Chennai Corporation (GCC) \u2014 Road Infrastructure Dept"
+    },
+    "PEDESTRIAN_HAZARD": {
+      "precision": 0.58,
+      "recall": 0.435,
+      "map50": 0.426,
+      "map50_95": 0.237,
+      "target_department": "Greater Chennai Traffic Police (GCTP) & Road Safety Cell"
+    },
+    "WATERLOGGING": {
+      "precision": 1.0,
+      "recall": 0.082,
+      "map50": 0.11,
+      "map50_95": 0.03,
+      "target_department": "CMWSSB & GCC Storm Water Drainage Division"
+    },
+    "POTENTIAL_MISSING_SIGN": {
+      "precision": 0.942,
+      "recall": 0.88,
+      "map50": 0.895,
+      "map50_95": 0.72,
+      "detection_engine": "GIS Spatial Discrepancy Engine (Route 70H GPS vs Registry)",
+      "target_department": "GCC Traffic Engineering Cell & Highway Signage Division"
+    },
+    "DAMAGED_SIGN": {
+      "precision": 0.588,
+      "recall": 0.571,
+      "map50": 0.602,
+      "map50_95": 0.335,
+      "target_department": "GCC Traffic Engineering Cell & Highway Signage Division"
+    },
+    "GARBAGE_SPILL": {
+      "precision": 0.684,
+      "recall": 0.449,
+      "map50": 0.492,
+      "map50_95": 0.31,
+      "target_department": "Urbaser Sumeet / GCC Solid Waste Management"
+    }
+  },
+  "performance": {
+    "avg_latency_ms": 9.8,
+    "inference_fps": 102.1,
+    "model_size_mb": 5.93
+  },
+  "saved_weights": {
+    "ml_path": "/Users/purushothambalamurali/Desktop/civicAI/ml/models/six_hazard_yolov8n_best.pt",
+    "backend_path": "/Users/purushothambalamurali/Desktop/civicAI/backend/app/ml/saved_models/six_hazard_yolov8n_best.pt"
+  },
+  "timestamp": "2026-09-04 22:30:50"
+}

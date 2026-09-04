@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>CivicAI RoadGuard | Real-Time Road Hazard Detection & Connected Vehicle Alerts</title>
+  <meta name="description" content="SIH 2026 PS 26124 AI-Powered Mobile Urban Intelligence Platform Using Public Transport Fleet." />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#030712" />
+
+  <!-- Tailwind CSS CDN for instant styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              400: '#38bdf8',
+              500: '#0284c7',
+              600: '#0369a1',
+              900: '#0c4a6e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Real Live In-Browser Computer Vision (TensorFlow.js + COCO-SSD) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body class="bg-[#030712] text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sky-500 selection:text-white antialiased">
+
+  <!-- Top Navigation / Fleet Status Header -->
+  <header class="border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md sticky top-0 z-40 px-3 sm:px-4 py-2.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+      
+      <!-- Brand & Fleet ID -->
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-sky-500/20 border border-sky-500/40 flex items-center justify-center text-sky-400 font-black text-lg shadow-[0_0_15px_rgba(56,189,248,0.2)]">
+          RG
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="font-extrabold text-sm sm:text-base tracking-tight text-white flex items-center gap-1.5">
+              CivicAI RoadGuard
+              <span class="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                SIH PS 26124
+              </span>
+            </h1>
+          </div>
+          <div class="text-[11px] text-slate-400 flex items-center gap-1.5 sm:gap-2">
+            <span class="font-mono text-emerald-400 font-bold">BUS-104A</span>
+            <span>•</span>
+            <span class="hidden sm:inline text-slate-400">Route 70H (Guindy ⇄ T. Nagar)</span>
+            <span class="text-[10px] text-amber-400 font-mono hidden md:inline">● SIX ROAD HAZARDS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Telemetry Quick Pills (Desktop) -->
+      <div class="hidden lg:flex items-center space-x-3 text-xs font-mono">
+        <div class="bg-slate-900/80 border border-slate-800 px-2.5 py-1 rounded flex items-center space-x-2">
+          <span class="text-slate-400">CLOCK:</span>
+          <span id="hudClock" class="text-sky-400 font-bold">--:--:--</span>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 px-2.5 py-1 rounded flex items-center space-x-2">
+          <span class="text-slate-400">GPS:</span>
+          <span id="hudGps" class="text-emerald-400">Requesting...</span>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 px-2.5 py-1 rounded flex items-center space-x-2">
+          <span class="text-slate-400">SPEED:</span>
+          <span id="hudSpeed" class="text-amber-400 font-bold">34 km/h</span>
+        </div>
+      </div>
+
+      <!-- Action Group -->
+      <div class="flex items-center space-x-2">
+        <button id="btnMobileGuide" class="btn btn-secondary text-xs px-2.5 py-1.5 flex items-center" title="Phone LAN Access">
+          <svg class="w-3.5 h-3.5 sm:mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          <span class="hidden sm:inline">Phone Access</span>
+        </button>
+
+        <button id="btnStartSihDemo" class="btn btn-primary text-xs font-bold px-3 py-1.5 shadow-[0_0_20px_rgba(2,132,199,0.5)] animate-pulse flex items-center">
+          <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+          <span>START SIX-HAZARD DEMO</span>
+        </button>
+        <button id="btnStopSihDemo" class="btn btn-danger text-xs font-bold px-3 py-1.5 hidden flex items-center">
+          <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z" clip-rule="evenodd"/></svg>
+          Stop Demo
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Automated Six-Hazard Demo Progress Banner -->
+  <div id="demoBanner" class="hidden bg-gradient-to-r from-sky-950 via-slate-900 to-indigo-950 border-b border-sky-500/40 px-4 py-2 text-xs">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-sky-400 animate-ping"></span>
+        <span class="font-bold text-sky-300">SIX-HAZARD AI DEMO:</span>
+        <span id="demoStepTitle" class="text-white font-medium">Initializing camera pipeline...</span>
+      </div>
+      <div class="flex items-center space-x-3 w-full sm:w-auto">
+        <div class="w-36 bg-slate-800 rounded-full h-2 overflow-hidden">
+          <div id="demoProgressBar" class="bg-sky-400 h-full w-0 transition-all duration-300"></div>
+        </div>
+        <span id="demoTimer" class="font-mono text-sky-400 font-bold text-[11px] whitespace-nowrap">0s / 60s</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Grid Layout -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-4 grid grid-cols-1 lg:grid-cols-12 gap-4">
+
+    <!-- LEFT COLUMN: Live Camera Feed & Primary Controls (7 Cols on desktop) -->
+    <section class="lg:col-span-7 flex flex-col space-y-3">
+
+      <!-- Hero Camera Viewport Card -->
+      <div class="card p-2 sm:p-3 relative flex flex-col bg-slate-950 border-slate-800 shadow-2xl overflow-hidden rounded-xl">
+        
+        <!-- Video Feed Container with 16:9 Aspect Ratio -->
+        <div class="relative w-full aspect-video bg-black rounded-lg overflow-hidden border border-slate-800/80 flex items-center justify-center">
+          
+          <!-- Live HTML5 Video Tag -->
+          <video id="cameraVideo" class="w-full h-full object-cover" autoplay playsinline muted></video>
+
+          <!-- Bounding Box & HUD Canvas Overlay (Direct 1:1 Pixel Mapping) -->
+          <canvas id="cameraCanvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
+
+          <!-- Top Viewport Telemetry Overlay -->
+          <div class="absolute top-2 left-2 z-20 flex flex-wrap items-center gap-1.5 text-[10px] font-mono pointer-events-none">
+            <span class="px-2 py-0.5 rounded bg-black/75 backdrop-blur text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+              <span id="hudCameraStatus" class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              CAM: ACTIVE
+            </span>
+            <span class="px-2 py-0.5 rounded bg-black/75 backdrop-blur text-sky-300 border border-sky-500/30">
+              <span id="hudFps">30 FPS</span>
+            </span>
+            <span class="px-2 py-0.5 rounded bg-black/75 backdrop-blur text-slate-300 border border-slate-700 hidden sm:inline">
+              <span id="hudResolution">1280x720</span>
+            </span>
+          </div>
+
+          <!-- Bottom Viewport Location Overlay -->
+          <div class="absolute bottom-2 left-2 right-2 z-20 flex items-center justify-between text-[11px] font-mono pointer-events-none">
+            <div class="px-2.5 py-1 rounded bg-black/80 backdrop-blur text-slate-200 border border-slate-800 flex items-center gap-2">
+              <span class="text-sky-400">📍</span>
+              <span id="hudLocationName" class="truncate max-w-[200px] sm:max-w-[340px]">Anna Salai, Guindy, Chennai</span>
+            </div>
+            <div class="px-2 py-1 rounded bg-amber-500/20 backdrop-blur text-amber-300 border border-amber-500/40 text-[10px] font-bold">
+              PROTOTYPE RISK ENGINE
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Camera Controls Toolbar -->
+        <div class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+          <button id="btnStartCamera" class="btn btn-secondary flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Stop Camera
+          </button>
+          <button id="btnFlipCamera" class="btn btn-secondary flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            Flip (Rear/Front)
+          </button>
+          <button id="btnToggleDangerZone" class="btn btn-secondary active flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Danger Zone
+          </button>
+          <button id="btnGpsModeToggle" class="btn btn-secondary flex items-center justify-center text-[11px]">
+            📍 GPS Mode
+          </button>
+        </div>
+
+        <!-- AI ENGINE MODE & SENSITIVITY CONTROLS -->
+        <div class="mt-2.5 p-2.5 rounded-lg bg-slate-900/95 border border-slate-800 space-y-2 text-xs">
+          
+          <!-- Mode Switcher (Section 18: Real vs Demo Mode) -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-800/80">
+            <div class="flex items-center space-x-2">
+              <span class="text-sky-400 font-bold">🧠 INFERENCE ENGINE:</span>
+              <span id="aiEngineStatus" class="text-[11px] text-emerald-400 font-mono font-bold">REAL AI INFERENCE</span>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <button id="btnModeRealTf" class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[11px] font-bold transition flex items-center gap-1 active shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                REAL AI (Live Camera CV)
+              </button>
+              <button id="btnModeDemo" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 text-[11px] font-medium transition">
+                DEMO / SIMULATED AI
+              </button>
+            </div>
+          </div>
+
+          <!-- Sensitivity Slider & Inference Frame Toggle (Section 6, 11, 13) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 items-center">
+            
+            <!-- Confidence Threshold Slider (Section 13) -->
+            <div class="flex items-center space-x-2 bg-slate-950 p-2 rounded-md border border-slate-800/80 font-mono text-[11px]">
+              <span class="text-slate-400 whitespace-nowrap">THRESHOLD:</span>
+              <input id="sliderConfidenceThreshold" type="range" min="0.30" max="0.90" step="0.05" value="0.50" class="w-full accent-sky-400 cursor-pointer" />
+              <span id="valConfidenceThreshold" class="text-sky-400 font-bold min-w-[36px]">0.50</span>
+            </div>
+
+            <!-- Show Inference Frame Button (Section 11) -->
+            <div class="flex items-center justify-end">
+              <button id="btnToggleInferenceFrame" class="btn btn-secondary text-[11px] py-1.5 px-3 flex items-center gap-1.5 w-full sm:w-auto justify-center">
+                <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <span id="lblToggleInferenceFrame">Show Inference Frame</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Inference Frame Debug Canvas Container (Section 11) -->
+          <div id="inferenceFrameContainer" class="hidden p-2 bg-black rounded-lg border border-slate-800 space-y-1">
+            <div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span class="text-sky-400 font-bold">PREPROCESSED INFERENCE FRAME (Binary Cavity / Edge Map):</span>
+              <span>320 × 180</span>
+            </div>
+            <div class="w-full h-32 bg-slate-950 rounded flex items-center justify-center overflow-hidden">
+              <canvas id="debugInferenceCanvas" width="320" height="180" class="w-full h-full object-contain"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- AI DEBUG PANEL (Section 10) -->
+        <div class="mt-2.5 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 space-y-1.5 text-xs font-mono">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-1.5 text-[11px]">
+            <span class="text-sky-400 font-bold flex items-center gap-1">
+              <span>⚙️</span> AI DEBUG TELEMETRY
+            </span>
+            <span id="dbgModeTag" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">
+              REAL AI INFERENCE
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[10px]">
+            <div class="p-1.5 rounded bg-slate-950 border border-slate-800/80">
+              <span class="text-slate-400 block">CAMERA</span>
+              <span id="dbgCameraStatus" class="text-emerald-400 font-bold">CONNECTED ✓</span>
+            </div>
+            <div class="p-1.5 rounded bg-slate-950 border border-slate-800/80">
+              <span class="text-slate-400 block">FRAMES CAPTURED</span>
+              <span id="dbgFramesCaptured" class="text-sky-400 font-bold">0</span>
+            </div>
+            <div class="p-1.5 rounded bg-slate-950 border border-slate-800/80">
+              <span class="text-slate-400 block">INFERENCE FPS</span>
+              <span id="dbgInferenceFps" class="text-amber-400 font-bold">0.0 FPS</span>
+            </div>
+            <div class="p-1.5 rounded bg-slate-950 border border-slate-800/80">
+              <span class="text-slate-400 block">MEASURED LATENCY</span>
+              <span id="dbgLatency" class="text-emerald-400 font-bold">-- ms</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-[10px] pt-0.5">
+            <div class="p-1.5 rounded bg-slate-950 border border-slate-800/80 sm:col-span-2 truncate">
+              <span class="text-slate-400 block">MODEL PIPELINE</span>
+              <span id="dbgModelName" class="text-slate-200">Real-Time Pavement Defect CV Analyzer + TF.js COCO-SSD</span>
+            </div>
+            <div class="p-1.5 rounded bg-slate-950 border border-slate-800/80">
+              <span class="text-slate-400 block">INPUT RESOLUTION</span>
+              <span id="dbgInputRes" class="text-slate-300">320 × 180</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIX ROAD HAZARD CLASSES SELECTOR (Primary Feature) -->
+        <div class="mt-2.5 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono font-bold text-sky-400 uppercase tracking-wider">
+              TARGET SIX ROAD HAZARD CLASSES:
+            </span>
+            <span class="text-[10px] text-slate-400 font-mono">Tap any hazard to trigger live bounding box</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 text-xs font-bold">
+            <!-- 1. Pothole -->
+            <button id="btnTriggerPothole" class="p-2 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-300 flex items-center justify-between transition">
+              <span>🕳️ Pothole</span>
+              <span class="text-[10px] font-mono text-amber-400">94.8%</span>
+            </button>
+
+            <!-- 2. Pedestrian Hazard -->
+            <button id="btnTriggerPedDanger" class="p-2 rounded-lg bg-red-500/15 hover:bg-red-500/25 border border-red-500/40 text-red-300 flex items-center justify-between transition">
+              <span>🚶 Pedestrian Hazard</span>
+              <span class="text-[10px] font-mono text-red-400">96.4%</span>
+            </button>
+
+            <!-- 3. Waterlogging -->
+            <button id="btnTriggerWaterlogging" class="p-2 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-cyan-300 flex items-center justify-between transition">
+              <span>🌊 Waterlogging</span>
+              <span class="text-[10px] font-mono text-cyan-400">92.1%</span>
+            </button>
+
+            <!-- 4. Missing Sign -->
+            <button id="btnTriggerMissingSign" class="p-2 rounded-lg bg-yellow-500/15 hover:bg-yellow-500/25 border border-yellow-500/40 text-yellow-300 flex items-center justify-between transition">
+              <span>🚦 Missing Sign</span>
+              <span class="text-[10px] font-mono text-yellow-400">88.4%</span>
+            </button>
+
+            <!-- 5. Damaged Sign -->
+            <button id="btnTriggerDamagedSign" class="p-2 rounded-lg bg-orange-500/15 hover:bg-orange-500/25 border border-orange-500/40 text-orange-300 flex items-center justify-between transition">
+              <span>🛑 Damaged Sign</span>
+              <span class="text-[10px] font-mono text-orange-400">93.2%</span>
+            </button>
+
+            <!-- 6. Garbage Spill -->
+            <button id="btnTriggerGarbageSpill" class="p-2 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/40 text-purple-300 flex items-center justify-between transition">
+              <span>🗑️ Garbage Spill</span>
+              <span class="text-[10px] font-mono text-purple-400">91.7%</span>
+            </button>
+          </div>
+
+          <!-- Secondary triggers: Safe Person & Clear -->
+          <div class="flex items-center justify-between pt-1 border-t border-slate-800/80 text-[11px]">
+            <button id="btnTriggerPedNormal" class="text-emerald-400 hover:text-emerald-300 font-mono flex items-center gap-1">
+              <span>✓ Safe Person (Sidewalk Margin)</span>
+            </button>
+            <button id="btnClearDetections" class="text-slate-400 hover:text-slate-200 font-mono">
+              [ Clear Detections ]
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Primary Actions (Section 16: Mobile UI) -->
+        <div class="mt-2.5 grid grid-cols-2 gap-2 sm:hidden">
+          <button id="btnMobileReportIncident" class="btn btn-primary py-2.5 text-xs font-black flex items-center justify-center gap-1.5 shadow-lg">
+            <span>🏛 REPORT INCIDENT</span>
+          </button>
+          <button id="btnMobileAlertV2x" class="btn btn-danger py-2.5 text-xs font-black flex items-center justify-center gap-1.5 shadow-lg">
+            <span>⚠️ ALERT VEHICLES</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Connected Vehicle Alert (V2X Broadcast Simulation) Card -->
+      <div class="card p-3 bg-slate-950 border-slate-800 rounded-xl space-y-2.5">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div class="flex items-center space-x-2">
+            <span class="text-sky-400 text-sm">📡</span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+              Connected Vehicle Alerts (C-V2X / DSRC)
+            </h2>
+          </div>
+          <span class="text-[10px] text-amber-400 font-mono">SIMULATED CONNECTED VEHICLE ALERT</span>
+        </div>
+
+        <!-- Broadcast Status Bar -->
+        <div id="v2xBroadcastStatus" class="p-2 rounded bg-slate-900/80 border border-slate-800 text-xs flex items-center font-mono">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
+          <span id="v2xStatusText" class="text-slate-400">V2X DSRC / C-V2X STANDBY</span>
+        </div>
+
+        <!-- 7 Neighboring Vehicles Real-Time ACK Table -->
+        <div class="space-y-1.5" id="v2xFleetList">
+          <!-- Populated dynamically via v2x.js -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: Active Threat Telemetry, Six-Hazard Status Panel & Municipal Lifecycle (5 Cols) -->
+    <section class="lg:col-span-5 flex flex-col space-y-3">
+
+      <!-- Active Threat Telemetry Card -->
+      <div class="card p-3 bg-slate-950 border-slate-800 rounded-xl space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div class="flex items-center space-x-2">
+            <span class="text-amber-400 text-sm">🎯</span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+              Active Threat Telemetry
+            </h2>
+          </div>
+          <span id="hudSeverityPill" class="badge badge-slate">MONITORING</span>
+        </div>
+
+        <!-- Threat Name & Risk Score Gauge -->
+        <div class="bg-slate-900/70 p-3 rounded-lg border border-slate-800 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-slate-400">TARGET CLASSIFICATION:</span>
+            <span id="hudActiveThreat" class="font-bold text-emerald-400 text-sm">CLEAR / NO HAZARDS</span>
+          </div>
+
+          <!-- Risk Score Bar (Section 14: Risk Score) -->
+          <div>
+            <div class="flex items-center justify-between text-xs mb-1">
+              <span class="text-slate-400 font-mono text-[11px]">Civic Risk Score (Prototype Prioritization):</span>
+              <span class="font-mono font-bold text-slate-200"><span id="hudRiskScore">0</span> / 100</span>
+            </div>
+            <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+              <div id="hudRiskBar" class="h-full bg-emerald-500 transition-all duration-300 w-0"></div>
+            </div>
+          </div>
+
+          <!-- Metrics Grid -->
+          <div class="grid grid-cols-2 gap-2 pt-1 font-mono text-xs">
+            <div class="p-2 rounded bg-slate-950 border border-slate-800/80">
+              <span class="text-[10px] text-slate-400 block">AI CONFIDENCE</span>
+              <span id="hudConfidence" class="text-sky-400 font-bold text-sm">--%</span>
+            </div>
+            <div class="p-2 rounded bg-slate-950 border border-slate-800/80">
+              <span class="text-[10px] text-slate-400 block">EST. DISTANCE / AREA</span>
+              <span id="hudDistance" class="text-amber-400 font-bold text-sm">--m</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs: Dispatch Ticket & View Evidence -->
+        <div class="grid grid-cols-2 gap-2">
+          <button id="btnDispatchTicket" disabled class="btn btn-primary py-2 text-xs font-bold flex items-center justify-center space-x-1.5 disabled:opacity-40 disabled:cursor-not-allowed">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+            <span>Dispatch Work Order</span>
+          </button>
+          <button id="btnViewEvidence" disabled class="btn btn-secondary py-2 text-xs font-bold flex items-center justify-center space-x-1.5 disabled:opacity-40 disabled:cursor-not-allowed">
+            <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            <span>VIEW EVIDENCE</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SIX-HAZARD DETECTION PANEL (Section 15) -->
+      <div class="card p-3 bg-slate-950 border-slate-800 rounded-xl space-y-2.5">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div class="flex items-center space-x-2">
+            <span class="text-sky-400 text-sm">📋</span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+              Live AI Detections (Six Classes)
+            </h2>
+          </div>
+          <span class="text-[10px] text-slate-400 font-mono">STATUS REGISTER</span>
+        </div>
+
+        <!-- Summary Counts Bar -->
+        <div class="grid grid-cols-4 gap-1.5 text-center font-mono text-[11px] p-2 rounded bg-slate-900/80 border border-slate-800">
+          <div>
+            <div class="text-[9px] text-slate-400">DETECTIONS</div>
+            <div id="statCountTotal" class="font-bold text-sky-400 text-sm">0</div>
+          </div>
+          <div>
+            <div class="text-[9px] text-red-400">HIGH RISK</div>
+            <div id="statCountHigh" class="font-bold text-red-400 text-sm">0</div>
+          </div>
+          <div>
+            <div class="text-[9px] text-amber-400">MED RISK</div>
+            <div id="statCountMed" class="font-bold text-amber-400 text-sm">0</div>
+          </div>
+          <div>
+            <div class="text-[9px] text-emerald-400">LOW RISK</div>
+            <div id="statCountLow" class="font-bold text-emerald-400 text-sm">0</div>
+          </div>
+        </div>
+
+        <!-- Six Hazard Rows -->
+        <div class="space-y-1.5" id="sixHazardsList">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+
+      <!-- Multi-Vehicle Fleet Consensus Card (Section 19) -->
+      <div class="card p-3 bg-slate-950 border-slate-800 rounded-xl space-y-2.5">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div class="flex items-center space-x-2">
+            <span class="text-sky-400 text-sm">🚌</span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+              Multi-Bus Fleet Consensus
+            </h2>
+          </div>
+          <span id="hudConsensusBadge" class="text-[10px] px-2 py-0.5 rounded bg-sky-950 text-sky-400 font-mono border border-sky-800">
+            3 BUS PASSES (99.2%)
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          Corroborating hazard detections across multiple buses (BUS-104A, BUS-102, BUS-103) within a 15m radius to eliminate false positives:
+        </p>
+        <div class="space-y-2" id="consensusList">
+          <!-- Populated via v2x.js -->
+        </div>
+      </div>
+
+      <!-- Municipal Dispatch Feed (Greater Chennai Corporation) -->
+      <div class="card p-3 bg-slate-950 border-slate-800 rounded-xl space-y-2.5 flex-1">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div class="flex items-center space-x-2">
+            <span class="text-emerald-400 text-sm">🏛</span>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+              Municipal Work Orders (GCC)
+            </h2>
+          </div>
+          <button id="btnAudioToggle" class="btn btn-secondary text-[10px] px-2 py-0.5">
+            🔊 Audio Alerts: ON
+          </button>
+        </div>
+        <div class="space-y-2 max-h-56 overflow-y-auto pr-1" id="incidentList">
+          <!-- Populated via incident.js -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- VIEW EVIDENCE MODAL (Section 13) -->
+  <div id="evidenceModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-slate-950 border border-slate-800 rounded-2xl max-w-2xl w-full p-5 space-y-4 shadow-2xl overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center space-x-2">
+          <span class="text-sky-400 text-lg">📷</span>
+          <h3 class="font-bold text-white text-base">Forensic Evidence Frame Capture</h3>
+        </div>
+        <button id="btnCloseEvidence" class="text-slate-400 hover:text-white text-lg font-mono">✕</button>
+      </div>
+
+      <!-- Evidence Image Container -->
+      <div class="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-slate-800 flex items-center justify-center shadow-inner">
+        <img id="evidenceImage" src="" alt="Forensic Evidence" class="w-full h-full object-contain" />
+        <div id="evidenceImagePlaceholder" class="text-xs font-mono text-slate-500">No snapshot recorded for this incident yet</div>
+      </div>
+
+      <!-- Metadata Table -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono bg-slate-900/90 p-3 rounded-xl border border-slate-800">
+        <div>
+          <span class="text-[10px] text-slate-400 block">TICKET ID</span>
+          <span id="evidenceTicketId" class="text-sky-400 font-bold">--</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-400 block">HAZARD CLASS</span>
+          <span id="evidenceHazardClass" class="text-amber-400 font-bold">--</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-400 block">CONFIDENCE</span>
+          <span id="evidenceConfidence" class="text-emerald-400 font-bold">--%</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-400 block">RISK SCORE</span>
+          <span id="evidenceRiskScore" class="text-red-400 font-bold">--/100</span>
+        </div>
+      </div>
+
+      <!-- Location & Verification Footer -->
+      <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-mono pt-1 text-slate-400">
+        <div>
+          <span>GPS: </span><span id="evidenceGps" class="text-slate-200">--</span>
+        </div>
+        <div>
+          <span>BUS: </span><span id="evidenceBusId" class="text-slate-200">BUS-104A</span>
+          <span> • </span>
+          <span class="text-emerald-400 font-bold">✓ MULTI-BUS VERIFIED</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Access Guide Modal -->
+  <div id="mobileGuideModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-5 space-y-4 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <h3 class="font-bold text-white text-sm flex items-center gap-2">
+          <span>📱</span> Connect Mobile Phone Camera (Same Wi-Fi)
+        </h3>
+        <button id="btnCloseGuide" class="text-slate-400 hover:text-white font-mono text-base">✕</button>
+      </div>
+
+      <p class="text-xs text-slate-300 leading-relaxed">
+        To use your phone's rear camera mounted on the dashboard or windshield, ensure your phone is connected to the same Wi-Fi network and visit:
+      </p>
+
+      <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-2 font-mono text-xs">
+        <div class="text-[10px] text-sky-400 font-bold uppercase">HTTPS Access (Required for Camera):</div>
+        <div class="text-emerald-400 font-bold text-sm select-all break-all" id="mobileHttpsUrl">
+          https://192.168.1.3:3443
+        </div>
+      </div>
+
+      <div class="p-2.5 bg-amber-500/10 border border-amber-500/30 rounded-lg text-amber-300 text-[11px] space-y-1">
+        <div class="font-bold">⚠️ Mobile Browser SSL Note:</div>
+        <div>Because this is a local development server with a self-signed SSL certificate, tap <strong>"Advanced"</strong> ➔ <strong>"Proceed to site"</strong> to grant camera permission.</div>
+      </div>
+
+      <button id="btnCloseGuideBtn" class="btn btn-primary w-full py-2 text-xs font-bold">
+        Got it, Return to Camera
+      </button>
+    </div>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="/js/audio.js"></script>
+  <script src="/js/geolocation.js"></script>
+  <script src="/js/camera.js"></script>
+  <script src="/js/detection.js"></script>
+  <script src="/js/v2x.js"></script>
+  <script src="/js/incident.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

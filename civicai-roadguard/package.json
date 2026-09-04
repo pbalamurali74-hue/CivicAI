@@ -1,0 +1,15 @@
+{
+  "name": "civicai-roadguard",
+  "version": "1.0.0",
+  "description": "CivicAI RoadGuard: AI-Powered Real-Time Road Hazard Detection & Connected Vehicle Alerts (SIH 2026 PS 26124)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "author": "CivicAI Team",
+  "license": "MIT"
+}

@@ -21,7 +21,8 @@ import {
   CheckCircle2, 
   AlertTriangle,
   Play,
-  RotateCcw
+  RotateCcw,
+  Camera
 } from "lucide-react";
 
 export default function LandingPage() {
@@ -55,14 +56,29 @@ export default function LandingPage() {
           Turn public transport buses into mobile urban sensing units. Detect potholes, traffic bottlenecks, pedestrian dangers, and official identity verification in real-time.
         </p>
 
-        {/* PRIMARY PS 26124 ACTION BUTTON */}
-        <div className="pt-2 flex justify-center gap-4">
+        {/* PRIMARY PS 26124 ACTION BUTTONS */}
+        <div className="pt-2 flex flex-wrap justify-center gap-3">
           <Link
             href="/sih-sensing"
-            className="px-8 py-4 rounded-2xl bg-[#FFC107] text-[#18181B] font-black text-sm hover:bg-[#F59E0B] transition shadow-lg shadow-amber-500/30 flex items-center gap-2 border border-amber-400"
+            className="px-6 py-3.5 rounded-2xl bg-[#FFC107] text-[#18181B] font-black text-sm hover:bg-[#F59E0B] transition shadow-lg shadow-amber-500/30 flex items-center gap-2 border border-amber-400"
           >
-            <span>🚌 Launch PS 26124 Fleet AI Sensing Dashboard</span>
+            <span>🚌 Fleet AI Sensing Command Hub</span>
             <ArrowRight className="w-4 h-4" />
+          </Link>
+
+          <Link
+            href="/safety-camera"
+            className="px-6 py-3.5 rounded-2xl bg-rose-600 text-white font-black text-sm hover:bg-rose-700 transition shadow-lg shadow-rose-600/30 flex items-center gap-2 border border-rose-700"
+          >
+            <Camera className="w-4 h-4" />
+            <span>Live Road Safety Camera (15 Hazards)</span>
+          </Link>
+
+          <Link
+            href="/ml-analytics"
+            className="px-6 py-3.5 rounded-2xl bg-zinc-900 text-white font-black text-sm hover:bg-black transition shadow-md flex items-center gap-2 border border-zinc-800"
+          >
+            <span>🧠 ML Analytics (89.2% Delay Model)</span>
           </Link>
         </div>
       </section>

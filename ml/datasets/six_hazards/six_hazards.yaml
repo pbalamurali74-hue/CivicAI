@@ -1,0 +1,14 @@
+# CivicAI RoadGuard — SIH 2026 PS 26124 Multi-Hazard YOLO Dataset
+path: /Users/purushothambalamurali/Desktop/civicAI/ml/datasets/six_hazards
+train: images/train
+val: images/val
+test: images/test
+
+nc: 6
+names:
+  0: POTHOLE
+  1: PEDESTRIAN_HAZARD
+  2: WATERLOGGING
+  3: POTENTIAL_MISSING_SIGN
+  4: DAMAGED_SIGN
+  5: GARBAGE_SPILL

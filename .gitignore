@@ -34,3 +34,22 @@ backend/civicai.db
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Scratch scripts
+scratch/
+
+# Large Base Models & Training Runs
+runs/
+ml/models/
+yolov8n.pt
+backend/yolov8n.pt
+backend/app/ml/saved_models/yolov8n.pt
+
+# Large Raw Datasets (Keep YAML & summary metadata)
+ml/datasets/*
+!ml/datasets/six_hazards/
+ml/datasets/six_hazards/images/
+ml/datasets/six_hazards/labels/

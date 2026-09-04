@@ -166,6 +166,32 @@ export async function getRecentSafetyIncidents() {
   return fetchJson(`/sensing/safety-camera/recent-incidents`);
 }
 
+export async function getSensingHotspots() {
+  return fetchJson(`/sensing/hotspots`);
+}
+
+export async function getSensingRequirementCoverage() {
+  return fetchJson(`/sensing/requirement-coverage`);
+}
+
+export async function transitionIncidentLifecycle(
+  incidentId: string,
+  targetStatus: string,
+  assignedCrew?: string,
+  resolutionNotes?: string
+) {
+  return fetchJson(`/sensing/incidents/transition`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      incident_id: incidentId,
+      target_status: targetStatus,
+      assigned_crew: assignedCrew,
+      resolution_notes: resolutionNotes,
+    }),
+  });
+}
+
 export async function getOfficeProcedureAi(query: string, officeCategory: string = "General") {
   return fetchJson(`/offices/procedure-query`, {
     method: "POST",
@@ -251,4 +277,17 @@ export async function predictMLRatingAbuse(payload: {
     body: JSON.stringify(payload),
   });
 }
+
+export async function getHazardModelMetrics() {
+  return fetchJson(`/hazard/metrics`);
+}
+
+export async function detectHazardFrame(imageBase64: string, threshold: number = 0.40) {
+  return fetchJson(`/hazard/detect-frame`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ image_base64: imageBase64, threshold }),
+  });
+}
+
 

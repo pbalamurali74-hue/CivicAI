@@ -1,0 +1,18 @@
+{
+  "short_name": "RoadGuard",
+  "name": "CivicAI RoadGuard — AI Road Hazard & Safety Camera",
+  "description": "AI-Powered Real-Time Road Hazard Detection & Connected Vehicle Alerts (SIH 2026 PS 26124)",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23ffc107'/><text x='50' y='65' font-size='50' text-anchor='middle'>🛡️</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "display": "standalone",
+  "orientation": "any"
+}

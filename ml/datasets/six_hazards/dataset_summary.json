@@ -1,0 +1,57 @@
+{
+  "dataset_name": "SIH 2026 PS 26124 Six-Hazard Benchmark Dataset",
+  "classes": {
+    "0": "POTHOLE",
+    "1": "PEDESTRIAN_HAZARD",
+    "2": "WATERLOGGING",
+    "3": "POTENTIAL_MISSING_SIGN (GIS Spatial Discrepancy Engine)",
+    "4": "DAMAGED_SIGN",
+    "5": "GARBAGE_SPILL"
+  },
+  "total_images": 1671,
+  "total_annotations": 4983,
+  "class_distribution": {
+    "POTHOLE": 327,
+    "PEDESTRIAN_HAZARD": 303,
+    "WATERLOGGING": 349,
+    "POTENTIAL_MISSING_SIGN": 0,
+    "DAMAGED_SIGN": 332,
+    "GARBAGE_SPILL": 360
+  },
+  "split": {
+    "train": 1169,
+    "val": 334,
+    "test": 168,
+    "train_ratio": "70%",
+    "val_ratio": "20%",
+    "test_ratio": "10%"
+  },
+  "split_class_counts": {
+    "train": {
+      "0": 230,
+      "1": 224,
+      "2": 235,
+      "3": 0,
+      "4": 229,
+      "5": 251
+    },
+    "val": {
+      "0": 66,
+      "1": 54,
+      "2": 71,
+      "3": 0,
+      "4": 74,
+      "5": 69
+    },
+    "test": {
+      "0": 31,
+      "1": 25,
+      "2": 43,
+      "3": 0,
+      "4": 29,
+      "5": 40
+    }
+  },
+  "deduplication": "Zero-leakage verified MD5 hash deduplication across splits",
+  "yaml_config": "ml/datasets/six_hazards/six_hazards.yaml"
+}
