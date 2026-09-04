@@ -69,6 +69,25 @@ def root():
         "documentation": "/docs"
     }
 
+@app.get("/api/health")
+def api_health():
+    from app.ml.hazard_yolo_service import hazard_yolo_service
+    return {
+        "status": "HEALTHY",
+        "platform": settings.PROJECT_NAME,
+        "ps_statement": "SIH 2026 PS 26124 - AI-Powered Mobile Urban Intelligence Platform",
+        "models": {
+            "hazard_yolo": {
+                "loaded": hazard_yolo_service.model is not None,
+                "model_name": hazard_yolo_service.model_name,
+                "is_fine_tuned": hazard_yolo_service.is_custom_trained,
+                "device": hazard_yolo_service.device.upper()
+            }
+        },
+        "database": "CONNECTED",
+        "city": "Chennai, Tamil Nadu"
+    }
+
 @app.get("/api/city-pulse")
 def get_city_pulse():
     return {

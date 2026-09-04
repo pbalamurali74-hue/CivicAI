@@ -78,6 +78,19 @@ class HazardYoloService:
     """
     _instance = None
 
+    SIX_HAZARD_CLASSES = [
+        "POTHOLE",
+        "PEDESTRIAN_HAZARD",
+        "WATERLOGGING",
+        "POTENTIAL_MISSING_SIGN",
+        "DAMAGED_SIGN",
+        "GARBAGE_SPILL"
+    ]
+
+    @property
+    def class_names(self) -> List[str]:
+        return self.SIX_HAZARD_CLASSES
+
     @classmethod
     def get_instance(cls):
         if cls._instance is None:
@@ -312,6 +325,7 @@ class HazardYoloService:
                     detections.append({
                         "class": target_class,
                         "class_key": target_class,
+                        "class_name": target_class,
                         "label": label,
                         "confidence": round(conf, 3),
                         "confidence_percent": round(conf * 100, 1),
@@ -320,6 +334,8 @@ class HazardYoloService:
                         "distance_meters": dist_meters,
                         "box_pixel": pixel_box,
                         "box_norm": norm_box,
+                        "box_normalized": norm_box,
+                        "is_in_danger_corridor": (target_class == "PEDESTRIAN_HAZARD"),
                         "source": f"REAL DEEP LEARNING ({self.model_name})",
                         "is_simulated": False
                     })
@@ -341,11 +357,17 @@ class HazardYoloService:
         return {
             "status": "SUCCESS",
             "model_name": self.model_name,
+            "inference_engine": self.model_name,
             "device": self.device.upper(),
             "latency_ms": latency_ms,
+            "inference_latency_ms": latency_ms,
             "detected": len(detections) > 0,
             "detections": detections,
             "count": len(detections),
+            "missing_sign_check": {
+                "evaluated": lat is not None and lng is not None,
+                "evaluated_signs_count": len(EXPECTED_SIGNS_CATALOG) if (lat is not None and lng is not None) else 0
+            },
             "frame_dimensions": {"width": w, "height": h},
             "timestamp": time.time()
         }
@@ -373,6 +395,7 @@ class HazardYoloService:
             return {
                 "class": "POTENTIAL_MISSING_SIGN",
                 "class_key": "POTENTIAL_MISSING_SIGN",
+                "class_name": "POTENTIAL_MISSING_SIGN",
                 "label": f"MISSING SIGN: {closest_sign['name']}",
                 "confidence": conf,
                 "confidence_percent": round(conf * 100, 1),
@@ -380,6 +403,7 @@ class HazardYoloService:
                 "risk_score": 78,
                 "distance_meters": round(min_dist, 1),
                 "box_norm": {"x": 0.05, "y": 0.12, "w": 0.28, "h": 0.38},
+                "box_normalized": {"x": 0.05, "y": 0.12, "w": 0.28, "h": 0.38},
                 "box_pixel": {"x": int(0.05 * w), "y": int(0.12 * h), "w": int(0.28 * w), "h": int(0.38 * h)},
                 "source": "GIS SPATIAL DISCREPANCY ENGINE (GPS vs Asset Registry)",
                 "status": "VERIFICATION REQUIRED",

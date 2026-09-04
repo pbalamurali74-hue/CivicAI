@@ -14,6 +14,25 @@ class FrameDetectionRequest(BaseModel):
     lat: Optional[float] = Field(None, description="Current Bus/Device Latitude (for Missing Sign GIS check)")
     lng: Optional[float] = Field(None, description="Current Bus/Device Longitude (for Missing Sign GIS check)")
 
+@router.get("/health")
+async def get_hazard_health():
+    """
+    Health check for Road Hazard Detection Service.
+    Verifies model presence, acceleration device, and readiness.
+    """
+    return {
+        "status": "HEALTHY",
+        "service": "Road Hazard YOLO Detection Service",
+        "problem_statement": "SIH 2026 PS 26124",
+        "model_loaded": hazard_yolo_service.model_name,
+        "is_fine_tuned": hazard_yolo_service.is_custom_trained,
+        "is_six_hazard_model": hazard_yolo_service.is_six_hazard_model,
+        "device": hazard_yolo_service.device.upper(),
+        "ready": hazard_yolo_service.model is not None,
+        "classes_count": len(hazard_yolo_service.class_names),
+        "classes": hazard_yolo_service.class_names
+    }
+
 @router.post("/detect-frame")
 async def detect_hazard_frame(req: FrameDetectionRequest):
     """

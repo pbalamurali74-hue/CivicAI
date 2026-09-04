@@ -290,4 +290,17 @@ export async function detectHazardFrame(imageBase64: string, threshold: number =
   });
 }
 
+export async function getHazardHealth() {
+  return fetchJson(`/hazard/health`);
+}
+
+export async function corroborateHazardCluster(observations?: any[], newObservation?: any) {
+  return fetchJson(`/sensing/corroborate-cluster`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ observations, new_observation: newObservation }),
+  });
+}
+
+
 

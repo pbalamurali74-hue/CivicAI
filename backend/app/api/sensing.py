@@ -1481,4 +1481,64 @@ def transition_incident_lifecycle(payload: IncidentLifecycleTransition):
             
     raise HTTPException(status_code=404, detail="Incident ID not found in active registry")
 
+from app.ml.multi_bus_consensus import multi_bus_consensus
+
+class ObservationItem(BaseModel):
+    bus_id: str
+    route_id: Optional[str] = "70H"
+    hazard_type: str
+    confidence: float
+    lat: float
+    lng: float
+    timestamp: Optional[float] = None
+    image_evidence: Optional[str] = None
+
+class ClusterEvaluationRequest(BaseModel):
+    observations: Optional[List[ObservationItem]] = None
+    new_observation: Optional[ObservationItem] = None
+
+@router.post("/corroborate-cluster")
+def corroborate_cluster(payload: ClusterEvaluationRequest):
+    """
+    Multi-Bus Spatial-Temporal Consensus & Corroboration Engine
+    SIH 2026 PS 26124
+
+    Clusters observations within 15 meters and 30 minutes, applying Bayesian confidence escalation:
+    C_fused = 1 - PROD(1 - c_i)
+    """
+    if payload.observations:
+        obs_dicts = [obs.dict() for obs in payload.observations]
+        clusters = multi_bus_consensus.cluster_all(obs_dicts)
+        return {
+            "status": "SUCCESS",
+            "clusters_count": len(clusters),
+            "clusters": clusters
+        }
+    elif payload.new_observation:
+        cluster = multi_bus_consensus.add_observation(payload.new_observation.dict())
+        return {
+            "status": "SUCCESS",
+            "cluster": cluster
+        }
+    else:
+        clusters = multi_bus_consensus.cluster_all()
+        return {
+            "status": "SUCCESS",
+            "clusters_count": len(clusters),
+            "clusters": clusters
+        }
+
+@router.get("/clusters")
+def get_sensing_clusters():
+    """
+    Returns active spatial-temporal consensus clusters across the bus fleet.
+    """
+    clusters = multi_bus_consensus.cluster_all()
+    return {
+        "status": "SUCCESS",
+        "clusters_count": len(clusters),
+        "clusters": clusters
+    }
+
+
 

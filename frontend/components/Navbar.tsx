@@ -166,8 +166,20 @@ export default function Navbar() {
           {/* Desktop Navigation Links matching SIH PS 26124 priority */}
           <nav className="hidden lg:flex items-center gap-2">
             <Link
+              href="/safety-camera"
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-black transition ${
+                pathname === "/safety-camera"
+                  ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
+                  : "bg-rose-100/80 text-rose-950 border border-rose-300 hover:bg-rose-100"
+              }`}
+            >
+              <Camera className="w-4 h-4 text-rose-700" />
+              <span>Live Safety Camera</span>
+            </Link>
+
+            <Link
               href="/sih-sensing"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-black transition ${
                 pathname === "/sih-sensing"
                   ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
                   : "bg-amber-100/70 text-amber-950 border border-amber-300 hover:bg-amber-100"
@@ -178,39 +190,27 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/safety-camera"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/safety-camera"
-                  ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
-                  : "bg-rose-100/70 text-rose-950 border border-rose-300 hover:bg-rose-100"
-              }`}
-            >
-              <Camera className="w-4 h-4 text-rose-700" />
-              <span>Safety Camera</span>
-            </Link>
-
-            <Link
               href="/ml-analytics"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-black transition ${
                 pathname === "/ml-analytics"
                   ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
                   : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
               }`}
             >
               <Brain className="w-4 h-4 text-indigo-600" />
-              <span>AI / ML Analytics</span>
+              <span>YOLO AI Benchmark</span>
             </Link>
 
             <Link
-              href="/transport/tn-bus-predictor"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/transport/tn-bus-predictor"
+              href="/sih-readiness"
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-black transition ${
+                pathname === "/sih-readiness"
                   ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
-                  : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
+                  : "bg-emerald-100/70 text-emerald-950 border border-emerald-300 hover:bg-emerald-100"
               }`}
             >
-              <TrendingUp className="w-4 h-4 text-amber-600" />
-              <span>Transit Congestion ML</span>
+              <ShieldCheck className="w-4 h-4 text-emerald-700" />
+              <span>SIH Readiness & Audit</span>
             </Link>
 
             {/* Additional CivicShield Modules Dropdown */}
