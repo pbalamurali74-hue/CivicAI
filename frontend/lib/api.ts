@@ -170,3 +170,53 @@ export async function verifyTicketProof(ticketNumber: string, routeCode: string,
     })
   });
 }
+
+// 9. COMPLETE MACHINE LEARNING ANALYTICS & PREDICTION ENGINE
+export async function getMLBusDelayReport() {
+  return fetchJson(`/ml/bus-delay/train-report`);
+}
+
+export async function predictMLBusDelay(payload: {
+  route_code: string;
+  hour_of_day: number;
+  day_of_week: number;
+  weather_condition: string;
+  traffic_density_index: number;
+  passenger_occupancy_percent: number;
+  distance_km?: number;
+  is_peak_hour?: number;
+  model_name?: string;
+}) {
+  return fetchJson(`/ml/bus-delay/predict`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function retrainMLBusDelay() {
+  return fetchJson(`/ml/bus-delay/retrain`, {
+    method: "POST",
+  });
+}
+
+export async function getMLRatingAbuseReport() {
+  return fetchJson(`/ml/rating-abuse/train-report`);
+}
+
+export async function predictMLRatingAbuse(payload: {
+  rating_value: number;
+  professionalism: number;
+  behavior: number;
+  transparency: number;
+  service_quality: number;
+  ip_freq?: number;
+  comment?: string;
+}) {
+  return fetchJson(`/ml/rating-abuse/predict`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+

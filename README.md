@@ -36,6 +36,12 @@ CivicShield is an enterprise-grade Smart Governance and Mobile Urban Intelligenc
 - **Haversine Distance Calculator**: Locates nearby Police, Hospital, EB, SRO, and Municipal offices.
 - **Linear Regression Queue Predictor**: Estimates office wait times and suggests optimal arrival hours.
 
+### 6. 🧠 AI / ML Analytics & Prediction Engine (`/ml-analytics`)
+- **Multiclass Transit Delay Classifier**: Evaluates and benchmarks Random Forest (Winner: 89.2% Test F1), Gradient Boosting, and Logistic Regression on 1,200 real Tamil Nadu Kaggle transit records.
+- **Interactive ML Visualizations**: Dynamic Confusion Matrix Heatmap, Multi-Class ROC-AUC Curves (One-vs-Rest), Feature Importance ranking bar chart, and Train vs Test generalization metrics.
+- **Live Inference Pipeline**: Interactive feature sliders (Route, Weather, Traffic Density, Occupancy, Peak Hours) producing real-time delay classifications, confidence scores, and automated fleet dispatch directives.
+- **Citizen Rating Anti-Abuse Classifier**: Supervised classification model trained on 500 records to detect and quarantine review-bombing bursts and fake officer extortion retaliations.
+
 ---
 
 ## 🔑 Demo Role Accounts

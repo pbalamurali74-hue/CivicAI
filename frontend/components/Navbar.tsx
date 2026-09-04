@@ -15,7 +15,8 @@ import {
   Home, 
   Sparkles,
   Globe,
-  Ticket
+  Ticket,
+  Brain
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useAccessibility } from "@/context/AccessibilityContext";
@@ -224,6 +225,17 @@ export default function Navbar() {
             >
               <Ticket className="w-4 h-4 text-amber-600" />
               <span>Ticket Proof</span>
+            </Link>
+            <Link
+              href="/ml-analytics"
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
+                pathname === "/ml-analytics"
+                  ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
+                  : "bg-indigo-50/80 text-indigo-950 border border-indigo-200 hover:bg-indigo-100"
+              }`}
+            >
+              <Brain className="w-4 h-4 text-indigo-600" />
+              <span>AI / ML Analytics</span>
             </Link>
             <Link
               href="/city-pulse"

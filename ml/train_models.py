@@ -71,4 +71,14 @@ joblib.dump({
 }, "backend/app/ml/saved_models/od_clustering.joblib")
 print("  ✓ Origin-Destination Clustering model trained and saved.")
 
+# 4. COMPREHENSIVE BUS CONGESTION & DELAY CLASSIFICATION PIPELINE
+import sys
+sys.path.insert(0, "backend")
+from app.ml.ml_analytics_engine import ml_analytics_engine
+rep = ml_analytics_engine.train_all_models()
+print(f"  ✓ Bus Congestion & Delay Risk Models trained and benchmarked. Best: {rep['best_model']}")
+ml_analytics_engine.train_rating_abuse_model()
+print("  ✓ Citizen Rating Abuse Anomaly Classifier trained and saved.")
+
 print("🚀 All ML models trained and saved to backend/app/ml/saved_models/")
+
