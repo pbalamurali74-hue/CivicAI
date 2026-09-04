@@ -67,140 +67,151 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* THREE 3D MOBILE DEVICE FRAMES SHOWCASE */}
+      {/* THREE 3D MOBILE DEVICE FRAMES SHOWCASE — PS 26124 PILLARS */}
       <section className="max-w-7xl mx-auto px-4 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           
-          {/* FRAME 1: VERIFY OFFICIAL */}
-          <div className="phone-frame-light-3d p-6 flex flex-col justify-between min-h-[580px] border-zinc-900 bg-white">
+          {/* FRAME 1: MOBILE SENSING FLEET (BUS-104A) */}
+          <div className="phone-frame-light-3d p-6 flex flex-col justify-between min-h-[580px] border-zinc-900 bg-white shadow-md">
             <div>
               {/* Phone Status Bar */}
               <div className="flex justify-between items-center text-[10px] text-zinc-500 mb-4 px-2 font-mono">
-                <span>13:01</span>
-                <span className="font-bold text-zinc-800">CIVICSHIELD</span>
-                <span>100% 🔋</span>
+                <span>18:45</span>
+                <span className="font-bold text-amber-700">FLEET SENSING</span>
+                <span>45 FPS ⚡</span>
               </div>
 
               <div className="text-center mb-6">
-                <span className="text-xs font-black uppercase text-amber-700 tracking-wider">Verify Official</span>
-                <h3 className="text-xl font-black text-[#212121] mt-1">Are you dealing with a Government Official?</h3>
+                <span className="text-xs font-black uppercase text-amber-700 tracking-wider">Pillar 1: Mobile Fleet</span>
+                <h3 className="text-xl font-black text-[#212121] mt-1">BUS-104A Mobile Sensing Unit</h3>
+                <p className="text-xs text-zinc-500 font-semibold mt-1">Route 70H: SRM ➔ Guindy ➔ T. Nagar</p>
               </div>
 
-              {/* 3D Officer Avatar Illustration Card */}
-              <div className="bg-amber-50/80 border border-amber-200 rounded-3xl p-5 text-center mb-6 relative overflow-hidden shadow-sm">
-                <div className="w-24 h-24 mx-auto rounded-full bg-[#FFC107] p-1 shadow-md mb-3 border border-amber-300">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
-                    alt="Officer Avatar"
-                    className="w-full h-full rounded-full object-cover border-2 border-white"
-                  />
+              {/* Bus Fleet Visual Card */}
+              <div className="bg-amber-50/80 border border-amber-200 rounded-3xl p-5 text-center mb-6 relative overflow-hidden shadow-sm space-y-3">
+                <div className="w-20 h-20 mx-auto rounded-3xl bg-[#FFC107] text-[#18181B] flex items-center justify-center text-4xl shadow-md border border-amber-300">
+                  🚌
                 </div>
-                <span className="inline-block px-3 py-1 bg-amber-500/20 text-amber-900 text-xs font-black rounded-full border border-amber-400">
-                  Officer ID Badge Verification
-                </span>
+                <div>
+                  <div className="font-mono font-black text-sm text-zinc-900">TN-01-N-9842</div>
+                  <div className="text-xs font-bold text-emerald-700">● 4 AI Cameras Active • Edge Online</div>
+                </div>
+                <div className="p-2 bg-white rounded-xl border border-amber-200 text-[11px] font-mono text-zinc-600">
+                  NVIDIA Jetson AGX Orin 64GB
+                </div>
               </div>
             </div>
 
-            {/* Pulsing Scan QR Code Button */}
+            {/* Action Button */}
             <div className="text-center space-y-3">
               <Link
-                href="/verify"
-                className="w-full py-4 rounded-3xl bg-gradient-to-r from-[#FFC107] to-[#F59E0B] text-[#18181B] font-black text-sm flex flex-col items-center justify-center shadow-lg shadow-amber-500/30 hover:scale-105 transition pulse-ring-yellow border border-amber-300"
+                href="/sih-sensing"
+                className="w-full py-4 rounded-3xl bg-gradient-to-r from-[#FFC107] to-[#F59E0B] text-[#18181B] font-black text-sm flex flex-col items-center justify-center shadow-lg shadow-amber-500/30 hover:scale-102 transition border border-amber-300"
               >
-                <QrCode className="w-8 h-8 mb-1 animate-bounce text-[#18181B]" />
-                <span>Scan QR Code</span>
-                <span className="text-[10px] font-bold text-zinc-800">on their ID Card / Badge</span>
-              </Link>
-
-              <Link href="/verify" className="block text-xs text-amber-700 font-black hover:underline">
-                Can't scan? Enter ID Manually →
+                <span>Inspect BUS-104A Cameras</span>
+                <span className="text-[10px] font-bold text-zinc-800">4-stream computer vision →</span>
               </Link>
             </div>
           </div>
 
-          {/* FRAME 2: VERIFICATION RESULT */}
-          <div className="phone-frame-light-3d p-6 flex flex-col justify-between min-h-[580px] border-amber-500 bg-white">
+          {/* FRAME 2: AI DETECTION & CIVIC RISK SCORE (92/100) */}
+          <div className="phone-frame-light-3d p-6 flex flex-col justify-between min-h-[580px] border-amber-500 bg-white shadow-md">
             <div>
               <div className="flex justify-between items-center text-[10px] text-zinc-500 mb-4 px-2 font-mono">
-                <span>13:01</span>
-                <span className="font-bold text-amber-700">🟡 VERIFIED</span>
-                <span>100% 🔋</span>
+                <span>18:45</span>
+                <span className="font-bold text-rose-600">🔴 CRITICAL HAZARD</span>
+                <span>RISK: 92/100</span>
               </div>
 
-              {/* Big Yellow 3D Shield Badge */}
-              <div className="bg-amber-50 border-2 border-[#FFC107] rounded-3xl p-6 text-center mb-6 shadow-md">
-                <div className="w-20 h-20 mx-auto rounded-full bg-[#FFC107] text-[#18181B] flex items-center justify-center text-4xl shadow-md border-2 border-white mb-3 font-black">
-                  ✓
-                </div>
-                <h3 className="text-2xl font-black text-[#212121]">Verified Official</h3>
-                <p className="text-xs text-amber-800 font-bold mt-1">Official Government Record Active</p>
+              <div className="text-center mb-4">
+                <span className="text-xs font-black uppercase text-amber-700 tracking-wider">Pillar 2: AI Prioritization</span>
+                <h3 className="text-xl font-black text-[#212121] mt-1">Severe Asphalt Pothole</h3>
+                <p className="text-xs text-zinc-500 font-semibold">Guindy Kathipara Underpass</p>
               </div>
 
-              {/* Officer Profile Card */}
-              <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex items-center gap-4 mb-4 shadow-sm">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
-                  alt="Ramesh Kumar"
-                  className="w-14 h-14 rounded-2xl object-cover border-2 border-[#FFC107] shadow-sm"
-                />
-                <div>
-                  <h4 className="font-black text-[#212121] text-base">Ramesh Kumar</h4>
-                  <p className="text-xs text-amber-700 font-bold">Traffic Police • Chennai City</p>
-                  <div className="flex items-center gap-1 mt-1 text-xs text-amber-600 font-black">
-                    <span>Trust Score: 4.6</span>
-                    <span>⭐⭐⭐⭐⭐</span>
-                  </div>
-                  <span className="text-[10px] text-zinc-500">Based on 128 reviews</span>
+              {/* Big Civic Risk Score Badge */}
+              <div className="bg-amber-50 border-2 border-[#FFC107] rounded-3xl p-5 text-center mb-4 shadow-sm">
+                <div className="font-mono text-4xl font-black text-[#EF4444] tracking-tight">
+                  92 <span className="text-sm text-zinc-500 font-bold">/ 100</span>
                 </div>
+                <div className="text-xs font-black text-rose-600 uppercase tracking-wider mt-0.5">
+                  CRITICAL CIVIC RISK SCORE
+                </div>
+                <div className="text-[11px] text-zinc-600 font-medium mt-2">
+                  Confidence: <strong>94.8%</strong> • Arterial Road
+                </div>
+              </div>
+
+              {/* Multi-Bus Verification Callout */}
+              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-3 text-xs space-y-1">
+                <div className="flex items-center gap-1.5 font-black text-emerald-950">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Multi-Bus Verified: 3 Buses</span>
+                </div>
+                <p className="text-[11px] text-emerald-900 font-medium">
+                  Corroborated by BUS-104A, BUS-102, & BUS-103 within 5 meters.
+                </p>
               </div>
             </div>
 
-            {/* Trust Banner */}
-            <div className="bg-amber-100/80 border border-amber-300 p-3.5 rounded-2xl flex items-center justify-between">
-              <span className="text-xs font-black text-amber-900">✓ Verified official. This officer is active.</span>
+            {/* Action Link */}
+            <div className="pt-3">
+              <Link
+                href="/sih-sensing"
+                className="w-full py-3.5 rounded-2xl bg-zinc-900 text-white font-black text-xs flex items-center justify-center gap-2 hover:bg-black transition shadow-md"
+              >
+                <span>View Multi-Bus Evidence</span>
+                <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
+              </Link>
             </div>
           </div>
 
-          {/* FRAME 3: WHERE DO YOU WANT TO GO? (TRAVEL) */}
-          <div className="phone-frame-light-3d p-6 flex flex-col justify-between min-h-[580px] border-zinc-900 bg-white">
+          {/* FRAME 3: MUNICIPAL WORK ORDER & CENTRAL GIS */}
+          <div className="phone-frame-light-3d p-6 flex flex-col justify-between min-h-[580px] border-zinc-900 bg-white shadow-md">
             <div>
               <div className="flex justify-between items-center text-[10px] text-zinc-500 mb-4 px-2 font-mono">
-                <span>13:01</span>
-                <span className="font-bold text-amber-700">SMART TRAVEL</span>
-                <span>100% 🔋</span>
+                <span>18:46</span>
+                <span className="font-bold text-emerald-600">✓ DISPATCHED</span>
+                <span>SLA: 4 HRS</span>
               </div>
 
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-black text-[#212121]">Where do you want to go?</h3>
-                <p className="text-xs font-bold text-zinc-500 mt-1">Select quick destination below</p>
+                <span className="text-xs font-black uppercase text-amber-700 tracking-wider">Pillar 3: Actionable Orders</span>
+                <h3 className="text-xl font-black text-[#212121] mt-1">GCC Municipal Work Order</h3>
+                <p className="text-xs font-semibold text-zinc-500 mt-1">Ticket #GCC-ROAD-4092</p>
               </div>
 
-              {/* 4 QUICK DESTINATION 3D BUTTONS */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <Link href="/mobility?dest=Home" className="bg-white p-4 rounded-2xl text-center border border-zinc-200 shadow-sm hover:border-[#FFC107] hover:shadow-md transition">
-                  <div className="text-3xl mb-1">🏠</div>
-                  <span className="font-black text-[#212121] text-xs block">Home</span>
-                </Link>
-                <Link href="/mobility?dest=Work" className="bg-white p-4 rounded-2xl text-center border border-zinc-200 shadow-sm hover:border-[#FFC107] hover:shadow-md transition">
-                  <div className="text-3xl mb-1">💼</div>
-                  <span className="font-black text-[#212121] text-xs block">Work</span>
-                </Link>
-                <Link href="/mobility?dest=Hospital" className="bg-white p-4 rounded-2xl text-center border border-zinc-200 shadow-sm hover:border-[#FFC107] hover:shadow-md transition">
-                  <div className="text-3xl mb-1">🏥</div>
-                  <span className="font-black text-[#212121] text-xs block">Hospital</span>
-                </Link>
-                <Link href="/mobility?dest=Market" className="bg-white p-4 rounded-2xl text-center border border-zinc-200 shadow-sm hover:border-[#FFC107] hover:shadow-md transition">
-                  <div className="text-3xl mb-1">🛒</div>
-                  <span className="font-black text-[#212121] text-xs block">Market</span>
-                </Link>
+              {/* Work Order Ticket Card */}
+              <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 space-y-2.5 mb-4 text-xs">
+                <div className="flex justify-between">
+                  <span className="text-zinc-500">Agency:</span>
+                  <span className="font-bold text-zinc-900">Greater Chennai Corp (GCC)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-500">Assigned Crew:</span>
+                  <span className="font-bold text-zinc-900">Patch Crew #4</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-500">Status:</span>
+                  <span className="font-bold text-indigo-700 font-mono">IN_PROGRESS</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-500">GIS Coordinates:</span>
+                  <span className="font-mono text-zinc-800">13.0067°N, 80.2020°E</span>
+                </div>
+              </div>
+
+              {/* Central GIS Map Tag */}
+              <div className="p-3 bg-amber-50 rounded-2xl border border-amber-300 text-xs text-amber-900 font-bold text-center">
+                🗺️ Auto-pinned on Chennai Central GIS Command Map
               </div>
             </div>
 
             <Link
-              href="/mobility"
-              className="clay-button-3d w-full py-3.5 rounded-2xl text-center font-black text-sm flex items-center justify-center gap-2 shadow-md"
+              href="/sih-sensing"
+              className="clay-button-3d w-full py-3.5 rounded-2xl text-center font-black text-xs flex items-center justify-center gap-2 shadow-md"
             >
-              <span>Plan My Journey</span>
+              <span>Launch GIS Command Map</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

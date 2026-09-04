@@ -134,6 +134,18 @@ export async function getSensingTrafficIntelligence() {
   return fetchJson(`/sensing/traffic-intelligence`);
 }
 
+export async function getSensingRoadHealth() {
+  return fetchJson(`/sensing/road-health`);
+}
+
+export async function updateWorkOrderStatus(eventId: string, newStatus: string, department?: string) {
+  return fetchJson(`/sensing/work-orders/update-status`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ event_id: eventId, new_status: newStatus, department }),
+  });
+}
+
 export async function getOfficeProcedureAi(query: string, officeCategory: string = "General") {
   return fetchJson(`/offices/procedure-query`, {
     method: "POST",

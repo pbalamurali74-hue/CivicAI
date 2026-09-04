@@ -16,7 +16,10 @@ import {
   Sparkles,
   Globe,
   Ticket,
-  Brain
+  Brain,
+  ChevronDown,
+  Layers,
+  Activity
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useAccessibility } from "@/context/AccessibilityContext";
@@ -28,6 +31,7 @@ export default function Navbar() {
   const { simpleMode } = useAccessibility();
   const [role, setRole] = useState<string>("CITIZEN");
   const [userEmail, setUserEmail] = useState<string>("citizen@demo.com");
+  const [moreOpen, setMoreOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const storedRole = localStorage.getItem("civicai_role") || "CITIZEN";
@@ -158,52 +162,32 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links matching presentation tabs */}
+          {/* Desktop Navigation Links matching SIH PS 26124 priority */}
           <nav className="hidden lg:flex items-center gap-2">
             <Link
               href="/sih-sensing"
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
                 pathname === "/sih-sensing"
                   ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
-                  : "bg-amber-100/60 text-amber-900 border border-amber-300 hover:bg-amber-100"
+                  : "bg-amber-100/70 text-amber-950 border border-amber-300 hover:bg-amber-100"
               }`}
             >
               <Bus className="w-4 h-4 text-amber-700" />
               <span>Fleet Sensing (PS 26124)</span>
             </Link>
+
             <Link
-              href="/verify"
+              href="/ml-analytics"
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/verify"
-                  ? "bg-[#FFC107] text-[#18181B] shadow-sm"
+                pathname === "/ml-analytics"
+                  ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
                   : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
               }`}
             >
-              <ShieldCheck className="w-4 h-4" />
-              <span>Verify Official</span>
+              <Brain className="w-4 h-4 text-indigo-600" />
+              <span>AI / ML Analytics</span>
             </Link>
-            <Link
-              href="/ratings"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/ratings"
-                  ? "bg-[#FFC107] text-[#18181B] shadow-sm"
-                  : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
-              }`}
-            >
-              <Sparkles className="w-4 h-4" />
-              <span>Trust</span>
-            </Link>
-            <Link
-              href="/mobility"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/mobility"
-                  ? "bg-[#FFC107] text-[#18181B] shadow-sm"
-                  : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
-              }`}
-            >
-              <Navigation className="w-4 h-4" />
-              <span>Travel</span>
-            </Link>
+
             <Link
               href="/transport/tn-bus-predictor"
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
@@ -213,41 +197,97 @@ export default function Navbar() {
               }`}
             >
               <TrendingUp className="w-4 h-4 text-amber-600" />
-              <span>TN Bus ML Predictor</span>
+              <span>Transit Congestion ML</span>
             </Link>
-            <Link
-              href="/transport/ticket-proof"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/transport/ticket-proof"
-                  ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
-                  : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
-              }`}
-            >
-              <Ticket className="w-4 h-4 text-amber-600" />
-              <span>Ticket Proof</span>
-            </Link>
-            <Link
-              href="/ml-analytics"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/ml-analytics"
-                  ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
-                  : "bg-indigo-50/80 text-indigo-950 border border-indigo-200 hover:bg-indigo-100"
-              }`}
-            >
-              <Brain className="w-4 h-4 text-indigo-600" />
-              <span>AI / ML Analytics</span>
-            </Link>
-            <Link
-              href="/city-pulse"
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
-                pathname === "/city-pulse"
-                  ? "bg-[#FFC107] text-[#18181B] shadow-sm"
-                  : "text-zinc-700 hover:bg-zinc-100 hover:text-black"
-              }`}
-            >
-              <Building2 className="w-4 h-4" />
-              <span>City Pulse</span>
-            </Link>
+
+            {/* Additional CivicShield Modules Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setMoreOpen(!moreOpen)}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 transition border border-transparent hover:border-zinc-200"
+              >
+                <Layers className="w-3.5 h-3.5 text-zinc-500" />
+                <span>Additional Modules</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {moreOpen && (
+                <div 
+                  className="absolute right-0 mt-2 w-64 bg-white rounded-2xl border border-zinc-200 shadow-xl p-2 z-50 space-y-1"
+                  onMouseLeave={() => setMoreOpen(false)}
+                >
+                  <div className="px-3 py-1.5 text-[10px] font-mono font-bold text-zinc-400 uppercase border-b border-zinc-100">
+                    Secondary Civic Capabilities
+                  </div>
+                  <Link
+                    href="/verify"
+                    onClick={() => setMoreOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-700 hover:bg-zinc-100 hover:text-black transition"
+                  >
+                    <ShieldCheck className="w-4 h-4 text-blue-600" />
+                    <div>
+                      <div className="leading-tight">Verify Official</div>
+                      <div className="text-[10px] text-zinc-400 font-normal">QR cryptographic badge check</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/ratings"
+                    onClick={() => setMoreOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-700 hover:bg-zinc-100 hover:text-black transition"
+                  >
+                    <Sparkles className="w-4 h-4 text-amber-500" />
+                    <div>
+                      <div className="leading-tight">Citizen Trust Ratings</div>
+                      <div className="text-[10px] text-zinc-400 font-normal">Anti-abuse review validation</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/offices"
+                    onClick={() => setMoreOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-700 hover:bg-zinc-100 hover:text-black transition"
+                  >
+                    <Building2 className="w-4 h-4 text-emerald-600" />
+                    <div>
+                      <div className="leading-tight">Govt Office Locator</div>
+                      <div className="text-[10px] text-zinc-400 font-normal">Wait time & queue prediction</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/mobility"
+                    onClick={() => setMoreOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-700 hover:bg-zinc-100 hover:text-black transition"
+                  >
+                    <Navigation className="w-4 h-4 text-indigo-600" />
+                    <div>
+                      <div className="leading-tight">Multimodal Travel</div>
+                      <div className="text-[10px] text-zinc-400 font-normal">Transit route solver</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/city-pulse"
+                    onClick={() => setMoreOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-700 hover:bg-zinc-100 hover:text-black transition"
+                  >
+                    <Activity className="w-4 h-4 text-rose-500" />
+                    <div>
+                      <div className="leading-tight">City Pulse</div>
+                      <div className="text-[10px] text-zinc-400 font-normal">Chennai civic telemetry</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/transport/ticket-proof"
+                    onClick={() => setMoreOpen(false)}
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-700 hover:bg-zinc-100 hover:text-black transition"
+                  >
+                    <Ticket className="w-4 h-4 text-amber-600" />
+                    <div>
+                      <div className="leading-tight">Ticket Proof</div>
+                      <div className="text-[10px] text-zinc-400 font-normal">Transit ticket verification</div>
+                    </div>
+                  </Link>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* User Profile Info */}

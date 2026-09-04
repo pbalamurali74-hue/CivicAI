@@ -30,7 +30,11 @@ const icons: Record<string, L.Icon> = {
   Workplace: createCustomIcon("🏢", "#1E293B"),
   Bus: createCustomIcon("🚌", "#0284C7"),
   Stop: createCustomIcon("🏣", "#475569"),
-  User: createCustomIcon("📍", "#10B981")
+  User: createCustomIcon("📍", "#10B981"),
+  HazardCritical: createCustomIcon("🔴", "#EF4444"),
+  HazardHigh: createCustomIcon("🟠", "#F59E0B"),
+  HazardMedium: createCustomIcon("🟡", "#EAB308"),
+  HazardResolved: createCustomIcon("🟢", "#10B981")
 };
 
 interface MapProps {
@@ -40,9 +44,11 @@ interface MapProps {
   buses?: any[];
   stops?: any[];
   markers?: any[];
+  hazards?: any[];
   userLocation?: [number, number];
   height?: string;
   onOfficeSelect?: (office: any) => void;
+  onHazardSelect?: (hazard: any) => void;
 }
 
 export default function InteractiveMap({
@@ -52,9 +58,11 @@ export default function InteractiveMap({
   buses = [],
   stops = [],
   markers = [],
+  hazards = [],
   userLocation = [13.0315, 80.1812],
   height = "450px",
   onOfficeSelect,
+  onHazardSelect,
 }: MapProps) {
   const [mounted, setMounted] = useState(false);
   const [mapProvider, setMapProvider] = useState<"google" | "carto">("google");
@@ -207,18 +215,66 @@ export default function InteractiveMap({
           );
         })}
 
-        {/* Generic Custom Markers */}
-        {markers.map((m) => {
-          const lat = m.position ? Number(m.position[0]) : Number(m.lat);
-          const lng = m.position ? Number(m.position[1]) : Number(m.lng);
+        {/* Urban Hazard Incident Pins (PS 26124 Fleet AI Detections) */}
+        {hazards.map((h) => {
+          const lat = Number(h.lat);
+          const lng = Number(h.lng);
           if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
 
+          const isResolved = h.work_order_status === "RESOLVED";
+          const hazardIcon = isResolved 
+            ? icons.HazardResolved 
+            : (h.civic_risk_score >= 80 || h.severity === "CRITICAL")
+            ? icons.HazardCritical 
+            : (h.civic_risk_score >= 65 || h.severity === "HIGH")
+            ? icons.HazardHigh 
+            : icons.HazardMedium;
+
           return (
-            <Marker key={m.id || m.title} position={[lat, lng]} icon={icons.Landmark}>
+            <Marker key={h.event_id || h.id} position={[lat, lng]} icon={hazardIcon}>
               <Popup>
-                <div className="text-slate-900 p-1 text-xs">
-                  <div className="font-bold">{m.title}</div>
-                  {m.popupText && <div className="text-slate-600 mt-0.5">{m.popupText}</div>}
+                <div className="p-1 max-w-xs text-zinc-900 text-xs space-y-1.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-mono text-[10px] font-black px-2 py-0.5 rounded bg-zinc-900 text-white">
+                      {h.event_id}
+                    </span>
+                    <span className="text-[10px] font-black px-2 py-0.5 rounded" style={{
+                      backgroundColor: isResolved ? "#10B981" : h.civic_risk_score >= 80 ? "#EF4444" : "#F59E0B",
+                      color: "#ffffff"
+                    }}>
+                      {isResolved ? "RESOLVED" : `RISK: ${h.civic_risk_score || 85}/100`}
+                    </span>
+                  </div>
+
+                  <div className="font-black text-sm text-zinc-950 leading-tight">
+                    {h.title}
+                  </div>
+
+                  <p className="text-[11px] text-zinc-600 font-medium">
+                    {h.description}
+                  </p>
+
+                  <div className="text-[10px] font-mono text-zinc-500 pt-1 border-t border-zinc-200 flex flex-col gap-0.5">
+                    <div>📍 {h.location_name}</div>
+                    <div>🚌 Detected by: <strong>{h.bus_id || "BUS-104A"}</strong> ({h.confidence}% conf.)</div>
+                    {h.multi_bus_verification && (
+                      <div className="text-emerald-700 font-bold">
+                        ✓ Multi-Bus Verified: {h.multi_bus_verification.bus_count} Buses ({h.multi_bus_verification.verification_confidence}%)
+                      </div>
+                    )}
+                    {h.work_order_id && (
+                      <div>📋 Work Order: <strong>{h.work_order_id}</strong> ({h.work_order_status})</div>
+                    )}
+                  </div>
+
+                  {onHazardSelect && (
+                    <button
+                      onClick={() => onHazardSelect(h)}
+                      className="mt-2 w-full py-1.5 bg-[#FFC107] text-[#18181B] font-black rounded-xl text-xs hover:bg-amber-400 transition shadow-sm"
+                    >
+                      Inspect AI Evidence & Stream →
+                    </button>
+                  )}
                 </div>
               </Popup>
             </Marker>
