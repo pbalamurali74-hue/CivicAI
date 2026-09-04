@@ -699,3 +699,216 @@ def get_edge_ai_metrics():
             ]
         }
     }
+
+# =========================================================================
+# SAFETY CAMERA & CONNECTED VEHICLE BROADCAST MODULE
+# =========================================================================
+
+class SafetyCameraDetectRequest(BaseModel):
+    source_type: str = "FRONT_CAMERA"  # FRONT_CAMERA, REAR_CAMERA, SIDE_CAMERA, DEVICE_CAMERA, UPLOADED_MEDIA, DEMO_FEED
+    hazard_type: str = "POTHOLE"       # POTHOLE or PEDESTRIAN_DANGER
+    lat: Optional[float] = 13.0067
+    lng: Optional[float] = 80.2020
+
+class BroadcastAlertRequest(BaseModel):
+    incident_id: str
+    hazard_type: str
+    distance_meters: int = 180
+
+SAFETY_CAMERA_INCIDENTS = [
+    {
+        "incident_id": "INC-2026-00421",
+        "hazard_type": "POTHOLE",
+        "title": "Severe Deep Asphalt Pothole",
+        "confidence": 94.8,
+        "severity": "HIGH",
+        "civic_risk_score": 87,
+        "timestamp": datetime.now().strftime("%H:%M:%S"),
+        "latitude": 13.0067,
+        "longitude": 80.2020,
+        "location_name": "Guindy Kathipara Underpass, Chennai",
+        "vehicle_id": "BUS-104A",
+        "route_id": "70H (SRM ➔ Guindy ➔ T. Nagar)",
+        "camera_id": "CAM-FRONT (Front Road AI Camera)",
+        "bounding_box": {"x": 120, "y": 220, "width": 190, "height": 115},
+        "danger_zone_active": False,
+        "verification_status": "MULTI_VEHICLE_VERIFIED",
+        "multi_vehicle_verification": {
+            "status": "MULTI_VEHICLE_VERIFIED",
+            "bus_count": 3,
+            "verification_confidence": 98.4,
+            "reporting_vehicles": [
+                {"vehicle_id": "BUS-104A", "confidence": 94.8, "delta_m": 0.0, "time_delta": "0s"},
+                {"vehicle_id": "BUS-102", "confidence": 91.3, "delta_m": 4.2, "time_delta": "+3m"},
+                {"vehicle_id": "BUS-103", "confidence": 95.2, "delta_m": 2.8, "time_delta": "+6m"}
+            ]
+        },
+        "connected_vehicle_broadcast": {
+            "alert_status": "ACTIVE_BROADCAST",
+            "alert_type": "ROAD_HAZARD_WARNING",
+            "broadcast_radius_m": 350,
+            "vehicles_alerted": 7,
+            "caution_message": "⚠️ ROAD HAZARD AHEAD: Deep Pothole detected 180m ahead. Slow down and proceed carefully."
+        },
+        "work_order": {
+            "created": True,
+            "work_order_id": "GCC-ROAD-4092",
+            "status": "ASSIGNED",
+            "department": "Greater Chennai Corporation (GCC) — Ward 168 Roads Div."
+        },
+        "privacy": {
+            "local_edge_inference": True,
+            "metadata_only_transmitted": True,
+            "privacy_masked": True
+        }
+    }
+]
+
+@router.post("/safety-camera/detect")
+def trigger_safety_camera_detection(payload: SafetyCameraDetectRequest):
+    """
+    Simulates real-time AI computer vision inference on safety camera feeds.
+    Returns bounding box, risk score (0-100), multi-vehicle verification, and connected vehicle alerts.
+    """
+    now_time = datetime.now().strftime("%H:%M:%S")
+    
+    if payload.hazard_type.upper() == "PEDESTRIAN_DANGER":
+        new_inc = {
+            "incident_id": f"INC-2026-00{random.randint(425, 499)}",
+            "hazard_type": "PEDESTRIAN_DANGER",
+            "title": "Vulnerable Road User / Pedestrian in Road Danger Zone",
+            "confidence": 96.4,
+            "severity": "HIGH",
+            "civic_risk_score": 91,
+            "timestamp": now_time,
+            "latitude": payload.lat or 13.0694,
+            "longitude": payload.lng or 80.1948,
+            "location_name": "Koyambedu School Approach Road, Chennai",
+            "vehicle_id": "BUS-104A",
+            "route_id": "70H",
+            "camera_id": "CAM-FRONT (Front Road AI Camera)",
+            "bounding_box": {"x": 210, "y": 170, "width": 140, "height": 165},
+            "danger_zone_active": True,
+            "danger_zone_note": "Pedestrian crossed active lane marker outside designated zebra crossing zone.",
+            "verification_status": "HIGH_CONFIDENCE_EDGE_ALERT",
+            "multi_vehicle_verification": {
+                "status": "IMMEDIATE_EDGE_TRIGGER",
+                "bus_count": 2,
+                "verification_confidence": 96.4,
+                "reporting_vehicles": [
+                    {"vehicle_id": "BUS-104A", "confidence": 96.4, "delta_m": 0.0, "time_delta": "0s"},
+                    {"vehicle_id": "BUS-102", "confidence": 94.1, "delta_m": 12.0, "time_delta": "+45s"}
+                ]
+            },
+            "connected_vehicle_broadcast": {
+                "alert_status": "ACTIVE_BROADCAST",
+                "alert_type": "VULNERABLE_ROAD_USER_WARNING",
+                "broadcast_radius_m": 250,
+                "vehicles_alerted": 9,
+                "caution_message": "⚠️ PEDESTRIAN DANGER AHEAD: High-risk pedestrian in roadway 120m ahead. Reduce speed and remain alert."
+            },
+            "work_order": {
+                "created": True,
+                "work_order_id": f"TN-TRAFFIC-VRU-{random.randint(100, 999)}",
+                "status": "DRIVER_ALERTED",
+                "department": "Greater Chennai Traffic Police (Traffic Safety Cell)"
+            },
+            "privacy": {
+                "local_edge_inference": True,
+                "metadata_only_transmitted": True,
+                "privacy_masked": True,
+                "face_anonymized": True
+            }
+        }
+    else:
+        # Default: POTHOLE
+        new_inc = {
+            "incident_id": f"INC-2026-00{random.randint(425, 499)}",
+            "hazard_type": "POTHOLE",
+            "title": "Severe Deep Asphalt Pothole",
+            "confidence": 94.8,
+            "severity": "HIGH",
+            "civic_risk_score": 87,
+            "timestamp": now_time,
+            "latitude": payload.lat or 13.0067,
+            "longitude": payload.lng or 80.2020,
+            "location_name": "Guindy Kathipara Underpass, Chennai",
+            "vehicle_id": "BUS-104A",
+            "route_id": "70H (SRM ➔ Guindy ➔ T. Nagar)",
+            "camera_id": "CAM-FRONT (Front Road AI Camera)",
+            "bounding_box": {"x": 120, "y": 220, "width": 190, "height": 115},
+            "danger_zone_active": False,
+            "verification_status": "MULTI_VEHICLE_VERIFIED",
+            "multi_vehicle_verification": {
+                "status": "MULTI_VEHICLE_VERIFIED",
+                "bus_count": 3,
+                "verification_confidence": 98.4,
+                "reporting_vehicles": [
+                    {"vehicle_id": "BUS-104A", "confidence": 94.8, "delta_m": 0.0, "time_delta": "0s"},
+                    {"vehicle_id": "BUS-102", "confidence": 91.3, "delta_m": 4.2, "time_delta": "+3m"},
+                    {"vehicle_id": "BUS-103", "confidence": 95.2, "delta_m": 2.8, "time_delta": "+6m"}
+                ]
+            },
+            "connected_vehicle_broadcast": {
+                "alert_status": "ACTIVE_BROADCAST",
+                "alert_type": "ROAD_HAZARD_WARNING",
+                "broadcast_radius_m": 350,
+                "vehicles_alerted": 7,
+                "caution_message": "⚠️ ROAD HAZARD AHEAD: Deep Pothole detected 180m ahead. Slow down and proceed carefully."
+            },
+            "work_order": {
+                "created": True,
+                "work_order_id": "GCC-ROAD-4092",
+                "status": "ASSIGNED",
+                "department": "Greater Chennai Corporation (GCC) — Ward 168 Roads Div."
+            },
+            "privacy": {
+                "local_edge_inference": True,
+                "metadata_only_transmitted": True,
+                "privacy_masked": True
+            }
+        }
+    
+    SAFETY_CAMERA_INCIDENTS.insert(0, new_inc)
+    return {
+        "status": "SUCCESS",
+        "demo_mode": True,
+        "inference_engine": "Prototype / Simulated Edge AI (YOLOv8s TensorRT)",
+        "incident": new_inc
+    }
+
+@router.post("/safety-camera/broadcast-alert")
+def broadcast_connected_vehicle_caution(payload: BroadcastAlertRequest):
+    """
+    Simulates V2X caution alert dispatch to nearby vehicles within alert radius.
+    """
+    nearby_fleet = [
+        {"vehicle": "MTC Bus 70H-02", "type": "Bus", "distance_m": 120, "speed_kmh": 36, "ack_status": "RECEIVED"},
+        {"vehicle": "Ambulance TN-01-G-1102", "type": "Emergency", "distance_m": 160, "speed_kmh": 48, "ack_status": "RECEIVED"},
+        {"vehicle": "Chennai Cab TN-09-CB-4491", "type": "Car", "distance_m": 210, "speed_kmh": 42, "ack_status": "RECEIVED"},
+        {"vehicle": "Auto TN-07-R-2210", "type": "Auto", "distance_m": 240, "speed_kmh": 28, "ack_status": "RECEIVED"},
+        {"vehicle": "Delivery Van TN-02-D-9092", "type": "Van", "distance_m": 280, "speed_kmh": 33, "ack_status": "RECEIVED"},
+        {"vehicle": "MTC Bus 101A-05", "type": "Bus", "distance_m": 310, "speed_kmh": 30, "ack_status": "RECEIVED"},
+        {"vehicle": "Private Car TN-10-AZ-5511", "type": "Car", "distance_m": 340, "speed_kmh": 40, "ack_status": "RECEIVED"}
+    ]
+    
+    return {
+        "status": "SUCCESS",
+        "demo_mode": True,
+        "incident_id": payload.incident_id,
+        "hazard_type": payload.hazard_type,
+        "broadcast_timestamp": datetime.now().strftime("%H:%M:%S"),
+        "vehicles_alerted_count": len(nearby_fleet),
+        "alerted_vehicles": nearby_fleet,
+        "caution_directive": f"Slow down to under 25 km/h. Hazard detected {payload.distance_meters}m ahead."
+    }
+
+@router.get("/safety-camera/recent-incidents")
+def get_recent_safety_incidents():
+    return {
+        "status": "SUCCESS",
+        "demo_mode": True,
+        "count": len(SAFETY_CAMERA_INCIDENTS),
+        "incidents": SAFETY_CAMERA_INCIDENTS
+    }
+

@@ -19,7 +19,8 @@ import {
   Brain,
   ChevronDown,
   Layers,
-  Activity
+  Activity,
+  Camera
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useAccessibility } from "@/context/AccessibilityContext";
@@ -174,6 +175,18 @@ export default function Navbar() {
             >
               <Bus className="w-4 h-4 text-amber-700" />
               <span>Fleet Sensing (PS 26124)</span>
+            </Link>
+
+            <Link
+              href="/safety-camera"
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition ${
+                pathname === "/safety-camera"
+                  ? "bg-[#FFC107] text-[#18181B] shadow-sm border border-amber-400"
+                  : "bg-rose-100/70 text-rose-950 border border-rose-300 hover:bg-rose-100"
+              }`}
+            >
+              <Camera className="w-4 h-4 text-rose-700" />
+              <span>Safety Camera</span>
             </Link>
 
             <Link

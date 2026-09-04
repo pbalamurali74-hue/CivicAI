@@ -146,6 +146,26 @@ export async function updateWorkOrderStatus(eventId: string, newStatus: string, 
   });
 }
 
+export async function detectSafetyCameraHazard(sourceType: string, hazardType: string, lat: number = 13.0067, lng: number = 80.2020) {
+  return fetchJson(`/sensing/safety-camera/detect`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ source_type: sourceType, hazard_type: hazardType, lat, lng }),
+  });
+}
+
+export async function broadcastSafetyCameraAlert(incidentId: string, hazardType: string, distanceMeters: number = 180) {
+  return fetchJson(`/sensing/safety-camera/broadcast-alert`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ incident_id: incidentId, hazard_type: hazardType, distance_meters: distanceMeters }),
+  });
+}
+
+export async function getRecentSafetyIncidents() {
+  return fetchJson(`/sensing/safety-camera/recent-incidents`);
+}
+
 export async function getOfficeProcedureAi(query: string, officeCategory: string = "General") {
   return fetchJson(`/offices/procedure-query`, {
     method: "POST",
