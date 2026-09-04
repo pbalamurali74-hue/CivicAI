@@ -525,10 +525,10 @@ export default function SafetyCameraPage() {
                 <div 
                   className="absolute border-2 border-dashed border-amber-400 bg-amber-500/15 rounded-xl pointer-events-none transition-all duration-300"
                   style={{
-                    left: "180px",
-                    top: "140px",
-                    width: "200px",
-                    height: "220px",
+                    left: "22%",
+                    top: "26%",
+                    width: "48%",
+                    height: "58%",
                   }}
                 >
                   <span className="absolute -top-5 left-1 bg-amber-400 text-zinc-950 px-1.5 py-0.5 rounded text-[9px] font-black uppercase">
@@ -545,10 +545,10 @@ export default function SafetyCameraPage() {
                     : "border-amber-400 bg-amber-400/25"
                 }`}
                 style={{
-                  left: `${activeIncident.bounding_box?.x || 130}px`,
-                  top: `${activeIncident.bounding_box?.y || 220}px`,
-                  width: `${activeIncident.bounding_box?.width || 190}px`,
-                  height: `${activeIncident.bounding_box?.height || 115}px`,
+                  left: hazardClass === "POTHOLE" ? "22%" : "34%",
+                  top: hazardClass === "POTHOLE" ? "52%" : "32%",
+                  width: hazardClass === "POTHOLE" ? "36%" : "24%",
+                  height: hazardClass === "POTHOLE" ? "28%" : "44%",
                 }}
               >
                 <div className={`absolute -top-7 left-0 px-2 py-0.5 rounded text-[10px] font-black uppercase whitespace-nowrap shadow-md flex items-center gap-1 ${
