@@ -302,5 +302,28 @@ export async function corroborateHazardCluster(observations?: any[], newObservat
   });
 }
 
+export async function createHazardIncident(payload: {
+  hazard_type: string;
+  confidence: number;
+  lat?: number;
+  lng?: number;
+  gps_accuracy?: number;
+  severity?: string;
+  civic_risk_score?: number;
+  bus_id?: string;
+  camera_id?: string;
+  route_id?: string;
+  title?: string;
+  bounding_box?: any;
+  image_base64?: string;
+}) {
+  return fetchJson(`/hazard/create-incident`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+
+
 
 

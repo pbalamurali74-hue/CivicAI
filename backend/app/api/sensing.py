@@ -1398,11 +1398,13 @@ def broadcast_connected_vehicle_caution(payload: BroadcastAlertRequest):
 
 @router.get("/safety-camera/recent-incidents")
 def get_recent_safety_incidents():
+    from app.database.incidents_store import incidents_store
+    all_inc = incidents_store.get_all()
     return {
         "status": "SUCCESS",
-        "demo_mode": True,
-        "count": len(SAFETY_CAMERA_INCIDENTS),
-        "incidents": SAFETY_CAMERA_INCIDENTS
+        "demo_mode": False,
+        "count": len(all_inc),
+        "incidents": all_inc
     }
 
 @router.get("/hotspots")
@@ -1466,18 +1468,22 @@ def transition_incident_lifecycle(payload: IncidentLifecycleTransition):
                 "message": f"Incident {payload.incident_id} successfully moved to {payload.target_status}."
             }
             
-    # Check SAFETY_CAMERA_INCIDENTS
-    for inc in SAFETY_CAMERA_INCIDENTS:
-        if inc["incident_id"] == payload.incident_id:
-            inc["work_order"]["status"] = payload.target_status
-            inc["last_transition_time"] = now_str
-            return {
-                "status": "SUCCESS",
-                "incident_id": payload.incident_id,
-                "current_status": payload.target_status,
-                "transition_time": now_str,
-                "message": f"Safety incident {payload.incident_id} work order moved to {payload.target_status}."
-            }
+    # Check persistent incidents_store and SAFETY_CAMERA_INCIDENTS
+    from app.database.incidents_store import incidents_store
+    stored_inc = incidents_store.transition_status(
+        payload.incident_id, 
+        payload.target_status, 
+        payload.assigned_crew, 
+        payload.resolution_notes
+    )
+    if stored_inc:
+        return {
+            "status": "SUCCESS",
+            "incident_id": payload.incident_id,
+            "current_status": payload.target_status,
+            "transition_time": now_str,
+            "message": f"Safety incident {payload.incident_id} work order moved to {payload.target_status} (Persisted)."
+        }
             
     raise HTTPException(status_code=404, detail="Incident ID not found in active registry")
 

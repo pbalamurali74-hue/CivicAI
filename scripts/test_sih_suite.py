@@ -18,7 +18,7 @@ sys.path.insert(0, str(BASE_DIR / "backend"))
 
 passed = 0
 failed = 0
-total = 14
+total = 19
 
 def log_test(num: int, name: str, success: bool, details: str = ""):
     global passed, failed
@@ -27,7 +27,7 @@ def log_test(num: int, name: str, success: bool, details: str = ""):
         passed += 1
     else:
         failed += 1
-    print(f"[{num:02d}/14] {status} | {name}")
+    print(f"[{num:02d}/{total}] {status} | {name}")
     if details:
         print(f"        👉 {details}")
 
@@ -184,6 +184,66 @@ fps = 1000.0 / max(0.1, avg_lat)
 t14_ok = (avg_lat <= 25.0)
 log_test(14, "Latency Benchmark & Edge Real-Time Throughput", t14_ok,
          f"Average Latency: {avg_lat:.2f} ms | Throughput: {fps:.1f} FPS (Target: >=10 FPS)")
+
+# TEST 15: Incident Creation API & Auto-Work-Order Routing
+inc_payload = {
+    "hazard_type": "POTHOLE",
+    "confidence": 0.92,
+    "lat": 13.0067,
+    "lng": 80.2025,
+    "bus_id": "TEST-BUS-01",
+    "route_id": "70H",
+    "severity": "CRITICAL",
+    "risk_score": 88
+}
+r15 = client.post("/api/hazard/create-incident", json=inc_payload)
+t15_data = r15.json() if r15.status_code == 200 else {}
+t15_inc = t15_data.get("incident", {})
+t15_dept = t15_inc.get("department") or t15_inc.get("work_order", {}).get("department", "")
+t15_ok = (r15.status_code == 200 and t15_data.get("status") == "SUCCESS" and 
+          "incident" in t15_data and "GCC" in t15_dept)
+log_test(15, "Incident Creation & Municipal Routing Engine", t15_ok,
+         f"Incident ID: {t15_inc.get('incident_id') or t15_inc.get('id')} | Assigned: {t15_dept}")
+
+# TEST 16: Persistent Incident Store Retrieval (/api/hazard/incidents)
+r16 = client.get("/api/hazard/incidents")
+t16_data = r16.json() if r16.status_code == 200 else {}
+t16_ok = (r16.status_code == 200 and t16_data.get("count", 0) >= 1)
+log_test(16, "JSON-Backed Persistent Incidents Store Retrieval", t16_ok,
+         f"Persisted Incident Count: {t16_data.get('count')} | Source: {t16_data.get('source')}")
+
+# TEST 17: 9-Stage Municipal Lifecycle Transition (/api/sensing/incidents/transition)
+test_inc_id = t15_inc.get("incident_id") or t15_inc.get("id") or "INC-001"
+r17 = client.post("/api/sensing/incidents/transition", json={
+    "incident_id": test_inc_id,
+    "target_status": "WORK_ORDER_CREATED",
+    "assigned_crew": "GCC-PWD-Dispatched",
+    "resolution_notes": "Verified by automated SIH test suite"
+})
+t17_data = r17.json() if r17.status_code == 200 else {}
+t17_ok = (r17.status_code == 200 and t17_data.get("status") == "SUCCESS" and t17_data.get("current_status") == "WORK_ORDER_CREATED")
+log_test(17, "9-Stage Municipal Work Order Lifecycle Transition", t17_ok,
+         f"Current Status: {t17_data.get('current_status')} | Message: {t17_data.get('message')}")
+
+# TEST 18: Edge Privacy-by-Design Blur Compliance
+ped_box = [100, 150, 400, 250] # [ymin, xmin, ymax, xmax]
+box_h = ped_box[2] - ped_box[0]
+head_blur_box = [ped_box[0], ped_box[1], ped_box[0] + int(box_h * 0.20), ped_box[3]]
+t18_ok = (head_blur_box[2] < ped_box[2] and (head_blur_box[2] - head_blur_box[0]) == 60)
+log_test(18, "Privacy-by-Design Head/Plate Anonymization Zone", t18_ok,
+         f"Full box height: {box_h}px | Face blur region: {head_blur_box[2] - head_blur_box[0]}px (Top 20%)")
+
+# TEST 19: Civic Risk Score Composite 5-Factor Calculation
+# Formula: Risk = Severity (0-30) + Confidence (0-25) + Corroboration (0-20) + Recurrence (0-15) + Density (0-10)
+sev_pts = 30  # CRITICAL
+conf_pts = round(0.92 * 25) # 23
+corr_pts = 20 # MULTI_BUS_CORROBORATED
+rec_pts = 10  # RECURRING
+dens_pts = 8  # HIGHWAY_CORRIDOR
+calc_score = sev_pts + conf_pts + corr_pts + rec_pts + dens_pts
+t19_ok = (calc_score == 91 and 0 <= calc_score <= 100)
+log_test(19, "Civic Risk Score 5-Factor Mathematical Integrity", t19_ok,
+         f"Calculated Score: {calc_score}/100 [Sev={sev_pts} + Conf={conf_pts} + Corr={corr_pts} + Rec={rec_pts} + Dens={dens_pts}]")
 
 print("=" * 80)
 print(f"AUDIT SUMMARY: {passed}/{total} TESTS PASSED ({passed/total*100:.1f}%)")

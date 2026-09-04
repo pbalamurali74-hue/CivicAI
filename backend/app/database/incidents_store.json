@@ -1,0 +1,496 @@
+[
+  {
+    "incident_id": "INC-2026-0554",
+    "id": "INC-2026-0554",
+    "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div.",
+    "hazard_type": "POTHOLE",
+    "title": "Verified Pothole",
+    "confidence": 92.0,
+    "severity": "CRITICAL",
+    "civic_risk_score": 85,
+    "timestamp": "23:05:22",
+    "latitude": 13.0067,
+    "longitude": 80.2025,
+    "gps_accuracy": null,
+    "location_name": "Route 70H Transit Corridor, Chennai",
+    "vehicle_id": "TEST-BUS-01",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "left": "22%",
+      "top": "52%",
+      "width": "36%",
+      "height": "28%"
+    },
+    "verification_status": "SINGLE_BUS_UNVERIFIED",
+    "multi_bus_consensus": {
+      "cluster_id": "CLUS-POT-6202",
+      "hazard_type": "POTHOLE",
+      "observations_count": 1,
+      "distinct_buses_count": 1,
+      "observing_buses": [
+        "TEST-BUS-01"
+      ],
+      "centroid_lat": 13.0067,
+      "centroid_lng": 80.2025,
+      "fused_confidence": 0.92,
+      "consensus_status": "SINGLE_BUS_UNVERIFIED",
+      "severity": "MEDIUM",
+      "work_order_priority": "P3_MONITORING",
+      "auto_work_order_triggered": false,
+      "spatial_radius_meters": 15.0,
+      "temporal_window_minutes": 30.0,
+      "evidence_count": 0,
+      "member_observations": [
+        {
+          "bus_id": "TEST-BUS-01",
+          "route_id": "70H",
+          "hazard_type": "POTHOLE",
+          "confidence": 0.92,
+          "lat": 13.0067,
+          "lng": 80.2025,
+          "timestamp": 1788543322.838497,
+          "image_evidence": null,
+          "observation_id": "INC-2026-0554"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 350,
+      "vehicles_alerted": 7,
+      "caution_message": "\u26a0\ufe0f POTHOLE detected ahead. Reduce speed."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-ROAD-4331",
+      "status": "WORK_ORDER_CREATED",
+      "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div."
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    },
+    "work_order_status": "WORK_ORDER_CREATED",
+    "assigned_crew": "GCC-PWD-Dispatched",
+    "resolution_notes": "Verified by automated SIH test suite"
+  },
+  {
+    "incident_id": "INC-2026-0912",
+    "hazard_type": "POTHOLE",
+    "title": "Verified Pothole",
+    "confidence": 92.0,
+    "severity": "CRITICAL",
+    "civic_risk_score": 85,
+    "timestamp": "23:04:39",
+    "latitude": 13.0067,
+    "longitude": 80.2025,
+    "gps_accuracy": null,
+    "location_name": "Route 70H Transit Corridor, Chennai",
+    "vehicle_id": "TEST-BUS-01",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "left": "22%",
+      "top": "52%",
+      "width": "36%",
+      "height": "28%"
+    },
+    "verification_status": "SINGLE_BUS_UNVERIFIED",
+    "multi_bus_consensus": {
+      "cluster_id": "CLUS-POT-6202",
+      "hazard_type": "POTHOLE",
+      "observations_count": 1,
+      "distinct_buses_count": 1,
+      "observing_buses": [
+        "TEST-BUS-01"
+      ],
+      "centroid_lat": 13.0067,
+      "centroid_lng": 80.2025,
+      "fused_confidence": 0.92,
+      "consensus_status": "SINGLE_BUS_UNVERIFIED",
+      "severity": "MEDIUM",
+      "work_order_priority": "P3_MONITORING",
+      "auto_work_order_triggered": false,
+      "spatial_radius_meters": 15.0,
+      "temporal_window_minutes": 30.0,
+      "evidence_count": 0,
+      "member_observations": [
+        {
+          "bus_id": "TEST-BUS-01",
+          "route_id": "70H",
+          "hazard_type": "POTHOLE",
+          "confidence": 0.92,
+          "lat": 13.0067,
+          "lng": 80.2025,
+          "timestamp": 1788543279.307005,
+          "image_evidence": null,
+          "observation_id": "INC-2026-0912"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 350,
+      "vehicles_alerted": 7,
+      "caution_message": "\u26a0\ufe0f POTHOLE detected ahead. Reduce speed."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-ROAD-4567",
+      "status": "DETECTED",
+      "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div."
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-00421",
+    "hazard_type": "POTHOLE",
+    "title": "Severe Deep Asphalt Pothole",
+    "confidence": 94.8,
+    "severity": "HIGH",
+    "civic_risk_score": 87,
+    "timestamp": "19:42:18",
+    "latitude": 13.0067,
+    "longitude": 80.202,
+    "location_name": "Guindy Kathipara Underpass, Chennai",
+    "vehicle_id": "BUS-104A",
+    "route_id": "70H (SRM \u2794 Guindy \u2794 T. Nagar)",
+    "camera_id": "CAM-FRONT (Front Road AI Camera)",
+    "bounding_box": {
+      "x": 130,
+      "y": 220,
+      "width": 190,
+      "height": 115
+    },
+    "danger_zone_active": false,
+    "verification_status": "MULTI_VEHICLE_VERIFIED",
+    "work_order_status": "ASSIGNED",
+    "multi_vehicle_verification": {
+      "status": "MULTI_VEHICLE_VERIFIED",
+      "bus_count": 3,
+      "verification_confidence": 98.4,
+      "reporting_vehicles": [
+        {
+          "vehicle_id": "BUS-104A",
+          "confidence": 94.8,
+          "delta_m": 0.0,
+          "time_delta": "0s"
+        },
+        {
+          "vehicle_id": "BUS-102",
+          "confidence": 91.3,
+          "delta_m": 4.2,
+          "time_delta": "+3m"
+        },
+        {
+          "vehicle_id": "BUS-103",
+          "confidence": 95.2,
+          "delta_m": 2.8,
+          "time_delta": "+6m"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 350,
+      "vehicles_alerted": 7,
+      "caution_message": "\u26a0\ufe0f ROAD HAZARD AHEAD: Deep Pothole detected 180m ahead. Slow down and proceed carefully."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-ROAD-4092",
+      "status": "ASSIGNED",
+      "department": "Greater Chennai Corporation (GCC) \u2014 Ward 168 Roads Div."
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-00418",
+    "hazard_type": "PEDESTRIAN_HAZARD",
+    "title": "Pedestrian in Vehicle Carriage-Way Danger Corridor",
+    "confidence": 96.2,
+    "severity": "CRITICAL",
+    "civic_risk_score": 93,
+    "timestamp": "19:15:02",
+    "latitude": 13.0125,
+    "longitude": 80.2156,
+    "location_name": "Guindy Industrial Estate Junction, Chennai",
+    "vehicle_id": "BUS-104A",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "x": 210,
+      "y": 170,
+      "width": 140,
+      "height": 165
+    },
+    "danger_zone_active": true,
+    "verification_status": "HIGH_CONFIDENCE_EDGE_ALERT",
+    "work_order_status": "PRIORITIZED",
+    "multi_vehicle_verification": {
+      "status": "IMMEDIATE_EDGE_TRIGGER",
+      "bus_count": 2,
+      "verification_confidence": 96.2,
+      "reporting_vehicles": [
+        {
+          "vehicle_id": "BUS-104A",
+          "confidence": 96.2,
+          "delta_m": 0.0,
+          "time_delta": "0s"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "VULNERABLE_ROAD_USER_WARNING",
+      "broadcast_radius_m": 250,
+      "vehicles_alerted": 9,
+      "caution_message": "\u26a0\ufe0f PEDESTRIAN HAZARD: Person in travel lane. Slow down immediately."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "TN-TRAFFIC-VRU-108",
+      "status": "PRIORITIZED",
+      "department": "Greater Chennai Traffic Police (Traffic Safety Cell)"
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true,
+      "face_anonymized": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-00392",
+    "hazard_type": "WATERLOGGING",
+    "title": "Monsoon Subway Water Stagnation",
+    "confidence": 92.4,
+    "severity": "HIGH",
+    "civic_risk_score": 84,
+    "timestamp": "18:30:45",
+    "latitude": 13.0382,
+    "longitude": 80.2405,
+    "location_name": "Saidapet Subway, Anna Salai",
+    "vehicle_id": "BUS-102",
+    "route_id": "101A",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "x": 100,
+      "y": 240,
+      "width": 300,
+      "height": 120
+    },
+    "danger_zone_active": false,
+    "verification_status": "MULTI_VEHICLE_VERIFIED",
+    "work_order_status": "WORK_ORDER_CREATED",
+    "multi_vehicle_verification": {
+      "status": "MULTI_VEHICLE_VERIFIED",
+      "bus_count": 2,
+      "verification_confidence": 92.4,
+      "reporting_vehicles": [
+        {
+          "vehicle_id": "BUS-102",
+          "confidence": 92.4,
+          "delta_m": 0.0,
+          "time_delta": "0s"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "ROAD_HAZARD_WARNING",
+      "broadcast_radius_m": 300,
+      "vehicles_alerted": 5,
+      "caution_message": "\u26a0\ufe0f WATERLOGGING AHEAD: Subway lane submerged. Exercise caution."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-STORM-DRAIN-88",
+      "status": "WORK_ORDER_CREATED",
+      "department": "GCC Storm Water Drainage Division"
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-00360",
+    "hazard_type": "POTENTIAL_MISSING_SIGN",
+    "title": "GIS Discrepancy: Missing Mandatory Bus Lane Sign",
+    "confidence": 92.8,
+    "severity": "HIGH",
+    "civic_risk_score": 76,
+    "timestamp": "17:15:10",
+    "latitude": 13.021,
+    "longitude": 80.224,
+    "location_name": "Saidapet Anna Salai Transit Corridor",
+    "vehicle_id": "BUS-104A",
+    "route_id": "70H",
+    "camera_id": "CAM-FRONT",
+    "bounding_box": {
+      "x": 280,
+      "y": 90,
+      "width": 80,
+      "height": 120
+    },
+    "danger_zone_active": false,
+    "verification_status": "GIS_CORRIDOR_VERIFIED",
+    "work_order_status": "IN_PROGRESS",
+    "multi_vehicle_verification": {
+      "status": "MULTI_VEHICLE_VERIFIED",
+      "bus_count": 3,
+      "verification_confidence": 94.0,
+      "reporting_vehicles": [
+        {
+          "vehicle_id": "BUS-104A",
+          "confidence": 92.8,
+          "delta_m": 0.0,
+          "time_delta": "0s"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "ACTIVE_BROADCAST",
+      "alert_type": "TRAFFIC_SIGN_DISCREPANCY",
+      "broadcast_radius_m": 200,
+      "vehicles_alerted": 4,
+      "caution_message": "\u26a0\ufe0f SIGN DEFICIENCY: Regulatory bus lane sign missing."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-SIGN-1204",
+      "status": "IN_PROGRESS",
+      "department": "Greater Chennai Corporation \u2014 Traffic Assets Dept"
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-00315",
+    "hazard_type": "DAMAGED_SIGN",
+    "title": "Damaged / Bent Speed Limit 40 Sign",
+    "confidence": 91.2,
+    "severity": "MEDIUM",
+    "civic_risk_score": 64,
+    "timestamp": "16:02:19",
+    "latitude": 13.052,
+    "longitude": 80.2501,
+    "location_name": "T. Nagar Panagal Park Approach",
+    "vehicle_id": "BUS-103",
+    "route_id": "23C",
+    "camera_id": "CAM-LEFT",
+    "bounding_box": {
+      "x": 260,
+      "y": 80,
+      "width": 85,
+      "height": 130
+    },
+    "danger_zone_active": false,
+    "verification_status": "EDGE_VERIFIED",
+    "work_order_status": "RESOLVED",
+    "multi_vehicle_verification": {
+      "status": "MULTI_VEHICLE_VERIFIED",
+      "bus_count": 2,
+      "verification_confidence": 91.2,
+      "reporting_vehicles": [
+        {
+          "vehicle_id": "BUS-103",
+          "confidence": 91.2,
+          "delta_m": 0.0,
+          "time_delta": "0s"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "STANDBY",
+      "alert_type": "TRAFFIC_SIGN_WARNING",
+      "broadcast_radius_m": 150,
+      "vehicles_alerted": 2,
+      "caution_message": "\u26a0\ufe0f DAMAGED SIGN: Bent signpost on curb."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-SIGN-1192",
+      "status": "RESOLVED",
+      "department": "GCC Traffic Assets Dept"
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  },
+  {
+    "incident_id": "INC-2026-00280",
+    "hazard_type": "GARBAGE_SPILL",
+    "title": "Roadside Solid Waste Spill Encroaching Carriage-way",
+    "confidence": 89.2,
+    "severity": "MEDIUM",
+    "civic_risk_score": 68,
+    "timestamp": "15:20:10",
+    "latitude": 13.045,
+    "longitude": 80.22,
+    "location_name": "Ashok Nagar 1st Avenue Bus Stop",
+    "vehicle_id": "BUS-104A",
+    "route_id": "70H",
+    "camera_id": "CAM-LEFT",
+    "bounding_box": {
+      "x": 40,
+      "y": 250,
+      "width": 160,
+      "height": 110
+    },
+    "danger_zone_active": false,
+    "verification_status": "MULTI_VEHICLE_VERIFIED",
+    "work_order_status": "ASSIGNED",
+    "multi_vehicle_verification": {
+      "status": "MULTI_VEHICLE_VERIFIED",
+      "bus_count": 2,
+      "verification_confidence": 89.2,
+      "reporting_vehicles": [
+        {
+          "vehicle_id": "BUS-104A",
+          "confidence": 89.2,
+          "delta_m": 0.0,
+          "time_delta": "0s"
+        }
+      ]
+    },
+    "connected_vehicle_broadcast": {
+      "alert_status": "STANDBY",
+      "alert_type": "SANITATION_ALERT",
+      "broadcast_radius_m": 150,
+      "vehicles_alerted": 3,
+      "caution_message": "\u26a0\ufe0f ROAD ENCROACHMENT: Overflowing bin encroaching lane."
+    },
+    "work_order": {
+      "created": true,
+      "work_order_id": "GCC-SWM-4401",
+      "status": "ASSIGNED",
+      "department": "Greater Chennai Corporation \u2014 Solid Waste Management (SWM)"
+    },
+    "privacy": {
+      "local_edge_inference": true,
+      "metadata_only_transmitted": true,
+      "privacy_masked": true
+    }
+  }
+]
