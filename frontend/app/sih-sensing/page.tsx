@@ -582,26 +582,75 @@ export default function SihSensingPage() {
                   </div>
 
                   {/* Bounding box animation */}
+                  {/* CAM-FRONT: Road defects & Pothole bounding box */}
                   {selectedCamera === "CAM-FRONT" && (
                     <div
                       className="absolute border-2 border-rose-500 bg-rose-500/25 rounded-lg p-1.5 transition-all duration-500 animate-pulse shadow-xl pointer-events-none"
-                      style={{
-                        left: "22%",
-                        top: "52%",
-                        width: "36%",
-                        height: "28%",
-                      }}
+                      style={{ left: "22%", top: "52%", width: "36%", height: "28%" }}
                     >
                       <div className="absolute -top-7 left-0 bg-rose-600 text-white px-2 py-0.5 rounded text-[10px] font-black uppercase whitespace-nowrap shadow-md">
-                        POTHOLE (94.8%)
+                        🕳️ POTHOLE (94.8%) • SEVERITY HIGH
                       </div>
+                    </div>
+                  )}
+
+                  {/* CAM-REAR: Real-Time Traffic Density & Offending Vehicle ALPR */}
+                  {selectedCamera === "CAM-REAR" && (
+                    <>
+                      {/* Offending Vehicle Rash Tracking Box */}
+                      <div
+                        className="absolute border-2 border-amber-400 bg-amber-400/20 rounded-lg p-1.5 transition-all duration-500 pointer-events-none"
+                        style={{ left: "38%", top: "35%", width: "32%", height: "42%" }}
+                      >
+                        <div className="absolute -top-7 left-0 bg-amber-500 text-black px-2 py-0.5 rounded text-[10px] font-black uppercase whitespace-nowrap shadow-md">
+                          🚗 CAR (96.2%) • SPEED: 68 KM/H
+                        </div>
+                        {/* ALPR Plate Region Crop */}
+                        <div className="absolute bottom-2 left-1/4 w-1/2 h-8 bg-black/90 border border-emerald-400 rounded flex items-center justify-center font-mono font-black text-[11px] text-emerald-400">
+                          TN-09-AB-1234 (96.8%)
+                        </div>
+                      </div>
+
+                      {/* Traffic Flow & Density HUD */}
+                      <div className="absolute top-16 right-3 bg-black/85 backdrop-blur-md px-3 py-2 rounded-xl border border-white/20 font-mono text-[10px] text-sky-400 font-bold space-y-0.5 pointer-events-none">
+                        <div>VEHICLE COUNT: 14 IN FRAME</div>
+                        <div>BOTTLENECK: LOS D (APPROACHING UNSTABLE)</div>
+                        <div>DELAY INDEX: +8.5 MINS</div>
+                        <div>DENSITY: 68% • FLOW: 1,840 V/HR</div>
+                      </div>
+                    </>
+                  )}
+
+                  {/* CAM-LEFT: Infrastructure Defect, Missing Signs & Curb Obstacles */}
+                  {selectedCamera === "CAM-LEFT" && (
+                    <div
+                      className="absolute border-2 border-indigo-500 bg-indigo-500/25 rounded-lg p-1.5 transition-all duration-500 pointer-events-none"
+                      style={{ left: "65%", top: "18%", width: "25%", height: "45%" }}
+                    >
+                      <div className="absolute -top-7 left-0 bg-indigo-600 text-white px-2 py-0.5 rounded text-[10px] font-black uppercase whitespace-nowrap shadow-md">
+                        🚸 MISSING SIGN (89.6%) • GIS DISCREPANCY
+                      </div>
+                    </div>
+                  )}
+
+                  {/* CAM-CABIN: Passenger Interior Safety & Occupancy */}
+                  {selectedCamera === "CAM-CABIN" && (
+                    <div className="absolute top-16 right-3 bg-black/85 backdrop-blur-md px-3 py-2 rounded-xl border border-white/20 font-mono text-[10px] text-emerald-400 font-bold space-y-0.5 pointer-events-none">
+                      <div>CABIN OCCUPANCY: 42 / 50 SEATS (84%)</div>
+                      <div>AISLE STATUS: CLEAR • DOORS: SECURED</div>
+                      <div>DRIVER DROWSINESS: ATTENTIVE (0.02)</div>
                     </div>
                   )}
 
                   {/* Bottom Telemetry Bar */}
                   <div className="absolute bottom-3 left-3 right-3 bg-black/85 backdrop-blur-md px-3 py-2 rounded-xl border border-white/20 text-xs font-bold text-white flex items-center justify-between">
-                    <span className="text-amber-400">🟡 DETECTED: Severe Asphalt Pothole</span>
-                    <span className="font-mono text-zinc-300">Route 70H Guindy Kathipara</span>
+                    <span className="text-amber-400">
+                      {selectedCamera === "CAM-FRONT" && "🟡 DETECTED: Severe Asphalt Cavity • Ward 168"}
+                      {selectedCamera === "CAM-REAR" && "🔴 ALPR TRIGGER: Rapid Swerve Infraction • Plate: TN-09-AB-1234"}
+                      {selectedCamera === "CAM-LEFT" && "🔵 INFRASTRUCTURE: GIS Sign Discrepancy • Speed Limit 40 Missing"}
+                      {selectedCamera === "CAM-CABIN" && "🟢 INTERIOR: Cabin Capacity Normal • Safety Verified"}
+                    </span>
+                    <span className="font-mono text-zinc-300">Route 70H Corridor • 13.0067°N, 80.2020°E</span>
                   </div>
                 </div>
 
@@ -1011,6 +1060,41 @@ export default function SihSensingPage() {
                     <span className="font-mono font-black text-rose-600">+{b.avg_delay_mins}m</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* SIH PS 26124: Rash Driving / Hit-and-Run Kinematic ALPR Alert Center */}
+            <div className="space-y-3 pt-4 border-t border-zinc-100">
+              <div className="flex items-center justify-between">
+                <h4 className="font-black text-sm text-[#212121] flex items-center gap-1.5">
+                  <ShieldAlert className="w-4 h-4 text-rose-600" /> Rash Driving & Hit-and-Run ANPR Extraction Unit
+                </h4>
+                <span className="text-[10px] font-mono font-bold bg-rose-100 text-rose-950 border border-rose-300 px-2.5 py-0.5 rounded">
+                  Automated GCTP Dispatch
+                </span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-rose-50/70 border border-rose-200 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono font-bold text-rose-900 block uppercase">Identified Offending Vehicle</span>
+                  <div className="font-black text-zinc-900 text-sm">TN-09-AB-1234</div>
+                  <div className="text-[11px] text-zinc-600">Model: Hyundai Verna • Private Car</div>
+                  <div className="text-[11px] font-mono font-bold text-emerald-700">ANPR Confidence: 96.8% (Valid Plate)</div>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono font-bold text-rose-900 block uppercase">Kinematic Infraction Rationale</span>
+                  <div className="font-black text-rose-700">AGGRESSIVE CUTTING-IN (LATERAL &gt; 0.45/s)</div>
+                  <div className="text-[11px] text-zinc-600">Speed: <strong>68 km/h</strong> in 40 km/h corridor</div>
+                  <div className="text-[11px] font-mono text-zinc-500">Proximity to Bus: 1.8m at peak swerve</div>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono font-bold text-rose-900 block uppercase">Police Command Dispatch</span>
+                  <div className="font-bold text-zinc-900">E-Challan Cell Dispatched</div>
+                  <div className="text-[11px] text-zinc-600">GPS: 13.0067°N, 80.2025°E • 18:45:12 IST</div>
+                  <div className="text-[10px] font-mono text-indigo-700 font-bold">Ticket: GCTP-CHALLAN-2026-8812</div>
+                </div>
               </div>
             </div>
           </div>

@@ -324,6 +324,41 @@ export async function createHazardIncident(payload: {
   });
 }
 
+export async function analyzeTrafficFrame(payload: {
+  image_base64: string;
+  conf_threshold?: number;
+  camera_id?: string;
+  bus_id?: string;
+  lat?: number;
+  lng?: number;
+}) {
+  return fetchJson(`/sensing/traffic/analyze-frame`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
 
+export async function reportRashDrivingIncident(payload: {
+  vehicle_id: string;
+  speed_kmh: number;
+  bus_speed_kmh?: number;
+  lat?: number;
+  lng?: number;
+  box?: any;
+  image_base64?: string;
+}) {
+  return fetchJson(`/sensing/incidents/report-rash-driving`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
 
+export async function getOriginDestinationAnalytics() {
+  return fetchJson(`/sensing/analytics/origin-destination`);
+}
 
+export async function getCongestionHeatmap() {
+  return fetchJson(`/sensing/analytics/congestion-heatmap`);
+}

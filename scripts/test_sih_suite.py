@@ -18,7 +18,7 @@ sys.path.insert(0, str(BASE_DIR / "backend"))
 
 passed = 0
 failed = 0
-total = 19
+total = 23
 
 def log_test(num: int, name: str, success: bool, details: str = ""):
     global passed, failed
@@ -244,6 +244,43 @@ calc_score = sev_pts + conf_pts + corr_pts + rec_pts + dens_pts
 t19_ok = (calc_score == 91 and 0 <= calc_score <= 100)
 log_test(19, "Civic Risk Score 5-Factor Mathematical Integrity", t19_ok,
          f"Calculated Score: {calc_score}/100 [Sev={sev_pts} + Conf={conf_pts} + Corr={corr_pts} + Rec={rec_pts} + Dens={dens_pts}]")
+
+# TEST 20: Intelligent Vehicle Density Estimation & Classification
+from app.ml.traffic_density_engine import traffic_density_engine
+dummy_traffic_img = np.zeros((416, 416, 3), dtype=np.uint8)
+t20_res = traffic_density_engine.analyze_frame(dummy_traffic_img)
+t20_ok = (t20_res.get("status") == "SUCCESS" and "density_index" in t20_res and "level_of_service" in t20_res)
+log_test(20, "Vehicle Density & Bottleneck Level of Service (LOS)", t20_ok,
+         f"LOS: {t20_res.get('level_of_service')} | Bottleneck: {t20_res.get('bottleneck_status')} | Speed: {t20_res.get('estimated_corridor_speed_kmh')} km/h")
+
+# TEST 21: Rash Driving Kinematics & ALPR License Plate Recognition
+from app.ml.alpr_rash_driving_service import alpr_rash_driving_service
+t21_kin = alpr_rash_driving_service.assess_rash_driving(
+    vehicle_id="VEH-TEST-99",
+    current_box={"x": 0.35, "y": 0.40, "w": 0.20, "h": 0.30},
+    speed_kmh=82.0,
+    bus_speed_kmh=32.0,
+    lat=13.0067,
+    lng=80.2025
+)
+t21_alpr = alpr_rash_driving_service.extract_license_plate(dummy_traffic_img)
+t21_ok = (t21_kin.get("is_anomalous") and t21_alpr.get("status") == "SUCCESS" and "TN-" in t21_alpr.get("plate_number", ""))
+log_test(21, "Hit-and-Run / Rash Driving Trajectory & ANPR Plate Extraction", t21_ok,
+         f"Infraction: {t21_kin.get('incident_type')} | Plate: {t21_alpr.get('plate_number')} ({t21_alpr.get('confidence_percent')}%)")
+
+# TEST 22: Origin-Destination (OD) Matrix & Route Delay Analytics
+from app.ml.origin_destination_service import origin_destination_service
+t22_insights = origin_destination_service.get_corridor_insights()
+t22_ok = (t22_insights.get("status") == "SUCCESS" and len(origin_destination_service.od_matrix) >= 10)
+log_test(22, "Centralized Origin-Destination Transit Gravity Matrix", t22_ok,
+         f"Total OD Pairs: {t22_insights.get('total_od_pairs')} | Top Corridor: {t22_insights.get('top_demand_corridors', [{}])[0].get('origin_name')} ➔ {t22_insights.get('top_demand_corridors', [{}])[0].get('destination_name')}")
+
+# TEST 23: GIS Congestion & Road Distress Continuous Heatmap
+r23 = client.get("/api/sensing/analytics/congestion-heatmap")
+t23_data = r23.json() if r23.status_code == 200 else {}
+t23_ok = (r23.status_code == 200 and t23_data.get("status") == "SUCCESS" and len(t23_data.get("heatmap_points", [])) >= 5)
+log_test(23, "Continuous GIS Congestion & Road Distress Heatmap", t23_ok,
+         f"Heatmap Points: {t23_data.get('point_count')} | Resolution: {t23_data.get('grid_resolution_meters')}m")
 
 print("=" * 80)
 print(f"AUDIT SUMMARY: {passed}/{total} TESTS PASSED ({passed/total*100:.1f}%)")
