@@ -250,7 +250,7 @@ export default function SihSensingPage() {
     : detections.filter((d) => d.category === activeHazardCategory);
 
   const walkthroughSteps = [
-    { title: "PS 26124 Mobile Urban Intelligence", speech: "Welcome to SIH 2026 Problem Statement PS 26124: AI-Powered Mobile Urban Intelligence Platform." },
+    { title: "PS 26124 Mobile Urban Intelligence", speech: "Welcome to Problem Statement PS 26124: AI-Powered Mobile Urban Intelligence Platform." },
     { title: "Public Buses as Mobile Sensing Units", speech: "Buses act as mobile AI sensing units with 4 cameras, edge TensorRT inference, and multi-bus spatial verification." },
     { title: "Actionable Civic Work Orders", speech: "Verified infrastructure hazards are tagged with a Civic Risk Score and auto-dispatched to municipal repair teams." }
   ];
@@ -268,7 +268,7 @@ export default function SihSensingPage() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-950 text-xs font-black uppercase tracking-wider">
                 <Bus className="w-3.5 h-3.5 text-amber-600" />
-                SIH 2026 PS 26124 • Mobile Urban Intelligence Platform
+                PS 26124 • Mobile Urban Intelligence Platform
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-950 text-xs font-bold">
                 <CheckCircle2 className="w-3 h-3 text-emerald-600" />
@@ -349,7 +349,7 @@ export default function SihSensingPage() {
               🎬
             </div>
             <div>
-              <h2 className="text-base font-black text-[#212121]">SIH 7-Step Evaluator Walkthrough Controller</h2>
+              <h2 className="text-base font-black text-[#212121]">7-Step Platform Walkthrough Controller</h2>
               <p className="text-xs text-zinc-500 font-medium">Click through the continuous story sequence to demonstrate the complete mobile sensing lifecycle</p>
             </div>
           </div>
@@ -842,7 +842,7 @@ export default function SihSensingPage() {
                         <h3 className="text-base font-black text-[#212121]">Civic Risk Score Explainability (0–100)</h3>
                       </div>
                       <span className="text-[10px] font-bold text-amber-900 bg-amber-100 border border-amber-300 px-2.5 py-1 rounded">
-                        Transparent SIH Formula
+                        Transparent Prioritization Formula
                       </span>
                     </div>
 
@@ -1351,7 +1351,7 @@ export default function SihSensingPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-100 pb-4">
               <div>
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-950 text-xs font-black uppercase mb-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> SIH 2026 PS 26124 Compliance
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> PS 26124 Compliance
                 </div>
                 <h3 className="text-xl font-black text-[#212121]">Official Problem Statement Requirement Coverage Matrix</h3>
                 <p className="text-xs text-zinc-500 font-medium">

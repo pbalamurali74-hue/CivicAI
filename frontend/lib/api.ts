@@ -108,9 +108,61 @@ export async function submitGrievance(data: any) {
   });
 }
 
-export async function getGrievances() {
-  return fetchJson(`/grievances`);
+// 12. ROAD HAZARD SEVERITY & MAINTENANCE PRIORITY (PS 26124)
+export async function getRoadHazards(params: {
+  priority?: string;
+  defect_type?: string;
+  status?: string;
+  search?: string;
+  sort_by?: string;
+  sort_order?: string;
+} = {}) {
+  const query = new URLSearchParams();
+  if (params.priority) query.append("priority", params.priority);
+  if (params.defect_type) query.append("defect_type", params.defect_type);
+  if (params.status) query.append("status", params.status);
+  if (params.search) query.append("search", params.search);
+  if (params.sort_by) query.append("sort_by", params.sort_by);
+  if (params.sort_order) query.append("sort_order", params.sort_order);
+  return fetchJson(`/hazards?${query.toString()}`);
 }
+
+export async function getRoadHazardRanking() {
+  return fetchJson(`/hazards/ranking`);
+}
+
+export async function getRoadHazardSummary() {
+  return fetchJson(`/hazards/summary`);
+}
+
+export async function getRoadHazardDetail(hazardId: string) {
+  return fetchJson(`/hazards/${encodeURIComponent(hazardId)}`);
+}
+
+export async function getRoadHazardSeverity(hazardId: string) {
+  return fetchJson(`/hazards/${encodeURIComponent(hazardId)}/severity`);
+}
+
+export async function updateRoadHazardStatus(hazardId: string, status: string, assignedTeam?: string, notes?: string) {
+  return fetchJson(`/hazards/${encodeURIComponent(hazardId)}/status`, {
+    method: "PATCH",
+    body: JSON.stringify({ status, assignedTeam, notes }),
+  });
+}
+
+export async function updateRoadHazardOverride(hazardId: string, overrideLevel: string, reason: string) {
+  return fetchJson(`/hazards/${encodeURIComponent(hazardId)}/override`, {
+    method: "PATCH",
+    body: JSON.stringify({ overrideLevel, reason }),
+  });
+}
+
+export async function clearRoadHazardOverride(hazardId: string) {
+  return fetchJson(`/hazards/${encodeURIComponent(hazardId)}/override`, {
+    method: "DELETE",
+  });
+}
+
 
 // 7. ADMIN METRICS
 export async function getAdminMetrics() {

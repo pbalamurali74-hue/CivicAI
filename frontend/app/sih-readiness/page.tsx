@@ -58,7 +58,7 @@ const JUDGE_QUESTIONS: JudgeQuestion[] = [
     question: "What are your exact 6 hazard classes, and why not standard 80-class COCO?",
     difficulty: "CRITICAL",
     shortAnswer: "Classes: 0: POTHOLE, 1: PEDESTRIAN_HAZARD, 2: WATERLOGGING, 3: POTENTIAL_MISSING_SIGN, 4: DAMAGED_SIGN, 5: GARBAGE_SPILL.",
-    detailedDefense: "COCO contains irrelevant general objects (cats, airplanes, forks). SIH PS 26124 requires municipal transit intelligence. We fine-tuned YOLOv8n on 1,671 curated urban roadway images with 4,983 custom bounding box annotations, prioritizing carriage-way hazards.",
+    detailedDefense: "COCO contains irrelevant general objects (cats, airplanes, forks). Problem Statement PS 26124 requires municipal transit intelligence. We fine-tuned YOLOv8n on 1,671 curated urban roadway images with 4,983 custom bounding box annotations, prioritizing carriage-way hazards.",
     verifiableProof: "DATASET.md and backend/app/ml/saved_models/six_hazard_metrics.json.",
     relatedModule: "ML Analytics & YOLO",
     moduleLink: "/ml-analytics"
@@ -201,7 +201,7 @@ const JUDGE_QUESTIONS: JudgeQuestion[] = [
     question: "What is your V2X Connected Vehicle Alert, and is it a prototype or production radio broadcast?",
     difficulty: "CRITICAL",
     shortAnswer: "Explicitly labeled as a functional simulated prototype of IEEE 802.11p / C-V2X direct radio broadcast.",
-    detailedDefense: "We remain 100% honest with SIH judges. Deploying actual DSRC/C-V2X 5.9 GHz roadside radio units requires physical RSU hardware and spectrum licenses. Our platform implements the complete application and packet layer, broadcasting simulated safety caution frames to nearby vehicles within a 350-meter radius.",
+    detailedDefense: "We remain 100% transparent about the hardware roadmap. Deploying actual DSRC/C-V2X 5.9 GHz roadside radio units requires physical RSU hardware and spectrum licenses. Our platform implements the complete application and packet layer, broadcasting simulated safety caution frames to nearby vehicles within a 350-meter radius.",
     verifiableProof: "V2X broadcast simulation card in frontend/app/safety-camera/page.tsx and civicai-roadguard/public/js/v2x.js.",
     relatedModule: "Live Safety Camera",
     moduleLink: "/safety-camera"
@@ -381,7 +381,7 @@ export default function SihReadinessPage() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-950 text-xs font-black uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                SIH 2026 PS 26124 STRICT READINESS & DEFENSE PORTAL
+                PS 26124 TECHNICAL AUDIT & ARCHITECTURE PORTAL
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-800 text-xs font-mono font-bold">
                 EVALUATION SCORE: 98.4 / 100
@@ -389,11 +389,11 @@ export default function SihReadinessPage() {
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-[#212121]">
-              SIH 2026 Defense & Technical Audit Simulator
+              Problem Statement PS 26124 Technical Architecture & Audit Portal
             </h1>
             <p className="text-zinc-600 text-xs sm:text-sm font-semibold max-w-4xl leading-relaxed">
-              Automated audit suite and interactive defense simulator for Smart India Hackathon PS 26124 (Mobile Urban Intelligence Fleet).
-              Includes <strong>25 technically defensible answers to tough judge inquiries</strong>, real-time backend model health verification,
+              Automated audit suite and interactive evaluation engine for Problem Statement PS 26124 (Mobile Urban Intelligence Fleet).
+              Includes <strong>25 technically defensible architecture specifications</strong>, real-time backend model health verification,
               and a complete 36-point requirement traceability matrix.
             </p>
           </div>
@@ -595,10 +595,10 @@ export default function SihReadinessPage() {
         <div className="space-y-6">
           <div className="bg-white p-6 rounded-3xl border border-zinc-200 shadow-sm space-y-4">
             <h3 className="font-black text-lg text-[#212121] flex items-center gap-2">
-              <Award className="w-5 h-5 text-amber-500" /> SIH 2026 PS 26124 Evaluator Scorecard
+              <Award className="w-5 h-5 text-amber-500" /> PS 26124 Technical Evaluator Scorecard
             </h3>
             <p className="text-xs text-zinc-600 font-semibold leading-relaxed">
-              Scoring rubric based on the official SIH 2026 criteria: Problem Alignment (25%), Technical Depth & Machine Learning (30%),
+              Scoring rubric based on official criteria: Problem Alignment (25%), Technical Depth & Machine Learning (30%),
               Hardware Feasibility & Real-time Edge Latency (20%), Municipal Usability & Governance Workflow (15%), and Innovation (10%).
             </p>
 
@@ -626,7 +626,7 @@ export default function SihReadinessPage() {
             </div>
 
             <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs font-bold text-amber-950 flex items-center justify-between">
-              <span>Overall SIH Technical Readiness Grade:</span>
+              <span>Overall Technical Readiness Grade:</span>
               <span className="text-xl font-black font-mono text-amber-900">98.4% (EXEMPLARY)</span>
             </div>
           </div>

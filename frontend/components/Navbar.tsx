@@ -210,7 +210,7 @@ export default function Navbar() {
               }`}
             >
               <ShieldCheck className="w-4 h-4 text-emerald-700" />
-              <span>SIH Readiness & Audit</span>
+              <span>PS 26124 Technical Audit</span>
             </Link>
 
             {/* Additional CivicShield Modules Dropdown */}

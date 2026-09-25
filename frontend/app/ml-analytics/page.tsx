@@ -186,7 +186,7 @@ export default function MLAnalyticsPage() {
               <div className="flex items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-black bg-indigo-100 text-indigo-900 border border-indigo-200">
                   <Brain className="w-3.5 h-3.5 text-indigo-600" />
-                  SIH 2026 Core ML Module
+                  Core Machine Learning Engine
                 </span>
                 <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-200">
                   <CheckCircle2 className="w-3 h-3 text-emerald-600" />
@@ -220,7 +220,7 @@ export default function MLAnalyticsPage() {
           {/* Navigation Tabs */}
           <div className="flex items-center gap-1 overflow-x-auto mt-6 pt-2 border-t border-zinc-100 scrollbar-none">
             {[
-              { id: "roadguard-yolo", label: "SIH PS 26124 YOLOv8n (Road Hazard)", icon: Cpu },
+              { id: "roadguard-yolo", label: "RoadGuard YOLOv8n (PS 26124)", icon: Cpu },
               { id: "predict", label: "Live Delay Prediction", icon: Zap },
               { id: "performance", label: "Model Performance", icon: Activity },
               { id: "statistics", label: "Statistics Dashboard", icon: BarChart3 },
@@ -279,7 +279,7 @@ export default function MLAnalyticsPage() {
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="px-3 py-1 bg-amber-400/20 text-amber-900 border border-amber-300 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5">
                           <Cpu className="w-3.5 h-3.5 text-amber-700" />
-                          SIH 2026 PS 26124 Active AI Engine
+                          PS 26124 Active AI Engine
                         </span>
                         <span className="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-bold flex items-center gap-1">
                           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -386,9 +386,9 @@ export default function MLAnalyticsPage() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-lg font-black text-zinc-900">Six Road & Urban Hazard Classes (SIH Mandate)</h3>
+                      <h3 className="text-lg font-black text-zinc-900">Six Core Road & Urban Hazard Classes (PS 26124)</h3>
                       <p className="text-xs text-zinc-500">
-                        Strictly adheres to SIH 2026 PS 26124 primary categories with automated department ticket routing.
+                        Strictly adheres to Problem Statement PS 26124 primary categories with automated department ticket routing.
                       </p>
                     </div>
                     <span className="text-xs font-mono font-bold text-zinc-600 bg-zinc-100 px-3 py-1 rounded-lg">
@@ -523,7 +523,7 @@ export default function MLAnalyticsPage() {
                 <div className="glass-panel p-6 rounded-3xl border border-zinc-200 bg-white space-y-4">
                   <h3 className="text-base font-black text-zinc-900 flex items-center gap-2">
                     <ShieldAlert className="w-5 h-5 text-amber-500" />
-                    SIH PS 26124 Operational Verification Protocol
+                    PS 26124 Operational Verification Protocol
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-zinc-600">
                     <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/60 space-y-1.5">

@@ -147,10 +147,38 @@ class HazardYoloService:
                 self.model_path = str(fallback)
                 self.model_name = "YOLOv8n Pretrained Base"
 
+        # Load standard COCO detector for robust real-time pedestrian & vehicle detection
+        self.coco_model = None
+        try:
+            coco_path = Path("/Users/purushothambalamurali/Desktop/civicAI/yolov8n.pt")
+            if not coco_path.exists():
+                coco_path = Path("yolov8n.pt")
+            if coco_path.exists():
+                self.coco_model = YOLO(str(coco_path))
+                print(f"✅ Loaded YOLOv8n COCO model for high-accuracy pedestrian detection on {self.device.upper()}!")
+        except Exception as e:
+            print(f"⚠️ Could not load secondary COCO model: {e}")
+
+        # Load dedicated RoadGuard Pothole detector for robust asphalt damage detection
+        self.pothole_model = None
+        try:
+            rg_path = Path("/Users/purushothambalamurali/Desktop/civicAI/backend/app/ml/saved_models/roadguard_yolov8n_best.pt")
+            if not rg_path.exists():
+                rg_path = Path("app/ml/saved_models/roadguard_yolov8n_best.pt")
+            if rg_path.exists():
+                self.pothole_model = YOLO(str(rg_path))
+                print(f"✅ Loaded RoadGuard Pothole detector for high-accuracy pavement detection on {self.device.upper()}!")
+        except Exception as e:
+            print(f"⚠️ Could not load secondary pothole model: {e}")
+
         # Warmup model
         try:
             dummy = np.zeros((416, 416, 3), dtype=np.uint8)
             self.model.predict(dummy, device=self.device, verbose=False, imgsz=416)
+            if self.coco_model:
+                self.coco_model.predict(dummy, device=self.device, verbose=False, imgsz=416)
+            if self.pothole_model:
+                self.pothole_model.predict(dummy, device=self.device, verbose=False, imgsz=416)
         except Exception:
             pass
 
@@ -290,16 +318,15 @@ class HazardYoloService:
                     # A pedestrian walking inside the vehicle travel lane (0.22 <= center_x <= 0.78 and bottom_y >= 0.40) is a critical hazard.
                     # A pedestrian on the outer sidewalk (<0.22 or >0.78) is classified as PERSON — NORMAL (safe).
                     if target_class == "PEDESTRIAN_HAZARD":
-                        is_in_corridor = (0.22 <= center_x <= 0.78) and (bottom_y >= 0.40)
+                        is_in_corridor = (0.15 <= center_x <= 0.85) and (bottom_y >= 0.20)
                         if is_in_corridor:
                             severity = "CRITICAL"
                             risk_score = min(98, max(85, int(conf * 98)))
                             label = "PEDESTRIAN HAZARD (IN TRAVEL LANE)"
                         else:
-                            target_class = "PERSON_NORMAL"
-                            severity = "LOW"
-                            risk_score = 22
-                            label = "PERSON (SIDEWALK / SAFE)"
+                            severity = "HIGH"
+                            risk_score = min(80, max(50, int(conf * 80)))
+                            label = "PEDESTRIAN HAZARD (ROADWAY PROXIMITY)"
                     elif target_class == "POTHOLE":
                         risk_score = min(98, max(50, int(conf * 95)))
                         severity = "CRITICAL" if (conf > 0.75 and dist_meters < 6.0) else "HIGH" if conf > 0.50 else "MEDIUM"
@@ -340,15 +367,165 @@ class HazardYoloService:
                         "is_simulated": False
                     })
 
+        # Multi-Model Detection: Ensure Pedestrians in front of camera are reliably captured via COCO
+        if self.coco_model is not None:
+            try:
+                coco_res = self.coco_model.predict(
+                    cv_img,
+                    conf=max(0.25, min(conf_threshold, 0.45)),
+                    iou=iou_threshold,
+                    imgsz=416,
+                    device=self.device,
+                    verbose=False
+                )
+                if coco_res and len(coco_res) > 0 and coco_res[0].boxes is not None:
+                    for c_box in coco_res[0].boxes:
+                        c_cls = int(c_box.cls[0].item())
+                        c_conf = float(c_box.conf[0].item())
+                        c_name = self.coco_model.names.get(c_cls, "")
+                        
+                        # Only target "person" with responsive confidence floor
+                        if c_name == "person" and c_conf >= max(0.25, conf_threshold * 0.85):
+                            c_xyxy = c_box.xyxy[0].tolist()
+                            c_x1, c_y1, c_x2, c_y2 = c_xyxy
+                            c_w = c_x2 - c_x1
+                            c_h = c_y2 - c_y1
+
+                            # Ignore tiny background noise / distant objects (less than 4% height or 2.5% width)
+                            if (c_h / float(h) < 0.04) or (c_w / float(w) < 0.025):
+                                continue
+
+                            c_norm_box = {
+                                "x": round(max(0.0, c_x1 / w), 4),
+                                "y": round(max(0.0, c_y1 / h), 4),
+                                "w": round(min(1.0, c_w / w), 4),
+                                "h": round(min(1.0, c_h / h), 4)
+                            }
+                            c_pixel_box = {
+                                "x": int(c_x1), "y": int(c_y1), "w": int(c_w), "h": int(c_h)
+                            }
+                            c_bottom_y = c_norm_box["y"] + c_norm_box["h"]
+                            c_center_x = c_norm_box["x"] + c_norm_box["w"] / 2.0
+                            c_dist = round(max(1.5, 16.0 - c_bottom_y * 13.0), 1)
+
+                            # Check if person in travel lane corridor or on road
+                            # In live camera demos, people in front of the lens/webcam should trigger hazard
+                            is_in_lane = (0.12 <= c_center_x <= 0.88) and (c_bottom_y >= 0.20)
+                            
+                            p_class = "PEDESTRIAN_HAZARD"
+                            p_label = "PEDESTRIAN HAZARD (IN TRAVEL LANE)" if is_in_lane else "PEDESTRIAN HAZARD (ROADWAY PROXIMITY)"
+                            p_sev = "CRITICAL" if (is_in_lane and c_conf > 0.6) else "HIGH" if is_in_lane else "MEDIUM"
+                            p_risk = min(98, max(85, int(c_conf * 98))) if is_in_lane else min(80, max(50, int(c_conf * 80)))
+
+                            # Avoid duplicate if six_hazard already found this person box with high overlap
+                            has_dup = False
+                            for d in detections:
+                                if d.get("class") in ["PEDESTRIAN_HAZARD", "PERSON_NORMAL"]:
+                                    dx = abs(d["box_norm"]["x"] - c_norm_box["x"])
+                                    dy = abs(d["box_norm"]["y"] - c_norm_box["y"])
+                                    if dx < 0.15 and dy < 0.15:
+                                        has_dup = True
+                                        break
+                            
+                            if not has_dup:
+                                detections.append({
+                                    "class": p_class,
+                                    "class_key": p_class,
+                                    "class_name": p_class,
+                                    "label": p_label,
+                                    "confidence": round(c_conf, 3),
+                                    "confidence_percent": round(c_conf * 100, 1),
+                                    "severity": p_sev,
+                                    "risk_score": p_risk,
+                                    "distance_meters": c_dist,
+                                    "box_pixel": c_pixel_box,
+                                    "box_norm": c_norm_box,
+                                    "box_normalized": c_norm_box,
+                                    "is_in_danger_corridor": is_in_lane,
+                                    "source": "REAL DEEP LEARNING (YOLOv8n-Pedestrian)",
+                                    "is_simulated": False
+                                })
+            except Exception as e:
+                print(f"⚠️ Secondary COCO pedestrian inference warning: {e}")
+
+        # Multi-Model Detection: Dedicated Pothole & Road Distress Model
+        if self.pothole_model is not None:
+            try:
+                # Check if pothole is present via dedicated single-class pothole model
+                rg_res = self.pothole_model.predict(
+                    cv_img,
+                    conf=max(0.28, min(conf_threshold, 0.40)),
+                    iou=iou_threshold,
+                    imgsz=416,
+                    device=self.device,
+                    verbose=False
+                )
+                if rg_res and len(rg_res) > 0 and rg_res[0].boxes is not None:
+                    for p_box in rg_res[0].boxes:
+                        p_conf = float(p_box.conf[0].item())
+                        p_xyxy = p_box.xyxy[0].tolist()
+                        px1, py1, px2, py2 = p_xyxy
+                        pw = px2 - px1
+                        ph = py2 - py1
+
+                        # Require minimum area to prevent single pixel clusters triggering potholes
+                        if (pw / float(w) < 0.03) or (ph / float(h) < 0.025):
+                            continue
+
+                        p_norm_box = {
+                            "x": round(max(0.0, px1 / w), 4),
+                            "y": round(max(0.0, py1 / h), 4),
+                            "w": round(min(1.0, pw / w), 4),
+                            "h": round(min(1.0, ph / h), 4)
+                        }
+                        p_pixel_box = {
+                            "x": int(px1), "y": int(py1), "w": int(pw), "h": int(ph)
+                        }
+                        p_bottom_y = p_norm_box["y"] + p_norm_box["h"]
+                        p_dist = round(max(2.0, 16.0 - p_bottom_y * 13.0), 1)
+
+                        # Check for overlap with already detected potholes
+                        has_overlap = False
+                        for d in detections:
+                            if d.get("class") == "POTHOLE":
+                                dx = abs(d["box_norm"]["x"] - p_norm_box["x"])
+                                dy = abs(d["box_norm"]["y"] - p_norm_box["y"])
+                                if dx < 0.20 and dy < 0.20:
+                                    has_overlap = True
+                                    break
+
+                        if not has_overlap:
+                            p_risk = min(98, max(55, int(p_conf * 95)))
+                            p_sev = "CRITICAL" if (p_conf > 0.65 and p_dist < 6.0) else "HIGH" if p_conf > 0.40 else "MEDIUM"
+                            detections.append({
+                                "class": "POTHOLE",
+                                "class_key": "POTHOLE",
+                                "class_name": "POTHOLE",
+                                "label": "POTHOLE",
+                                "confidence": round(p_conf, 3),
+                                "confidence_percent": round(p_conf * 100, 1),
+                                "severity": p_sev,
+                                "risk_score": p_risk,
+                                "distance_meters": p_dist,
+                                "box_pixel": p_pixel_box,
+                                "box_norm": p_norm_box,
+                                "box_normalized": p_norm_box,
+                                "is_in_danger_corridor": False,
+                                "source": "REAL DEEP LEARNING (YOLOv8n-RoadGuard Pothole)",
+                                "is_simulated": False
+                            })
+            except Exception as e:
+                print(f"⚠️ Dedicated pothole inference warning: {e}")
+
         # GIS Spatial Discrepancy Engine for Missing Signs (Prompt Section 14)
         if lat is not None and lng is not None:
             discrepancy = self._check_missing_signs_gis(lat, lng, visual_signs_detected, w, h)
             if discrepancy:
                 detections.append(discrepancy)
 
-        # Auxiliary Asphalt Cavity Inspection for extreme low-texture camera frames
-        if len(detections) == 0 and conf_threshold <= 0.50:
-            aux_defect = self._inspect_road_cavity(cv_img, w, h, conf_threshold)
+        # Auxiliary Asphalt Cavity Inspection for low-texture road frames
+        if not any(d.get("class") == "POTHOLE" for d in detections):
+            aux_defect = self._inspect_road_cavity(cv_img, w, h, max(0.60, conf_threshold))
             if aux_defect:
                 detections.append(aux_defect)
 
@@ -422,10 +599,12 @@ class HazardYoloService:
     def _inspect_road_cavity(self, img: np.ndarray, w: int, h: int, conf_thresh: float) -> Optional[Dict[str, Any]]:
         """Deep asphalt texture variance check for severe asphalt cavity edge-cases."""
         try:
-            road_roi = img[int(h * 0.40):, :]
+            # Check bottom 45% of image (road region)
+            road_roi = img[int(h * 0.55):, :]
             gray = cv2.cvtColor(road_roi, cv2.COLOR_BGR2GRAY)
             std_dev = np.std(gray)
-            if std_dev < 10.0:
+            # Require minimum texture variance to rule out plain solid surfaces/walls
+            if std_dev < 28.0:
                 return None
 
             blurred = cv2.GaussianBlur(gray, (7, 7), 0)
@@ -436,23 +615,25 @@ class HazardYoloService:
             max_area = 0
             for c in contours:
                 area = cv2.contourArea(c)
-                if area > 1200:
+                # Require significant area on the road plane
+                if area > 3500:
                     x, y, cw, ch = cv2.boundingRect(c)
                     aspect = cw / float(ch)
-                    if 0.5 < aspect < 3.2 and area > max_area:
+                    # Potholes have realistic aspect ratio and occupy a moderate portion of the road
+                    if 0.7 < aspect < 2.5 and (cw / float(w) > 0.10) and (ch / float(h) > 0.08) and area > max_area:
                         max_area = area
                         best_cnt = (x, y, cw, ch)
 
             if best_cnt:
                 x, y, cw, ch = best_cnt
-                actual_y = int(h * 0.40) + y
+                actual_y = int(h * 0.55) + y
                 norm_box = {
                     "x": round(x / w, 4),
                     "y": round(actual_y / h, 4),
                     "w": round(cw / w, 4),
                     "h": round(ch / h, 4)
                 }
-                conf = round(min(0.88, 0.55 + (max_area / (w * h * 0.6)) * 0.35), 3)
+                conf = round(min(0.85, 0.55 + (max_area / (w * h * 0.45)) * 0.30), 3)
                 if conf >= conf_thresh:
                     return {
                         "class": "POTHOLE",
@@ -465,6 +646,7 @@ class HazardYoloService:
                         "distance_meters": round(max(3.0, 14.0 - norm_box["y"] * 12.0), 1),
                         "box_pixel": {"x": x, "y": actual_y, "w": cw, "h": ch},
                         "box_norm": norm_box,
+                        "box_normalized": norm_box,
                         "source": f"REAL PAVEMENT CONTOUR ANALYSIS ({self.model_name})",
                         "is_simulated": False
                     }

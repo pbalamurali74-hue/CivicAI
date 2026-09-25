@@ -50,7 +50,7 @@ export default function AuthoritySchedulingPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-black uppercase tracking-wider mb-2">
-              <SlidersHorizontal className="w-4 h-4 text-amber-600" /> SIH PS 26124 • FLEET SCHEDULING COMMAND
+              <SlidersHorizontal className="w-4 h-4 text-amber-600" /> PS 26124 • FLEET SCHEDULING COMMAND
             </div>
             <h1 className="text-3xl font-black text-[#212121]">Rush-Hour Fleet & Environmental Optimization</h1>
             <p className="text-zinc-600 text-sm font-semibold mt-1">

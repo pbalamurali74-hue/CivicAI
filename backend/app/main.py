@@ -9,7 +9,7 @@ from app.services.seeder import seed_database
 from app.websocket.bus_tracker import bus_manager, simulate_live_bus_movements
 from app.services.gemini_service import generate_trip_plan_with_gemini
 
-from app.api import auth, officers, offices, routes, buses, demand, scheduling, grievances, admin, sensing, ml_analytics, hazard
+from app.api import auth, officers, offices, routes, buses, demand, scheduling, grievances, admin, sensing, ml_analytics, hazard, road_hazard_priority
 
 # Create Database tables
 Base.metadata.create_all(bind=engine)
@@ -54,6 +54,8 @@ app.include_router(admin.router)
 app.include_router(sensing.router)
 app.include_router(ml_analytics.router)
 app.include_router(hazard.router)
+app.include_router(road_hazard_priority.router)
+
 
 class AssistantQuery(BaseModel):
     query: str

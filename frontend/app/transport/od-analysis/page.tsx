@@ -21,7 +21,7 @@ export default function OdAnalysisPage() {
   const [selectedRouteCase, setSelectedRouteCase] = useState<string>("CASE_DIRECT_SOLVER");
 
   const walkthroughSteps = [
-    { title: "SIH PS 26124 O-D AI", speech: "Welcome to Origin-Destination AI Route Optimization & Frequency Boost Engine." },
+    { title: "Origin-Destination AI", speech: "Welcome to Origin-Destination AI Route Optimization & Frequency Boost Engine." },
     { title: "Direct Bus Solver", speech: "When citizens must transfer between buses at a junction, AI detects the transfer bottleneck and proposes a Direct Express Route." },
     { title: "Frequency Boost", speech: "If a direct bus already exists, AI predicts passenger crowding and recommends increasing bus frequency." }
   ];
@@ -35,7 +35,7 @@ export default function OdAnalysisPage() {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-black uppercase tracking-wider mb-2">
-              <GitMerge className="w-4 h-4 text-amber-600" /> SIH PS 26124 • ORIGIN-DESTINATION AI ANALYTICS
+              <GitMerge className="w-4 h-4 text-amber-600" /> PS 26124 • ORIGIN-DESTINATION AI ANALYTICS
             </div>
             <h1 className="text-3xl md:text-4xl font-black text-[#212121]">
               Direct Bus Route & Frequency Optimization Engine

@@ -47,7 +47,7 @@ export default function LandingPage() {
       <section className="pt-8 pb-8 max-w-7xl mx-auto px-4 text-center relative z-10 space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-black shadow-sm">
           <ShieldCheck className="w-4 h-4 text-amber-600" />
-          <span>CIVICSHIELD PLATFORM • SIH 2026 PS 26124 EDITION</span>
+          <span>CIVICSHIELD PLATFORM • PS 26124 EDITION</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-black text-[#212121] tracking-tight mb-3">
           AI Mobile Urban Sensing <span className="text-amber-600">& Fleet Intelligence.</span>
